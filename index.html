@@ -1,17 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="it">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<title>AUTOTECH ATLAS | The Science of Automotive Performance</title>
-<meta name="description" content="AUTOTECH ATLAS: enciclopedia automobilistica indipendente. Modelli, generazioni, motori, prestazioni e tecnologie dei grandi marchi automobilistici.">
-<meta name="theme-color" content="#090a0c">
-<meta property="og:title" content="AUTOTECH ATLAS">
-<meta property="og:description" content="The engineering behind every car. Esplora il mondo dell'ingegneria automobilistica.">
-<meta property="og:type" content="website">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&amp;family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<title>AUTOTECH ATLAS | The Automotive Editorial Archive</title>
+<meta content="AUTOTECH ATLAS: enciclopedia automobilistica indipendente. Modelli, generazioni, motori, prestazioni e tecnologie dei grandi marchi automobilistici." name="description"/>
+<meta content="#090a0c" name="theme-color"/>
+<meta content="AUTOTECH ATLAS" property="og:title"/>
+<meta content="The engineering behind every car. Esplora il mondo dell'ingegneria automobilistica." property="og:description"/>
+<meta content="website" property="og:type"/>
 <style>
 :root{--bg:#090a0c;--panel:#121519;--panel2:#191e23;--line:#2a3037;--red:#e12b35;--muted:#9aa3ad;--white:#f3f5f7}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 75% -10%,#321216 0,transparent 32%),var(--bg);color:var(--white);font:15px/1.5 Inter,Segoe UI,Arial,sans-serif}
@@ -148,228 +149,255 @@ h2,.page-title{font:800 clamp(30px,4vw,52px)/.95 'Barlow Condensed',Impact,sans-
 @media(max-width:900px){.side{grid-template-columns:1fr;gap:8px;padding:14px 18px 0}.brand{font-size:24px}.nav{justify-content:flex-start;padding-bottom:9px}.nav button{font-size:14px;padding:10px 9px}.main{padding-left:18px;padding-right:18px}.top{margin-left:-18px;margin-right:-18px;padding-left:18px;padding-right:18px}.hero{min-height:520px}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid #33363a}}
 @media(max-width:600px){.hero{min-height:470px;padding:27px 22px}.hero h1{font-size:clamp(60px,17vw,94px);line-height:.8}.hero p{font-size:13px}.top{gap:6px}.top .muted{font-size:11px}.quick-search{margin:15px 0 20px}.stats{grid-template-columns:repeat(2,1fr)}.stat{padding:15px 12px}.nav button{font-size:13px}}
 
+
+
+/* AUTOTECH ATLAS / FULL EDITORIAL REDESIGN */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
+:root{--red:#e3312e;--red-deep:#8e1719;--ink:#08090a;--panel:#111315;--line:#343638;--muted:#a1a4a7;--paper:#ece9e3}
+*{box-sizing:border-box} body{background:#08090a;color:#f1efeb;font-family:Inter,Arial,sans-serif;letter-spacing:0;}
+.atlas-header{height:auto;min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:16px clamp(18px,4vw,64px);background:rgba(5,6,7,.96);border-bottom:1px solid #292a2b;position:sticky;top:0;z-index:100;backdrop-filter:blur(16px)}
+.atlas-identity{color:#f4f1ec;text-decoration:none;display:flex;flex-direction:column;min-width:215px}.identity-word{font:900 25px/.82 'Barlow Condensed',Impact,sans-serif;letter-spacing:1.7px}.identity-word>span{color:var(--red)}.atlas-identity small{font:600 8px/1.5 Inter,sans-serif;letter-spacing:2.1px;color:#929496;margin-top:9px}
+.atlas-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(8px,1.5vw,25px);overflow-x:auto;max-width:calc(100vw - 290px);scrollbar-width:none}.atlas-nav::-webkit-scrollbar{display:none}.atlas-nav button{white-space:nowrap;background:transparent;border:0;border-radius:0;border-bottom:2px solid transparent;color:#c6c4c0;padding:15px 2px 12px;font:700 12px 'Barlow Condensed',Impact,sans-serif;letter-spacing:1.15px;text-transform:uppercase}.atlas-nav button:hover,.atlas-nav button.active{background:transparent;color:#fff;border-left:0;border-bottom-color:var(--red)}
+.mobile-menu{display:none;background:transparent;color:#eee;border:1px solid #444;padding:10px 12px;font:700 12px 'Barlow Condensed',sans-serif;letter-spacing:1px}
+.main{max-width:none;width:100%;padding:0 clamp(16px,3.5vw,58px) 70px}.top{padding:18px 0 14px;margin:0 0 8px;border-bottom:1px solid #242628}.eyebrow{font:700 10px Inter,sans-serif;letter-spacing:2.4px;color:#df3a36}.pill{border-radius:0;border-color:#48403c;color:#d2c7bc;font:600 10px Inter,sans-serif;letter-spacing:1px}
+.quick-search{margin:18px 0 24px;border:1px solid #3a3c3e;border-radius:2px;background:#111315;padding:8px 10px;display:flex;align-items:center;gap:12px}.quick-search input{background:transparent;border:0;color:white;min-width:0}.quick-search .btn{border-radius:0}
+#home{padding-top:4px}.hero{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);min-height:min(690px,70vw);padding:0;border:1px solid #353638;border-radius:0;overflow:hidden;background:#101112;isolation:isolate}
+.hero-copy{position:relative;z-index:2;padding:clamp(28px,5vw,76px) clamp(24px,4vw,66px);display:flex;flex-direction:column;justify-content:center;min-height:570px;background:linear-gradient(115deg,rgba(5,6,7,.99) 0%,rgba(5,6,7,.91) 60%,rgba(5,6,7,.42) 100%)}
+.hero-kicker,.mosaic-index{display:flex;align-items:center;gap:10px;color:#c7bdb3;font:600 10px Inter,sans-serif;letter-spacing:2px;text-transform:uppercase}.kicker-line{width:28px;height:1px;background:var(--red)}.hero-index{position:absolute;right:28px;top:28px;color:#f05b43;font:700 15px 'Barlow Condensed',sans-serif}.hero-index span{display:block;color:#777;font:600 8px Inter,sans-serif;letter-spacing:1.4px;margin-top:4px}
+.hero h1{font:900 clamp(64px,9.5vw,150px)/.78 'Barlow Condensed',Impact,sans-serif;letter-spacing:-.035em;text-transform:uppercase;margin:36px 0 28px;max-width:900px;color:#f0eee9}.hero h1 em{font-style:normal;color:var(--red);display:inline-block}.hero p{font:400 clamp(13px,1.1vw,16px)/1.75 Inter,sans-serif;color:#b9b7b2;max-width:490px}.hero .actions{margin-top:24px;gap:10px}.hero .btn{padding:14px 18px;border-radius:0;font:700 11px 'Barlow Condensed',sans-serif;letter-spacing:1.2px}.hero .btn.primary{background:var(--red);border-color:var(--red)}.hero-caption{margin-top:44px;color:#777;font:600 9px Inter,sans-serif;letter-spacing:2px}
+.hero-visual{position:relative;min-height:570px;background:linear-gradient(90deg,rgba(8,9,10,.45),rgba(8,9,10,.03)),url('https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1600&q=90') center/cover;filter:saturate(.72)}.hero-visual:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.72),transparent 48%),linear-gradient(90deg,rgba(0,0,0,.25),transparent)}.visual-label,.visual-number{position:absolute;z-index:1;color:#eee;font:600 9px Inter,sans-serif;letter-spacing:2px}.visual-label{right:22px;top:25px;writing-mode:vertical-rl}.visual-number{right:24px;bottom:25px;font:700 22px 'Barlow Condensed',sans-serif}.visual-number span{color:var(--red);padding:0 8px}
+.editorial-mosaic{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:#393a3b;border:1px solid #393a3b;margin:1px 0 28px}.mosaic-panel{position:relative;min-height:280px;padding:25px 28px;background:#111315;overflow:hidden}.mosaic-index{font-size:9px;color:#e75a4d}.mosaic-title{position:relative;z-index:1;font:800 clamp(30px,3.2vw,48px)/.88 'Barlow Condensed',Impact,sans-serif;letter-spacing:-.02em;margin:35px 0 14px;text-transform:uppercase}.mosaic-title em{font-style:normal;color:var(--red)}.mosaic-panel p{position:relative;z-index:1;color:#a8a7a3;font:12px/1.6 Inter,sans-serif;max-width:260px}.text-link{position:relative;z-index:1;background:none;border:0;color:#f1eee8;padding:15px 0 0;font:700 10px 'Barlow Condensed',sans-serif;letter-spacing:1.2px}.text-link span{color:var(--red);font-size:17px;margin-left:10px}.panel-innovation{background:linear-gradient(120deg,rgba(8,9,10,.94),rgba(8,9,10,.68)),url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=85') center/cover}.panel-heritage{background:linear-gradient(120deg,rgba(8,9,10,.93),rgba(8,9,10,.63)),url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85') center/cover}.panel-data{background:#e9e6df;color:#111}.panel-data .mosaic-index,.panel-data p{color:#444}.panel-data .mosaic-title{color:#111}.data-big{position:absolute;right:25px;top:28px;font:900 100px/.8 'Barlow Condensed',sans-serif;color:rgba(0,0,0,.09)}.stats{gap:1px;background:#36383a;border:1px solid #36383a;border-radius:0;margin:28px 0}.stat{border:0;border-radius:0;background:#111315;padding:20px}.stat b{font:800 38px/.9 'Barlow Condensed',sans-serif;color:#f0eee9}.stat small{font:600 9px Inter,sans-serif;letter-spacing:1.3px;text-transform:uppercase}
+h2,.page-title{font:800 clamp(30px,4vw,56px)/.92 'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;letter-spacing:-.015em}.card,.panel,.stat,.brand-tile{border-radius:0}.card{background:#111315;border-color:#343638}.btn,.brand-tile{border-radius:0}.page{padding-top:24px}.notice{border-radius:0}
+@media(max-width:900px){.atlas-header{align-items:flex-start;flex-wrap:wrap}.atlas-nav{order:3;max-width:100%;width:100%;justify-content:flex-start}.hero{grid-template-columns:1fr .7fr}.hero h1{font-size:clamp(56px,10vw,100px)}.editorial-mosaic{grid-template-columns:1fr 1fr}.panel-data{grid-column:1/-1;min-height:200px}}
+@media(max-width:620px){.atlas-header{min-height:68px;padding:12px 16px;align-items:center}.atlas-identity{min-width:0}.identity-word{font-size:22px}.atlas-identity small{font-size:6px;letter-spacing:1.2px}.mobile-menu{display:block}.atlas-nav{display:none;order:3;max-width:none;width:100%;flex-wrap:wrap;gap:5px 14px;padding:8px 0 3px}.atlas-nav.nav-open{display:flex}.atlas-nav button{font-size:12px;padding:8px 0}.main{padding:0 12px 45px}.top{align-items:flex-start}.top .muted{font-size:11px}.quick-search{flex-wrap:wrap}.quick-search input{flex:1 1 70%;font-size:13px}.quick-search .btn{flex:1}.hero{display:block;min-height:0}.hero-copy{min-height:530px;padding:28px 22px 24px;background:linear-gradient(90deg,rgba(4,5,6,.97),rgba(4,5,6,.72)),url('https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1000&q=85') center/cover}.hero-visual{display:none}.hero h1{font-size:clamp(57px,15vw,90px);margin:34px 0 22px;line-height:.79}.hero-index{right:18px;top:18px}.hero p{font-size:13px}.hero-caption{margin-top:32px}.editorial-mosaic{grid-template-columns:1fr}.mosaic-panel{min-height:230px}.panel-data{grid-column:auto}.stats{grid-template-columns:repeat(2,1fr)}.stat{padding:14px}.stat b{font-size:32px}}
 </style>
 </head>
 <body>
 <div class="shell">
-<aside class="side">
-  <div class="brand">AUTO<span>TECH</span><br>ATLAS</div>
-  <div class="tag">THE SCIENCE OF AUTOMOTIVE PERFORMANCE</div>
-  <nav class="nav">
-    <button class="active" data-page="home">⌂ &nbsp; HOME</button>
-    <button data-page="brands">◈ &nbsp; TUTTI I MARCHI</button>
-    <button data-page="models">▤ &nbsp; MODELLI</button>
-    <button data-page="generations">▦ &nbsp; GENERAZIONI</button><button data-page="engines">⚙ &nbsp; MOTORI</button>
-    <button data-page="variants">▦ &nbsp; VERSIONI TECNICHE</button>
-    <button data-page="compare">⇄ &nbsp; CONFRONTO</button>
-    <button data-page="rankings">◆ &nbsp; CLASSIFICHE</button>
-    <button data-page="tech">⌁ &nbsp; TECNOLOGIE</button>
-    <button data-page="components">⚙ &nbsp; COMPONENTI</button>
-    <button data-page="transmissions">⇄ &nbsp; TRASMISSIONI</button>
-    <button data-page="audit">✓ &nbsp; CONTROLLO DATI</button>
-    <button data-page="platforms">⌖ &nbsp; PIATTAFORME</button>
-    <button data-page="chassis">▧ &nbsp; TELAIO & FRENI</button>
-    <button data-page="electronics">⌁ &nbsp; ELETTRONICA</button>
-    <button data-page="engineTech">⚙ &nbsp; TECNOLOGIE MOTORE</button>
-    <button data-page="engineCodes">⌗ &nbsp; CODICI MOTORE</button>
-    <button data-page="specials">★ &nbsp; SPECIALI & ALPINA</button>
-    <button data-page="markets">◎ &nbsp; MERCATI</button>
-    <button data-page="regional">⌖ &nbsp; USA & GIAPPONE</button>
-    <button data-page="audit">✓ &nbsp; AUDIT MOTORI</button>
-  </nav>
-  <div class="sidefoot">GLOBAL EDITION · MULTI-BRAND · 6.0<br>DATABASE IN EVOLUZIONE</div>
-</aside>
+<header class="atlas-header"><a aria-label="AUTOTECH ATLAS Home" class="atlas-identity" href="#home"><span class="identity-word">AUTO<span>TECH</span><br/>ATLAS</span><small>THE SCIENCE OF AUTOMOTIVE PERFORMANCE</small></a><nav class="atlas-nav">
+<button class="active" data-page="home">⌂   HOME</button>
+<button data-page="brands">◈   TUTTI I MARCHI</button>
+<button data-page="models">▤   MODELLI</button>
+<button data-page="generations">▦   GENERAZIONI</button><button data-page="engines">⚙   MOTORI</button>
+<button data-page="variants">▦   VERSIONI TECNICHE</button>
+<button data-page="compare">⇄   CONFRONTO</button>
+<button data-page="rankings">◆   CLASSIFICHE</button>
+<button data-page="tech">⌁   TECNOLOGIE</button>
+<button data-page="components">⚙   COMPONENTI</button>
+<button data-page="transmissions">⇄   TRASMISSIONI</button>
+<button data-page="audit">✓   CONTROLLO DATI</button>
+<button data-page="platforms">⌖   PIATTAFORME</button>
+<button data-page="chassis">▧   TELAIO &amp; FRENI</button>
+<button data-page="electronics">⌁   ELETTRONICA</button>
+<button data-page="engineTech">⚙   TECNOLOGIE MOTORE</button>
+<button data-page="engineCodes">⌗   CODICI MOTORE</button>
+<button data-page="specials">★   SPECIALI &amp; ALPINA</button>
+<button data-page="markets">◎   MERCATI</button>
+<button data-page="regional">⌖   USA &amp; GIAPPONE</button>
+<button data-page="audit">✓   AUDIT MOTORI</button>
+</nav><button aria-label="Apri menu" class="mobile-menu" onclick='document.querySelector(".atlas-nav").classList.toggle("nav-open")' type="button">MENU ☰</button></header>
 <main class="main">
-  <div class="top"><div><div class="eyebrow">AUTOMOTIVE KNOWLEDGE PLATFORM</div><div class="muted">Enciclopedia automobilistica indipendente · Multi-brand</div></div><span class="pill">GLOBAL EDITION · DATABASE 6.3</span></div>
-  <div class="quick-search"><span>⌕</span><input id="globalCarSearch" type="search" placeholder="Cerca un modello, un motore o una generazione: M3 E46, 911, RS6, Supra..."><button type="button" id="globalSearchBtn" class="btn primary">CERCA</button></div>
-  <div id="globalSearchResults" class="grid quick-results" aria-live="polite"></div>
-
-<section id="brands" class="page hidden">
+<div class="top"><div><div class="eyebrow">INDEPENDENT AUTOMOTIVE KNOWLEDGE PLATFORM</div><div class="muted">Engineering · Design · Performance · Heritage</div></div><span class="pill">GLOBAL EDITION / 2026</span></div>
+<div class="quick-search"><span>⌕</span><input id="globalCarSearch" placeholder="Cerca un modello, un motore o una generazione: M3 E46, 911, RS6, Supra..." type="search"/><button class="btn primary" id="globalSearchBtn" type="button">CERCA</button></div>
+<div aria-live="polite" class="grid quick-results" id="globalSearchResults"></div>
+<section class="page hidden" id="brands">
 <div class="eyebrow">GLOBAL AUTOMOTIVE INDEX</div>
 <h1 class="page-title">SCEGLI IL TUO <em>UNIVERSO.</em></h1>
 <p class="muted" style="max-width:760px">AUTOTECH ATLAS nasce come archivio multi-brand. La struttura è pronta per accogliere i principali costruttori; BMW è il primo archivio approfondito. Gli altri marchi verranno popolati progressivamente con schede e dati verificati.</p>
 <div class="stats" style="margin:24px 0"><div class="stat"><b>01</b><small>Archivio approfondito</small></div><div class="stat"><b>20+</b><small>Marchi in roadmap</small></div><div class="stat"><b>GLOBAL</b><small>Copertura prevista</small></div><div class="stat"><b>6.0</b><small>Prima release multi-brand</small></div></div>
 <h2>Marchi automobilistici</h2>
 <div class="brand-grid" id="brandGrid">
-<button class="brand-tile active-brand" type="button" data-brand="BMW"><span class="brand-mark">BMW</span><strong>BMW</strong><small>Archivio disponibile · Esplora modelli e motori</small><b>ENTRA NELL'ARCHIVIO →</b></button>
-<button class="brand-tile" type="button" data-brand="Mercedes-Benz"><span class="brand-mark">MB</span><strong>Mercedes-Benz</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
-<button class="brand-tile" type="button" data-brand="Audi"><span class="brand-mark">AUDI</span><strong>Audi</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
-<button class="brand-tile" type="button" data-brand="Porsche"><span class="brand-mark">PORSCHE</span><strong>Porsche</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
-<button class="brand-tile" type="button" data-brand="Volkswagen"><span class="brand-mark">VW</span><strong>Volkswagen</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
-<button class="brand-tile" type="button" data-brand="Ferrari"><span class="brand-mark">FERRARI</span><strong>Ferrari</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
-<button class="brand-tile" type="button" data-brand="Lamborghini"><span class="brand-mark">LAMBORGHINI</span><strong>Lamborghini</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
-<button class="brand-tile" type="button" data-brand="Maserati"><span class="brand-mark">MASERATI</span><strong>Maserati</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
-<button class="brand-tile" type="button" data-brand="Alfa Romeo"><span class="brand-mark">ALFA</span><strong>Alfa Romeo</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
-<button class="brand-tile" type="button" data-brand="Fiat"><span class="brand-mark">FIAT</span><strong>Fiat</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
-<button class="brand-tile" type="button" data-brand="McLaren"><span class="brand-mark">McLAREN</span><strong>McLaren</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
-<button class="brand-tile" type="button" data-brand="Aston Martin"><span class="brand-mark">AM</span><strong>Aston Martin</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
-<button class="brand-tile" type="button" data-brand="Jaguar"><span class="brand-mark">JAGUAR</span><strong>Jaguar</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
-<button class="brand-tile" type="button" data-brand="Land Rover"><span class="brand-mark">LAND ROVER</span><strong>Land Rover</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
-<button class="brand-tile" type="button" data-brand="Toyota"><span class="brand-mark">TOYOTA</span><strong>Toyota</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
-<button class="brand-tile" type="button" data-brand="Honda"><span class="brand-mark">HONDA</span><strong>Honda</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
-<button class="brand-tile" type="button" data-brand="Nissan"><span class="brand-mark">NISSAN</span><strong>Nissan</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
-<button class="brand-tile" type="button" data-brand="Mazda"><span class="brand-mark">MAZDA</span><strong>Mazda</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
-<button class="brand-tile" type="button" data-brand="Hyundai"><span class="brand-mark">HYUNDAI</span><strong>Hyundai</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
-<button class="brand-tile" type="button" data-brand="Kia"><span class="brand-mark">KIA</span><strong>Kia</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
+<button class="brand-tile active-brand" data-brand="BMW" type="button"><span class="brand-mark">BMW</span><strong>BMW</strong><small>Archivio disponibile · Esplora modelli e motori</small><b>ENTRA NELL'ARCHIVIO →</b></button>
+<button class="brand-tile" data-brand="Mercedes-Benz" type="button"><span class="brand-mark">MB</span><strong>Mercedes-Benz</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
+<button class="brand-tile" data-brand="Audi" type="button"><span class="brand-mark">AUDI</span><strong>Audi</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
+<button class="brand-tile" data-brand="Porsche" type="button"><span class="brand-mark">PORSCHE</span><strong>Porsche</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
+<button class="brand-tile" data-brand="Volkswagen" type="button"><span class="brand-mark">VW</span><strong>Volkswagen</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
+<button class="brand-tile" data-brand="Ferrari" type="button"><span class="brand-mark">FERRARI</span><strong>Ferrari</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
+<button class="brand-tile" data-brand="Lamborghini" type="button"><span class="brand-mark">LAMBORGHINI</span><strong>Lamborghini</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
+<button class="brand-tile" data-brand="Maserati" type="button"><span class="brand-mark">MASERATI</span><strong>Maserati</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
+<button class="brand-tile" data-brand="Alfa Romeo" type="button"><span class="brand-mark">ALFA</span><strong>Alfa Romeo</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
+<button class="brand-tile" data-brand="Fiat" type="button"><span class="brand-mark">FIAT</span><strong>Fiat</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
+<button class="brand-tile" data-brand="McLaren" type="button"><span class="brand-mark">McLAREN</span><strong>McLaren</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
+<button class="brand-tile" data-brand="Aston Martin" type="button"><span class="brand-mark">AM</span><strong>Aston Martin</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
+<button class="brand-tile" data-brand="Jaguar" type="button"><span class="brand-mark">JAGUAR</span><strong>Jaguar</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
+<button class="brand-tile" data-brand="Land Rover" type="button"><span class="brand-mark">LAND ROVER</span><strong>Land Rover</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
+<button class="brand-tile" data-brand="Toyota" type="button"><span class="brand-mark">TOYOTA</span><strong>Toyota</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
+<button class="brand-tile" data-brand="Honda" type="button"><span class="brand-mark">HONDA</span><strong>Honda</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
+<button class="brand-tile" data-brand="Nissan" type="button"><span class="brand-mark">NISSAN</span><strong>Nissan</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
+<button class="brand-tile" data-brand="Mazda" type="button"><span class="brand-mark">MAZDA</span><strong>Mazda</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
+<button class="brand-tile" data-brand="Hyundai" type="button"><span class="brand-mark">HYUNDAI</span><strong>Hyundai</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
+<button class="brand-tile" data-brand="Kia" type="button"><span class="brand-mark">KIA</span><strong>Kia</strong><small>Archivio in preparazione</small><b>PROSSIMAMENTE</b></button>
 </div>
-<div id="brandNotice" class="notice hidden" role="status" style="margin-top:12px"></div>
+<div class="notice hidden" id="brandNotice" role="status" style="margin-top:12px"></div>
 <div class="notice" style="margin-top:24px"><strong>Un progetto in espansione.</strong> Il catalogo multi-brand è la struttura di partenza, non una dichiarazione di completezza: ogni nuovo archivio verrà attivato quando avrà contenuti tecnici sufficienti e controllati.</div>
 </section>
-
-  <section id="home" class="page">
-    <div class="hero"><div class="eyebrow">AUTOMOTIVE KNOWLEDGE PLATFORM · GLOBAL EDITION</div><h1>THE ENGINEERING<br>BEHIND <em>EVERY CAR.</em></h1><p>Non solo automobili. Architetture, motori, materiali e prestazioni. Entra dentro la macchina e scopri cosa la rende unica.</p><div class="actions"><button class="btn primary" onclick="showPage('brands')">ESPLORA I MARCHI</button><button class="btn" onclick="showPage('models')">ESPLORA BMW</button></div></div>
-    <div class="stats"><div class="stat"><b>8</b><small>Famiglie Serie</small></div><div class="stat"><b>7</b><small>Famiglie SUV X</small></div><div class="stat"><b>4</b><small>Famiglie motori in evidenza</small></div><div class="stat"><b>20+</b><small>Marchi previsti</small></div></div>
-    <h2>Esplora l'universo BMW</h2><div class="grid" id="homeCards"></div>
-    <div class="notice">Questa è la prima versione navigabile. Le schede iniziali contengono dati dimostrativi e valori indicativi: prima della pubblicazione definitiva ogni specifica dovrà essere verificata per anno, mercato e variante.</div>
-  </section>
-  <section id="models" class="page hidden"><div class="eyebrow">BMW MODEL DATABASE</div><h2>Modelli e generazioni</h2><p class="muted">Archivio ampliato con schede di gamma e generazione. Le schede aggregate non sostituiscono le singole motorizzazioni: potenza, coppia, massa e prestazioni restano da verificare per variante, anno e mercato.</p><div class="toolbar"><input id="search" type="search" placeholder="Cerca modello, generazione, motore o codice telaio..."><select id="family"><option value="">Tutte le famiglie</option><option>Serie</option><option>Serie 1</option><option>Serie 2</option><option>Serie 3</option><option>Serie 4</option><option>Serie 5</option><option>Serie 6</option><option>Serie 7</option><option>Serie 8</option><option>SUV X</option><option>Roadster Z</option><option>BMW M</option><option>BMW i</option></select><button type="button" class="btn" id="resetModelFilters">AZZERA FILTRI</button></div><div class="catalog-status"><span id="modelCount" aria-live="polite"></span><span>Seleziona “APRI SCHEDA” per i dati tecnici</span></div><div class="catalog-status"><span id="techCoverage"></span><span>Le schede aggregate non equivalgono a una singola variante omologata</span></div><div class="grid" id="modelGrid"></div></section>
-  <section id="generations" class="page hidden"><div class="eyebrow">BMW GENERATION ARCHIVE</div><h2>Tutte le famiglie e generazioni</h2><div class="toolbar"><input id="genSearch" placeholder="Cerca serie, codice telaio o modello..."><select id="genFamily"><option value="">Tutte le famiglie</option></select></div><div class="tablewrap"><table><thead><tr><th>Famiglia</th><th>Generazione / codice</th><th>Periodo</th><th>Modelli e varianti</th></tr></thead><tbody id="generationRows"></tbody></table></div><p class="muted">Indice generale ricostruito dal materiale raccolto. Date e disponibilità possono variare in base al mercato.</p></section>
-  <section id="variants" class="page hidden"><div class="eyebrow">BMW POWERTRAIN DATABASE</div><h2>Versioni e motorizzazioni</h2><p class="muted">Archivio tecnico esteso: motore, cilindrata, potenza, coppia e schema di trazione. I valori sono indicativi e possono cambiare per anno, mercato, omologazione e aggiornamento.</p><div class="toolbar"><input id="variantSearch" placeholder="Cerca modello, telaio, motore o potenza..."><select id="variantFamily"><option value="">Tutte le famiglie</option></select></div><p class="muted" id="variantStatus" aria-live="polite"></p><div class="tablewrap"><table><thead><tr><th>Famiglia</th><th>Generazione</th><th>Versione</th><th>Motore</th><th>Cilindrata</th><th>Potenza</th><th>Coppia</th><th>Trazione</th></tr></thead><tbody id="variantRows"></tbody></table></div><p class="muted">Nota editoriale: prima base dati strutturata. Le varianti regionali e le differenze di anno modello saranno ulteriormente dettagliate e verificate nelle prossime revisioni.</p></section>
-  <section id="engines" class="page hidden"><div class="eyebrow">POWERTRAIN ARCHIVE</div><h2>Motori BMW</h2><p class="muted">Una prima selezione di famiglie motoristiche. Le potenze dipendono dalla specifica applicazione.</p><div class="tablewrap"><table><thead><tr><th>Famiglia</th><th>Architettura</th><th>Cilindrata</th><th>Alimentazione</th><th>Applicazioni indicative</th></tr></thead><tbody id="engineRows"></tbody></table></div>
-    <h2 style="margin-top:28px">Atlante tecnico dei propulsori</h2>
-    <p class="muted">Apri una famiglia per consultare architettura, costruzione, alimentazione, distribuzione, lubrificazione, raffreddamento e applicazioni. I dati identificano una configurazione rappresentativa: varianti, potenze e componenti possono cambiare per modello, anno e mercato.</p>
-    <div class="toolbar" style="margin:16px 0"><input id="engineSearch" placeholder="Cerca codice motore, architettura o tecnologia..."><select id="engineType"><option value="">Tutti i propulsori</option><option value="BMW M">BMW M</option><option value="Serie">BMW di serie</option><option value="Diesel">Diesel</option><option value="Ibrido">Ibridi</option></select></div>
-    <div id="engineCoverage" class="coverage-grid"></div><div class="grid" id="engineAtlas"></div></section>
-  <section id="engineTech" class="page hidden">
-    <div class="eyebrow">ENGINE DESIGN & COMBUSTION</div>
-    <h2>Tecnologie e ingegneria dei motori</h2>
-    <p class="muted">Dossier trasversali sui principi costruttivi dei propulsori BMW: dalla cinematica interna alla combustione, dalla sovralimentazione alla gestione termica. Le soluzioni effettive dipendono dalla famiglia e dalla variante del motore.</p>
-    <div class="toolbar"><input id="engineTechSearch" placeholder="Cerca distribuzione, iniezione, turbo, lubrificazione..."><select id="engineTechType"><option value="">Tutte le aree</option><option value="Architettura">Architettura</option><option value="Distribuzione">Distribuzione</option><option value="Alimentazione">Alimentazione</option><option value="Sovralimentazione">Sovralimentazione</option><option value="Lubrificazione">Lubrificazione</option><option value="Termica">Gestione termica</option><option value="Controllo">Controllo e combustione</option><option value="Diesel">Tecnologie diesel</option></select></div>
-    <div class="grid" id="engineTechGrid"></div>
-    <div class="notice"><b>Nota tecnica:</b> una tecnologia presente su una famiglia non è automaticamente presente su tutte le sue evoluzioni. Codici motore, anno, mercato e versione determinano componenti e tarature effettive.</div>
-  </section>
-  <section id="engineCodes" class="page hidden">
-    <div class="eyebrow">BMW ENGINE IDENTIFICATION</div>
-    <h2>Decodificatore codici motore</h2>
-    <p class="muted">Il sistema BMW moderno codifica generazione, architettura, tecnologia, carburante, classe di cilindrata, livello prestazionale e revisione. Il formato non è applicabile in modo identico a tutti i codici storici.</p>
-    <div class="panel">
-      <label for="engineCodeInput">Inserisci un codice motore BMW</label>
-      <div class="toolbar"><input id="engineCodeInput" value="N55B30M0" placeholder="Es. N55B30M0"><button class="btn primary" id="decodeEngineCode">DECODIFICA</button></div>
-      <div id="engineCodeResult" class="grid"></div>
-    </div>
-    <h2>Struttura del codice moderno</h2>
-    <div class="tablewrap"><table><thead><tr><th>Posizione</th><th>Significato</th><th>Esempi / valori</th></tr></thead><tbody>
-      <tr><td>1</td><td>Generazione / sviluppatore</td><td>M, N, P, S, B e altre lettere secondo epoca e famiglia</td></tr>
-      <tr><td>2</td><td>Tipo motore / architettura</td><td>4, 5, 6, 7, 8; per elettrici possono comparire codici specifici</td></tr>
-      <tr><td>3</td><td>Tecnologia</td><td>Codifica dipendente dalla famiglia e dalla generazione</td></tr>
-      <tr><td>4</td><td>Carburante / ciclo</td><td>B benzina, D diesel, E elettrico nelle codifiche descritte dal manuale</td></tr>
-      <tr><td>5–6</td><td>Classe di cilindrata</td><td>Valore codificato, non sempre cilindrata esatta in cm³</td></tr>
-      <tr><td>7</td><td>Classe prestazionale</td><td>K, U, M, O, T, S nella nomenclatura documentata</td></tr>
-      <tr><td>8</td><td>Indice revisione</td><td>0 sviluppo iniziale, 1–9 revisioni successive secondo il manuale</td></tr>
-    </tbody></table></div>
-    <div class="notice"><b>Importante:</b> il decodificatore è una guida orientativa per il formato a otto caratteri descritto nella documentazione BMW. Non sostituisce il codice completo riportato su motore, VIN, catalogo ricambi o documentazione di officina. I codici storici come M54B30 o S54B32 seguono convenzioni precedenti e non vanno forzati in questo schema.</div>
-    <h2>Fonti tecniche di riferimento</h2>
-    <div class="grid">
-      <article class="card"><div class="meta">BMW GROUP CLASSIC</div><h3>Archivio storico BMW</h3><p>Catalogo storico, modelli, carrozzerie, motori e documentazione d'archivio.</p><a href="https://www.bmwgroup-classic.com/en/history/historic-modeloverview-bmw.html" target="_blank" rel="noopener">Apri archivio BMW Classic ↗</a></article>
-      <article class="card"><div class="meta">BMW TECHNICAL TRAINING</div><h3>Engine Technology</h3><p>Manuale tecnico BMW sulla tecnologia dei motori e sulla nomenclatura delle famiglie.</p><a href="https://bmwtechinfo.bmwgroup.com/tech_training_manual/ST501%20Engine%20Technology.pdf" target="_blank" rel="noopener">Apri manuale tecnico BMW ↗</a></article>
-    </div>
-  </section>
-  <section id="audit" class="page hidden">
-    <div class="eyebrow">ENGINE APPLICATION / DATA INTEGRITY</div>
-    <h2>Audit vetture ↔ motori</h2>
-    <p class="muted">Questa sezione introduce un metodo di verifica delle applicazioni motore. Un codice famiglia (es. N55) non identifica da solo ogni variante: servono codice completo, model year, mercato e omologazione. I dossier BMW Training mostrano anche codici motore a 7 posizioni in alcune generazioni: il decoder a 8 caratteri va quindi considerato uno schema utile, non una regola universale.</p>
-    <div class="grid" id="auditStats"></div>
-    <div class="toolbar"><input id="auditSearch" placeholder="Cerca motore, modello o generazione..."><select id="auditStatus"><option value="">Tutti gli stati</option><option>Applicazione documentata</option><option>Da verificare</option><option>Nota metodologica</option></select></div>
-    <div class="grid" id="auditGrid"></div>
-    <div class="notice"><b>Livelli di affidabilità Atlas:</b> documentato = fonte tecnica specifica per quella vettura; corroborato = più fonti coerenti ma manca il documento primario dell'esemplare; da verificare = dato incompleto o dipendente da mercato/anno. Non trasformare mai un dato mancante in un valore presunto.</div>
-    <h2>Documentazione BMW di riferimento</h2>
-    <div class="grid">
-      <article class="card"><div class="meta">BMW TECHNICAL TRAINING</div><h3>Engine Technology</h3><p>Spiega designazione motore, identificazione e significato degli indici.</p><a href="https://bmwtechinfo.bmwgroup.com/tech_training_manual/ST501%20Engine%20Technology.pdf" target="_blank" rel="noopener">Apri manuale BMW ↗</a></article>
-      <article class="card"><div class="meta">BMW TECHNICAL TRAINING</div><h3>F30 Complete Vehicle</h3><p>Mostra che il sistema di identificazione va letto nella documentazione specifica del modello.</p><a href="https://bmwtechinfo.bmwgroup.com/tech_training_manual/ST1113%20F30%20Complete%20Vehicle.pdf" target="_blank" rel="noopener">Apri manuale F30 ↗</a></article>
-    </div>
-  </section>
-  <section id="regional" class="page hidden">
-    <div class="eyebrow">MARKET-SPECIFIC MODEL VARIANTS</div>
-    <h2>USA e Giappone: versioni e differenze</h2>
-    <p class="muted">Archivio comparativo di alcune varianti regionali. Le denominazioni commerciali non bastano a identificare una vettura: anno modello, codice telaio, codice motore e normativa locale sono indispensabili.</p>
-    <div class="toolbar"><input id="regionalSearch" placeholder="Cerca modello, motore, mercato..."><select id="regionalFilter"><option value="">Tutti</option><option>USA / Nord America</option><option>Giappone</option><option>Confronto mercati</option></select></div>
-    <div class="grid" id="regionalGrid"></div>
-    <div class="notice"><b>Regola di catalogazione:</b> non unire sotto un solo record le versioni con motori diversi. Per la M3 E36, ad esempio, la variante nordamericana con S52 non va confusa con la configurazione europea S50.</div>
-    <h2>Come leggere una scheda regionale</h2>
-    <div class="grid"><article class="card"><h3>Model year</h3><p>L'anno modello può anticipare o seguire l'anno solare di produzione.</p></article><article class="card"><h3>Codice motore</h3><p>La sigla esatta è più affidabile del solo badge commerciale.</p></article><article class="card"><h3>Omologazione</h3><p>Emissioni e sicurezza possono cambiare hardware e calibrazione.</p></article></div>
-  </section>
-  <section id="markets" class="page hidden">
-    <div class="eyebrow">REGIONAL ENGINEERING / HOMOLOGATION / PRODUCTION</div><h2>BMW per mercati: varianti regionali</h2>
-    <p class="muted">Registro delle versioni regionali e delle differenze di produzione. Motore, guida, emissioni, omologazione e dotazioni possono cambiare da un mercato all'altro.</p>
-    <div class="toolbar"><input id="marketSearch" placeholder="Cerca modello, paese, codice o motore..."><select id="marketRegion"><option value="">Tutti i mercati</option><option>Sudafrica</option><option>Cina</option><option>Globale / produzione</option></select></div>
-    <div class="grid" id="marketGrid"></div>
-    <div class="notice"><b>Metodo Atlas:</b> non trasferire automaticamente i dati europei alle versioni USA, giapponesi, cinesi o sudafricane. Identificare prima codice modello, mercato e anno.</div>
-    <h2>Perché il mercato cambia la vettura</h2><div class="grid">
-    <article class="card"><h3>Omologazione</h3><p>Normative locali possono modificare catalizzatori, gestione motore, potenza e sistemi antipollution.</p></article>
-    <article class="card"><h3>Guida a destra / sinistra</h3><p>Layout di sterzo e vano motore possono condizionare la scelta del powertrain.</p></article>
-    <article class="card"><h3>Produzione locale</h3><p>Assemblaggio regionale e serie dedicate vanno registrati separatamente dal mercato di vendita.</p></article>
-    </div>
-    <p><a href="https://www.bmw-m.com/en/topics/magazine-article-pool/bmw-m-models-south-africa.html" target="_blank" rel="noopener">BMW M: modelli speciali sudafricani ↗</a> · <a href="https://newsroom.bmwgroup.com/global/50-years-of-bmw-3-series-production---an-international-success-story/" target="_blank" rel="noopener">BMW Group: produzione globale Serie 3 ↗</a></p>
-  </section>
-  <section id="specials" class="page hidden">
-    <div class="eyebrow">HERITAGE / HOMOLOGATION / LOW VOLUME</div>
-    <h2>BMW speciali, Motorsport e ALPINA</h2>
-    <p class="muted">Registro editoriale delle vetture fuori serie, delle omologazioni, delle edizioni limitate e delle elaborazioni storiche. La presenza in questo registro non implica che ogni versione sia già dotata di una scheda prestazionale completa: produzione, mercato e specifiche vanno verificati singolarmente.</p>
-    <div class="toolbar"><input id="specialSearch" placeholder="Cerca modello, famiglia, motore o caratteristica..."><select id="specialType"><option value="">Tutte le categorie</option><option value="BMW M">BMW M</option><option value="BMW Motorsport">BMW Motorsport / omologazione</option><option value="ALPINA">ALPINA</option><option value="Edizione limitata">Edizioni limitate</option><option value="Concept / speciale">Concept e speciali</option></select></div>
-    <div class="grid" id="specialGrid"></div>
-    <div class="notice"><b>Distinzione importante:</b> BMW M, BMW Motorsport, ALPINA, BMW Individual e pacchetti M Sport non sono categorie intercambiabili. Ogni scheda deve riportare produttore, periodo, omologazione, mercato e stato di originalità con fonti specifiche.</div>
-    <h2>Fonti per la ricerca storica</h2>
-    <div class="grid">
-      <article class="card"><div class="meta">FONTE UFFICIALE</div><h3>BMW Group Classic</h3><p>Catalogo storico ufficiale, con modelli, carrozzerie e motorizzazioni d'epoca.</p><a href="https://www.bmwgroup-classic.com/en/models/bmw-classics.html" target="_blank" rel="noopener">Apri catalogo BMW Classic ↗</a></article>
-      <article class="card"><div class="meta">ARCHIVIO BMW</div><h3>BMW Group Archive</h3><p>Documenti storici, pubblicazioni, brochure e materiali d'archivio.</p><a href="https://bmw-grouparchiv.de/irc/" target="_blank" rel="noopener">Apri archivio BMW ↗</a></article>
-    </div>
-  </section>
-  <section id="transmissions" class="page hidden">
-    <div class="eyebrow">DRIVELINE & GEARBOX ARCHIVE</div>
-    <h2>Atlante delle trasmissioni BMW</h2>
-    <p class="muted">Cambi, frizioni, convertitori, differenziali e sistemi di trazione. Le schede descrivono famiglie tecniche: la sigla esatta del cambio e i rapporti vanno verificati per telaio, motore, anno modello e mercato.</p>
-    <div class="toolbar"><input id="transmissionSearch" placeholder="Cerca ZF 8HP, DCT, manuale, xDrive..."><select id="transmissionType"><option value="">Tutte le categorie</option><option value="Automatico">Automatici</option><option value="Manuale">Manuali</option><option value="Doppia frizione">Doppia frizione</option><option value="Trazione">Trazione integrale</option><option value="Differenziale">Differenziali</option></select></div>
-    <div class="grid" id="transmissionGrid"></div>
-    <div class="notice"><b>Nota di identificazione:</b> una stessa denominazione commerciale può corrispondere a rapporti, tarature, capacità di coppia e componenti differenti. Non usare questa libreria per ordinare ricambi senza identificazione tramite VIN e codice componente.</div>
-  </section>
-  <section id="audit" class="page hidden">
-    <div class="eyebrow">DATABASE QUALITY CONTROL</div>
-    <h2>Controllo qualità del database</h2>
-    <p class="muted">Una banca dati tecnica deve rendere visibili anche i dati mancanti. Questa pagina separa i record censiti da quelli con specifiche prestazionali disponibili e segnala le schede da completare.</p>
-    <div class="stats" id="auditStats"></div>
-    <h2>Record da completare</h2>
-    <div class="toolbar"><input id="auditSearch" placeholder="Cerca modello, generazione o motore..."><select id="auditFilter"><option value="all">Tutti i record</option><option value="missing">Dati prestazionali incompleti</option><option value="complete">Dati prestazionali presenti</option><option value="tech">Con dossier tecnico aggiuntivo</option></select></div>
-    <div class="tablewrap"><table><thead><tr><th>Modello</th><th>Generazione</th><th>Motore</th><th>Potenza</th><th>Coppia</th><th>0-100</th><th>Dossier</th></tr></thead><tbody id="auditRows"></tbody></table></div>
-    <div class="notice"><b>Regola editoriale:</b> un valore vuoto non viene ricostruito per supposizione. Potenza, coppia, massa e prestazioni possono cambiare per anno modello, carrozzeria, omologazione e mercato. Le schede incomplete restano visibili ma sono identificate come da verificare.</div>
-  </section>
-  <section id="platforms" class="page hidden">
-    <div class="eyebrow">CHASSIS ARCHITECTURE ARCHIVE</div>
-    <h2>Piattaforme e architetture BMW</h2>
-    <p class="muted">Una piattaforma definisce vincoli e soluzioni di base per scocca, disposizione meccanica, sospensioni, elettronica e produzione. Le singole vetture possono avere tarature, componenti e geometrie differenti: questa libreria descrive famiglie architetturali, non una distinta ricambi valida per ogni modello.</p>
-    <div class="toolbar"><input id="platformSearch" placeholder="Cerca piattaforma, generazione o architettura..."><select id="platformType"><option value="">Tutte le architetture</option><option value="Longitudinale">Motore longitudinale</option><option value="Trasversale">Motore trasversale</option><option value="Elettrica">Elettrica dedicata</option><option value="Storica">Architetture storiche</option></select></div>
-    <div class="grid" id="platformGrid"></div>
-    <div class="notice"><b>Attenzione alle sovrapposizioni:</b> le sigle E, F e G identificano serie di sviluppo e carrozzerie, non una piattaforma unica in senso stretto. Varianti M, xDrive, ibride e mercati differenti possono adottare componenti specifici.</div>
-  </section>
-  <section id="chassis" class="page hidden">
-    <div class="eyebrow">CHASSIS / BRAKE SYSTEMS DATABASE</div>
-    <h2>Telaio, sospensioni e freni</h2>
-    <p class="muted">Archivio dei sistemi dinamici BMW, con criteri di identificazione e confronto tra famiglie. Le misure di dischi, pinze, molle e ammortizzatori non sono generalizzate: vanno associate a codice modello, asse, data di produzione e impianto effettivo.</p>
-    <div class="toolbar"><input id="chassisSearch" placeholder="Cerca asse, freni, sterzo, sospensione..."><select id="chassisType"><option value="">Tutti i sistemi</option><option value="Sospensioni">Sospensioni</option><option value="Freni">Freni</option><option value="Sterzo">Sterzo</option><option value="Dinamica">Dinamica veicolo</option></select></div>
-    <div class="grid" id="chassisGrid"></div>
-    <div class="notice"><b>Come leggere le configurazioni:</b> stessa generazione non significa stesso impianto. Motore, carrozzeria, allestimento, pacchetto freni, trazione e mercato possono cambiare diametri, pinze, tarature e codici ricambio. Per un'identificazione certa servono VIN e codici OE.</div>
-  </section>
-  <section id="electronics" class="page hidden">
-    <div class="eyebrow">VEHICLE ELECTRONICS & CONTROL SYSTEMS</div>
-    <h2>Elettronica, controllo e reti di bordo</h2>
-    <p class="muted">Dossier sui sistemi elettronici BMW: centraline, sensori, reti dati, gestione motore, sicurezza attiva e propulsione elettrificata. Le denominazioni e le funzioni cambiano tra generazioni e piattaforme: le schede descrivono principi, non codifiche universali.</p>
-    <div class="toolbar"><input id="electronicsSearch" placeholder="Cerca centralina, sensore, CAN, radar, BMS..."><select id="electronicsType"><option value="">Tutti i sistemi</option><option value="Centraline">Centraline</option><option value="Reti">Reti e comunicazione</option><option value="Sensori">Sensori</option><option value="Assistenza">Assistenza alla guida</option><option value="Elettrificazione">Elettrificazione</option><option value="Sicurezza">Sicurezza attiva</option></select></div>
-    <div class="grid" id="electronicsGrid"></div>
-    <div class="notice"><b>Diagnosi e sicurezza:</b> accesso, codifica, programmazione e interventi su reti o sistemi ad alta tensione richiedono strumenti, procedure e competenze appropriate. Non ponticellare linee dati o componenti HV e non intervenire su dispositivi pirotecnici.</div>
-  </section>
-  <section id="compare" class="page hidden"><div class="eyebrow">SIDE BY SIDE ANALYSIS</div><h2>Confronta due BMW</h2><div class="panel"><div class="comparebox"><div><label>Vettura A</label><select id="carA"></select></div><div><label>Vettura B</label><select id="carB"></select></div></div><div id="compareResult" style="margin-top:18px"></div></div></section>
-  <section id="rankings" class="page hidden"><div class="eyebrow">PERFORMANCE INDEX</div><h2>Classifiche dimostrative</h2><div class="toolbar"><select id="rankMetric"><option value="hp">Potenza</option><option value="zero">0-100 km/h</option><option value="weight">Peso</option><option value="ratio">Rapporto peso/potenza</option></select></div><div class="tablewrap"><table><thead><tr><th>#</th><th>Modello</th><th>Motore</th><th>Valore</th></tr></thead><tbody id="rankRows"></tbody></table></div><p class="muted">Classifica limitata ai record dimostrativi presenti in questa prima versione.</p></section>
-  <section id="tech" class="page hidden"><div class="eyebrow">ENGINEERING LIBRARY</div><h2>Tecnologie BMW</h2><div class="grid" id="techGrid"></div></section>
-
-  <section id="components" class="page hidden">
-    <div class="eyebrow">ENGINEERING DEEP DIVE</div>
-    <h2>Componenti ingegneristici</h2>
-    <p class="muted">La vettura vista da dentro: componenti, materiali, cinematismi e sistemi di controllo. Le schede spiegano cosa fa ogni elemento, come lavora e perché influenza il comportamento dell'auto.</p>
-    <div class="toolbar" style="margin:18px 0"><input id="componentSearch" placeholder="Cerca componente, sistema o principio fisico..."><select id="componentCategory"><option value="">Tutte le aree</option><option>Motore</option><option>Trasmissione</option><option>Telaio e dinamica</option><option>Freni e sterzo</option><option>Aerodinamica</option><option>Elettronica e ibrido</option><option>Sicurezza e struttura</option><option>Materiali e costruzione</option><option>Sicurezza e struttura</option></select></div>
-    <div class="grid" id="componentGrid"></div>
-    <div class="notice" style="margin-top:14px"><b>Sicurezza alta tensione:</b> le schede descrivono principi e architetture. Diagnosi, disconnessione e riparazione di componenti HV e batterie devono essere eseguite esclusivamente da personale qualificato, seguendo procedure e attrezzature specifiche BMW.</div><div class="notice" style="margin-top:12px"><b>Nota sulle trasmissioni:</b> ZF 8HP, DCT, cambi manuali e ripartitori xDrive hanno varianti differenti per coppia ammessa, rapporti, software e lubrificante. Identificare sempre il codice esatto del gruppo prima di usare dati o procedure di manutenzione.</div><div class="notice">Nota tecnica: le soluzioni cambiano tra modello, generazione, allestimento e mercato. Le schede descrivono il principio ingegneristico; l'applicazione su una specifica BMW sarà indicata nella relativa scheda modello quando verificata.</div>
-  </section>
-  <section id="detail" class="page hidden"><button type="button" class="btn" onclick="showPage('models')">← Torna ai risultati</button><div id="detailContent"></div></section>
-  <div class="footer">AUTOTECH ATLAS · GLOBAL EDITION · RELEASE 6.3 · ARCHIVIO BMW ATTIVO · MULTI-BRAND IN ESPANSIONE.</div>
+<section class="page" id="home">
+<div class="hero">
+<div class="hero-copy">
+<div class="hero-kicker"><span class="kicker-line"></span> THE AUTOMOTIVE ARCHIVE / VOL. 01</div>
+<div class="hero-index">01 <span>GLOBAL EDITION</span></div>
+<h1>THE<br/>ENGINEERING<br/><em>BEHIND EVERY CAR.</em></h1>
+<p>Un atlante indipendente dedicato alle automobili: architetture, motori, design, tecnologia e prestazioni. Ogni linea ha una ragione. Ogni motore, una storia.</p>
+<div class="actions"><button class="btn primary" onclick="showPage('brands')">ESPLORA I MARCHI <span>↗</span></button><button class="btn" onclick="showPage('models')">ENTRA NELL'ARCHIVIO BMW ↗</button></div>
+<div class="hero-caption">AUTOMOTIVE KNOWLEDGE / EST. 2026</div>
+</div>
+<div aria-label="Automobile sportiva in ambientazione architettonica" class="hero-visual"><div class="visual-label">DESIGN / ENGINEERING / MOTION</div><div class="visual-number">01<span>—</span>04</div></div>
+</div>
+<div class="editorial-mosaic">
+<article class="mosaic-panel panel-innovation"><div class="mosaic-index">02 / ENGINEERING</div><div class="mosaic-title">POWER<br/>WITHOUT<br/><em>COMPROMISE.</em></div><p>Motori, trasmissioni e soluzioni tecniche raccontati attraverso i dettagli.</p><button class="text-link" onclick="showPage('engines')">ESPLORA I MOTORI <span>→</span></button></article>
+<article class="mosaic-panel panel-heritage"><div class="mosaic-index">03 / HERITAGE</div><div class="mosaic-title">BUILT TO<br/><em>BE REMEMBERED.</em></div><p>Generazioni, modelli iconici e storie di ingegneria.</p><button class="text-link" onclick="showPage('generations')">SCOPRI LE GENERAZIONI <span>→</span></button></article>
+<article class="mosaic-panel panel-data"><div class="mosaic-index">04 / THE ATLAS</div><div class="data-big">01</div><div class="mosaic-title">ONE MACHINE.<br/>THOUSAND DETAILS.</div><p>Un archivio in evoluzione, costruito per andare oltre la superficie.</p></article>
+</div><div class="stats"><div class="stat"><b>8</b><small>Famiglie Serie</small></div><div class="stat"><b>7</b><small>Famiglie SUV X</small></div><div class="stat"><b>4</b><small>Famiglie motori in evidenza</small></div><div class="stat"><b>20+</b><small>Marchi previsti</small></div></div>
+<h2>Esplora l'universo BMW</h2><div class="grid" id="homeCards"></div>
+<div class="notice">Questa è la prima versione navigabile. Le schede iniziali contengono dati dimostrativi e valori indicativi: prima della pubblicazione definitiva ogni specifica dovrà essere verificata per anno, mercato e variante.</div>
+</section>
+<section class="page hidden" id="models"><div class="eyebrow">BMW MODEL DATABASE</div><h2>Modelli e generazioni</h2><p class="muted">Archivio ampliato con schede di gamma e generazione. Le schede aggregate non sostituiscono le singole motorizzazioni: potenza, coppia, massa e prestazioni restano da verificare per variante, anno e mercato.</p><div class="toolbar"><input id="search" placeholder="Cerca modello, generazione, motore o codice telaio..." type="search"/><select id="family"><option value="">Tutte le famiglie</option><option>Serie</option><option>Serie 1</option><option>Serie 2</option><option>Serie 3</option><option>Serie 4</option><option>Serie 5</option><option>Serie 6</option><option>Serie 7</option><option>Serie 8</option><option>SUV X</option><option>Roadster Z</option><option>BMW M</option><option>BMW i</option></select><button class="btn" id="resetModelFilters" type="button">AZZERA FILTRI</button></div><div class="catalog-status"><span aria-live="polite" id="modelCount"></span><span>Seleziona “APRI SCHEDA” per i dati tecnici</span></div><div class="catalog-status"><span id="techCoverage"></span><span>Le schede aggregate non equivalgono a una singola variante omologata</span></div><div class="grid" id="modelGrid"></div></section>
+<section class="page hidden" id="generations"><div class="eyebrow">BMW GENERATION ARCHIVE</div><h2>Tutte le famiglie e generazioni</h2><div class="toolbar"><input id="genSearch" placeholder="Cerca serie, codice telaio o modello..."/><select id="genFamily"><option value="">Tutte le famiglie</option></select></div><div class="tablewrap"><table><thead><tr><th>Famiglia</th><th>Generazione / codice</th><th>Periodo</th><th>Modelli e varianti</th></tr></thead><tbody id="generationRows"></tbody></table></div><p class="muted">Indice generale ricostruito dal materiale raccolto. Date e disponibilità possono variare in base al mercato.</p></section>
+<section class="page hidden" id="variants"><div class="eyebrow">BMW POWERTRAIN DATABASE</div><h2>Versioni e motorizzazioni</h2><p class="muted">Archivio tecnico esteso: motore, cilindrata, potenza, coppia e schema di trazione. I valori sono indicativi e possono cambiare per anno, mercato, omologazione e aggiornamento.</p><div class="toolbar"><input id="variantSearch" placeholder="Cerca modello, telaio, motore o potenza..."/><select id="variantFamily"><option value="">Tutte le famiglie</option></select></div><p aria-live="polite" class="muted" id="variantStatus"></p><div class="tablewrap"><table><thead><tr><th>Famiglia</th><th>Generazione</th><th>Versione</th><th>Motore</th><th>Cilindrata</th><th>Potenza</th><th>Coppia</th><th>Trazione</th></tr></thead><tbody id="variantRows"></tbody></table></div><p class="muted">Nota editoriale: prima base dati strutturata. Le varianti regionali e le differenze di anno modello saranno ulteriormente dettagliate e verificate nelle prossime revisioni.</p></section>
+<section class="page hidden" id="engines"><div class="eyebrow">POWERTRAIN ARCHIVE</div><h2>Motori BMW</h2><p class="muted">Una prima selezione di famiglie motoristiche. Le potenze dipendono dalla specifica applicazione.</p><div class="tablewrap"><table><thead><tr><th>Famiglia</th><th>Architettura</th><th>Cilindrata</th><th>Alimentazione</th><th>Applicazioni indicative</th></tr></thead><tbody id="engineRows"></tbody></table></div>
+<h2 style="margin-top:28px">Atlante tecnico dei propulsori</h2>
+<p class="muted">Apri una famiglia per consultare architettura, costruzione, alimentazione, distribuzione, lubrificazione, raffreddamento e applicazioni. I dati identificano una configurazione rappresentativa: varianti, potenze e componenti possono cambiare per modello, anno e mercato.</p>
+<div class="toolbar" style="margin:16px 0"><input id="engineSearch" placeholder="Cerca codice motore, architettura o tecnologia..."/><select id="engineType"><option value="">Tutti i propulsori</option><option value="BMW M">BMW M</option><option value="Serie">BMW di serie</option><option value="Diesel">Diesel</option><option value="Ibrido">Ibridi</option></select></div>
+<div class="coverage-grid" id="engineCoverage"></div><div class="grid" id="engineAtlas"></div></section>
+<section class="page hidden" id="engineTech">
+<div class="eyebrow">ENGINE DESIGN &amp; COMBUSTION</div>
+<h2>Tecnologie e ingegneria dei motori</h2>
+<p class="muted">Dossier trasversali sui principi costruttivi dei propulsori BMW: dalla cinematica interna alla combustione, dalla sovralimentazione alla gestione termica. Le soluzioni effettive dipendono dalla famiglia e dalla variante del motore.</p>
+<div class="toolbar"><input id="engineTechSearch" placeholder="Cerca distribuzione, iniezione, turbo, lubrificazione..."/><select id="engineTechType"><option value="">Tutte le aree</option><option value="Architettura">Architettura</option><option value="Distribuzione">Distribuzione</option><option value="Alimentazione">Alimentazione</option><option value="Sovralimentazione">Sovralimentazione</option><option value="Lubrificazione">Lubrificazione</option><option value="Termica">Gestione termica</option><option value="Controllo">Controllo e combustione</option><option value="Diesel">Tecnologie diesel</option></select></div>
+<div class="grid" id="engineTechGrid"></div>
+<div class="notice"><b>Nota tecnica:</b> una tecnologia presente su una famiglia non è automaticamente presente su tutte le sue evoluzioni. Codici motore, anno, mercato e versione determinano componenti e tarature effettive.</div>
+</section>
+<section class="page hidden" id="engineCodes">
+<div class="eyebrow">BMW ENGINE IDENTIFICATION</div>
+<h2>Decodificatore codici motore</h2>
+<p class="muted">Il sistema BMW moderno codifica generazione, architettura, tecnologia, carburante, classe di cilindrata, livello prestazionale e revisione. Il formato non è applicabile in modo identico a tutti i codici storici.</p>
+<div class="panel">
+<label for="engineCodeInput">Inserisci un codice motore BMW</label>
+<div class="toolbar"><input id="engineCodeInput" placeholder="Es. N55B30M0" value="N55B30M0"/><button class="btn primary" id="decodeEngineCode">DECODIFICA</button></div>
+<div class="grid" id="engineCodeResult"></div>
+</div>
+<h2>Struttura del codice moderno</h2>
+<div class="tablewrap"><table><thead><tr><th>Posizione</th><th>Significato</th><th>Esempi / valori</th></tr></thead><tbody>
+<tr><td>1</td><td>Generazione / sviluppatore</td><td>M, N, P, S, B e altre lettere secondo epoca e famiglia</td></tr>
+<tr><td>2</td><td>Tipo motore / architettura</td><td>4, 5, 6, 7, 8; per elettrici possono comparire codici specifici</td></tr>
+<tr><td>3</td><td>Tecnologia</td><td>Codifica dipendente dalla famiglia e dalla generazione</td></tr>
+<tr><td>4</td><td>Carburante / ciclo</td><td>B benzina, D diesel, E elettrico nelle codifiche descritte dal manuale</td></tr>
+<tr><td>5–6</td><td>Classe di cilindrata</td><td>Valore codificato, non sempre cilindrata esatta in cm³</td></tr>
+<tr><td>7</td><td>Classe prestazionale</td><td>K, U, M, O, T, S nella nomenclatura documentata</td></tr>
+<tr><td>8</td><td>Indice revisione</td><td>0 sviluppo iniziale, 1–9 revisioni successive secondo il manuale</td></tr>
+</tbody></table></div>
+<div class="notice"><b>Importante:</b> il decodificatore è una guida orientativa per il formato a otto caratteri descritto nella documentazione BMW. Non sostituisce il codice completo riportato su motore, VIN, catalogo ricambi o documentazione di officina. I codici storici come M54B30 o S54B32 seguono convenzioni precedenti e non vanno forzati in questo schema.</div>
+<h2>Fonti tecniche di riferimento</h2>
+<div class="grid">
+<article class="card"><div class="meta">BMW GROUP CLASSIC</div><h3>Archivio storico BMW</h3><p>Catalogo storico, modelli, carrozzerie, motori e documentazione d'archivio.</p><a href="https://www.bmwgroup-classic.com/en/history/historic-modeloverview-bmw.html" rel="noopener" target="_blank">Apri archivio BMW Classic ↗</a></article>
+<article class="card"><div class="meta">BMW TECHNICAL TRAINING</div><h3>Engine Technology</h3><p>Manuale tecnico BMW sulla tecnologia dei motori e sulla nomenclatura delle famiglie.</p><a href="https://bmwtechinfo.bmwgroup.com/tech_training_manual/ST501%20Engine%20Technology.pdf" rel="noopener" target="_blank">Apri manuale tecnico BMW ↗</a></article>
+</div>
+</section>
+<section class="page hidden" id="audit">
+<div class="eyebrow">ENGINE APPLICATION / DATA INTEGRITY</div>
+<h2>Audit vetture ↔ motori</h2>
+<p class="muted">Questa sezione introduce un metodo di verifica delle applicazioni motore. Un codice famiglia (es. N55) non identifica da solo ogni variante: servono codice completo, model year, mercato e omologazione. I dossier BMW Training mostrano anche codici motore a 7 posizioni in alcune generazioni: il decoder a 8 caratteri va quindi considerato uno schema utile, non una regola universale.</p>
+<div class="grid" id="auditStats"></div>
+<div class="toolbar"><input id="auditSearch" placeholder="Cerca motore, modello o generazione..."/><select id="auditStatus"><option value="">Tutti gli stati</option><option>Applicazione documentata</option><option>Da verificare</option><option>Nota metodologica</option></select></div>
+<div class="grid" id="auditGrid"></div>
+<div class="notice"><b>Livelli di affidabilità Atlas:</b> documentato = fonte tecnica specifica per quella vettura; corroborato = più fonti coerenti ma manca il documento primario dell'esemplare; da verificare = dato incompleto o dipendente da mercato/anno. Non trasformare mai un dato mancante in un valore presunto.</div>
+<h2>Documentazione BMW di riferimento</h2>
+<div class="grid">
+<article class="card"><div class="meta">BMW TECHNICAL TRAINING</div><h3>Engine Technology</h3><p>Spiega designazione motore, identificazione e significato degli indici.</p><a href="https://bmwtechinfo.bmwgroup.com/tech_training_manual/ST501%20Engine%20Technology.pdf" rel="noopener" target="_blank">Apri manuale BMW ↗</a></article>
+<article class="card"><div class="meta">BMW TECHNICAL TRAINING</div><h3>F30 Complete Vehicle</h3><p>Mostra che il sistema di identificazione va letto nella documentazione specifica del modello.</p><a href="https://bmwtechinfo.bmwgroup.com/tech_training_manual/ST1113%20F30%20Complete%20Vehicle.pdf" rel="noopener" target="_blank">Apri manuale F30 ↗</a></article>
+</div>
+</section>
+<section class="page hidden" id="regional">
+<div class="eyebrow">MARKET-SPECIFIC MODEL VARIANTS</div>
+<h2>USA e Giappone: versioni e differenze</h2>
+<p class="muted">Archivio comparativo di alcune varianti regionali. Le denominazioni commerciali non bastano a identificare una vettura: anno modello, codice telaio, codice motore e normativa locale sono indispensabili.</p>
+<div class="toolbar"><input id="regionalSearch" placeholder="Cerca modello, motore, mercato..."/><select id="regionalFilter"><option value="">Tutti</option><option>USA / Nord America</option><option>Giappone</option><option>Confronto mercati</option></select></div>
+<div class="grid" id="regionalGrid"></div>
+<div class="notice"><b>Regola di catalogazione:</b> non unire sotto un solo record le versioni con motori diversi. Per la M3 E36, ad esempio, la variante nordamericana con S52 non va confusa con la configurazione europea S50.</div>
+<h2>Come leggere una scheda regionale</h2>
+<div class="grid"><article class="card"><h3>Model year</h3><p>L'anno modello può anticipare o seguire l'anno solare di produzione.</p></article><article class="card"><h3>Codice motore</h3><p>La sigla esatta è più affidabile del solo badge commerciale.</p></article><article class="card"><h3>Omologazione</h3><p>Emissioni e sicurezza possono cambiare hardware e calibrazione.</p></article></div>
+</section>
+<section class="page hidden" id="markets">
+<div class="eyebrow">REGIONAL ENGINEERING / HOMOLOGATION / PRODUCTION</div><h2>BMW per mercati: varianti regionali</h2>
+<p class="muted">Registro delle versioni regionali e delle differenze di produzione. Motore, guida, emissioni, omologazione e dotazioni possono cambiare da un mercato all'altro.</p>
+<div class="toolbar"><input id="marketSearch" placeholder="Cerca modello, paese, codice o motore..."/><select id="marketRegion"><option value="">Tutti i mercati</option><option>Sudafrica</option><option>Cina</option><option>Globale / produzione</option></select></div>
+<div class="grid" id="marketGrid"></div>
+<div class="notice"><b>Metodo Atlas:</b> non trasferire automaticamente i dati europei alle versioni USA, giapponesi, cinesi o sudafricane. Identificare prima codice modello, mercato e anno.</div>
+<h2>Perché il mercato cambia la vettura</h2><div class="grid">
+<article class="card"><h3>Omologazione</h3><p>Normative locali possono modificare catalizzatori, gestione motore, potenza e sistemi antipollution.</p></article>
+<article class="card"><h3>Guida a destra / sinistra</h3><p>Layout di sterzo e vano motore possono condizionare la scelta del powertrain.</p></article>
+<article class="card"><h3>Produzione locale</h3><p>Assemblaggio regionale e serie dedicate vanno registrati separatamente dal mercato di vendita.</p></article>
+</div>
+<p><a href="https://www.bmw-m.com/en/topics/magazine-article-pool/bmw-m-models-south-africa.html" rel="noopener" target="_blank">BMW M: modelli speciali sudafricani ↗</a> · <a href="https://newsroom.bmwgroup.com/global/50-years-of-bmw-3-series-production---an-international-success-story/" rel="noopener" target="_blank">BMW Group: produzione globale Serie 3 ↗</a></p>
+</section>
+<section class="page hidden" id="specials">
+<div class="eyebrow">HERITAGE / HOMOLOGATION / LOW VOLUME</div>
+<h2>BMW speciali, Motorsport e ALPINA</h2>
+<p class="muted">Registro editoriale delle vetture fuori serie, delle omologazioni, delle edizioni limitate e delle elaborazioni storiche. La presenza in questo registro non implica che ogni versione sia già dotata di una scheda prestazionale completa: produzione, mercato e specifiche vanno verificati singolarmente.</p>
+<div class="toolbar"><input id="specialSearch" placeholder="Cerca modello, famiglia, motore o caratteristica..."/><select id="specialType"><option value="">Tutte le categorie</option><option value="BMW M">BMW M</option><option value="BMW Motorsport">BMW Motorsport / omologazione</option><option value="ALPINA">ALPINA</option><option value="Edizione limitata">Edizioni limitate</option><option value="Concept / speciale">Concept e speciali</option></select></div>
+<div class="grid" id="specialGrid"></div>
+<div class="notice"><b>Distinzione importante:</b> BMW M, BMW Motorsport, ALPINA, BMW Individual e pacchetti M Sport non sono categorie intercambiabili. Ogni scheda deve riportare produttore, periodo, omologazione, mercato e stato di originalità con fonti specifiche.</div>
+<h2>Fonti per la ricerca storica</h2>
+<div class="grid">
+<article class="card"><div class="meta">FONTE UFFICIALE</div><h3>BMW Group Classic</h3><p>Catalogo storico ufficiale, con modelli, carrozzerie e motorizzazioni d'epoca.</p><a href="https://www.bmwgroup-classic.com/en/models/bmw-classics.html" rel="noopener" target="_blank">Apri catalogo BMW Classic ↗</a></article>
+<article class="card"><div class="meta">ARCHIVIO BMW</div><h3>BMW Group Archive</h3><p>Documenti storici, pubblicazioni, brochure e materiali d'archivio.</p><a href="https://bmw-grouparchiv.de/irc/" rel="noopener" target="_blank">Apri archivio BMW ↗</a></article>
+</div>
+</section>
+<section class="page hidden" id="transmissions">
+<div class="eyebrow">DRIVELINE &amp; GEARBOX ARCHIVE</div>
+<h2>Atlante delle trasmissioni BMW</h2>
+<p class="muted">Cambi, frizioni, convertitori, differenziali e sistemi di trazione. Le schede descrivono famiglie tecniche: la sigla esatta del cambio e i rapporti vanno verificati per telaio, motore, anno modello e mercato.</p>
+<div class="toolbar"><input id="transmissionSearch" placeholder="Cerca ZF 8HP, DCT, manuale, xDrive..."/><select id="transmissionType"><option value="">Tutte le categorie</option><option value="Automatico">Automatici</option><option value="Manuale">Manuali</option><option value="Doppia frizione">Doppia frizione</option><option value="Trazione">Trazione integrale</option><option value="Differenziale">Differenziali</option></select></div>
+<div class="grid" id="transmissionGrid"></div>
+<div class="notice"><b>Nota di identificazione:</b> una stessa denominazione commerciale può corrispondere a rapporti, tarature, capacità di coppia e componenti differenti. Non usare questa libreria per ordinare ricambi senza identificazione tramite VIN e codice componente.</div>
+</section>
+<section class="page hidden" id="audit">
+<div class="eyebrow">DATABASE QUALITY CONTROL</div>
+<h2>Controllo qualità del database</h2>
+<p class="muted">Una banca dati tecnica deve rendere visibili anche i dati mancanti. Questa pagina separa i record censiti da quelli con specifiche prestazionali disponibili e segnala le schede da completare.</p>
+<div class="stats" id="auditStats"></div>
+<h2>Record da completare</h2>
+<div class="toolbar"><input id="auditSearch" placeholder="Cerca modello, generazione o motore..."/><select id="auditFilter"><option value="all">Tutti i record</option><option value="missing">Dati prestazionali incompleti</option><option value="complete">Dati prestazionali presenti</option><option value="tech">Con dossier tecnico aggiuntivo</option></select></div>
+<div class="tablewrap"><table><thead><tr><th>Modello</th><th>Generazione</th><th>Motore</th><th>Potenza</th><th>Coppia</th><th>0-100</th><th>Dossier</th></tr></thead><tbody id="auditRows"></tbody></table></div>
+<div class="notice"><b>Regola editoriale:</b> un valore vuoto non viene ricostruito per supposizione. Potenza, coppia, massa e prestazioni possono cambiare per anno modello, carrozzeria, omologazione e mercato. Le schede incomplete restano visibili ma sono identificate come da verificare.</div>
+</section>
+<section class="page hidden" id="platforms">
+<div class="eyebrow">CHASSIS ARCHITECTURE ARCHIVE</div>
+<h2>Piattaforme e architetture BMW</h2>
+<p class="muted">Una piattaforma definisce vincoli e soluzioni di base per scocca, disposizione meccanica, sospensioni, elettronica e produzione. Le singole vetture possono avere tarature, componenti e geometrie differenti: questa libreria descrive famiglie architetturali, non una distinta ricambi valida per ogni modello.</p>
+<div class="toolbar"><input id="platformSearch" placeholder="Cerca piattaforma, generazione o architettura..."/><select id="platformType"><option value="">Tutte le architetture</option><option value="Longitudinale">Motore longitudinale</option><option value="Trasversale">Motore trasversale</option><option value="Elettrica">Elettrica dedicata</option><option value="Storica">Architetture storiche</option></select></div>
+<div class="grid" id="platformGrid"></div>
+<div class="notice"><b>Attenzione alle sovrapposizioni:</b> le sigle E, F e G identificano serie di sviluppo e carrozzerie, non una piattaforma unica in senso stretto. Varianti M, xDrive, ibride e mercati differenti possono adottare componenti specifici.</div>
+</section>
+<section class="page hidden" id="chassis">
+<div class="eyebrow">CHASSIS / BRAKE SYSTEMS DATABASE</div>
+<h2>Telaio, sospensioni e freni</h2>
+<p class="muted">Archivio dei sistemi dinamici BMW, con criteri di identificazione e confronto tra famiglie. Le misure di dischi, pinze, molle e ammortizzatori non sono generalizzate: vanno associate a codice modello, asse, data di produzione e impianto effettivo.</p>
+<div class="toolbar"><input id="chassisSearch" placeholder="Cerca asse, freni, sterzo, sospensione..."/><select id="chassisType"><option value="">Tutti i sistemi</option><option value="Sospensioni">Sospensioni</option><option value="Freni">Freni</option><option value="Sterzo">Sterzo</option><option value="Dinamica">Dinamica veicolo</option></select></div>
+<div class="grid" id="chassisGrid"></div>
+<div class="notice"><b>Come leggere le configurazioni:</b> stessa generazione non significa stesso impianto. Motore, carrozzeria, allestimento, pacchetto freni, trazione e mercato possono cambiare diametri, pinze, tarature e codici ricambio. Per un'identificazione certa servono VIN e codici OE.</div>
+</section>
+<section class="page hidden" id="electronics">
+<div class="eyebrow">VEHICLE ELECTRONICS &amp; CONTROL SYSTEMS</div>
+<h2>Elettronica, controllo e reti di bordo</h2>
+<p class="muted">Dossier sui sistemi elettronici BMW: centraline, sensori, reti dati, gestione motore, sicurezza attiva e propulsione elettrificata. Le denominazioni e le funzioni cambiano tra generazioni e piattaforme: le schede descrivono principi, non codifiche universali.</p>
+<div class="toolbar"><input id="electronicsSearch" placeholder="Cerca centralina, sensore, CAN, radar, BMS..."/><select id="electronicsType"><option value="">Tutti i sistemi</option><option value="Centraline">Centraline</option><option value="Reti">Reti e comunicazione</option><option value="Sensori">Sensori</option><option value="Assistenza">Assistenza alla guida</option><option value="Elettrificazione">Elettrificazione</option><option value="Sicurezza">Sicurezza attiva</option></select></div>
+<div class="grid" id="electronicsGrid"></div>
+<div class="notice"><b>Diagnosi e sicurezza:</b> accesso, codifica, programmazione e interventi su reti o sistemi ad alta tensione richiedono strumenti, procedure e competenze appropriate. Non ponticellare linee dati o componenti HV e non intervenire su dispositivi pirotecnici.</div>
+</section>
+<section class="page hidden" id="compare"><div class="eyebrow">SIDE BY SIDE ANALYSIS</div><h2>Confronta due BMW</h2><div class="panel"><div class="comparebox"><div><label>Vettura A</label><select id="carA"></select></div><div><label>Vettura B</label><select id="carB"></select></div></div><div id="compareResult" style="margin-top:18px"></div></div></section>
+<section class="page hidden" id="rankings"><div class="eyebrow">PERFORMANCE INDEX</div><h2>Classifiche dimostrative</h2><div class="toolbar"><select id="rankMetric"><option value="hp">Potenza</option><option value="zero">0-100 km/h</option><option value="weight">Peso</option><option value="ratio">Rapporto peso/potenza</option></select></div><div class="tablewrap"><table><thead><tr><th>#</th><th>Modello</th><th>Motore</th><th>Valore</th></tr></thead><tbody id="rankRows"></tbody></table></div><p class="muted">Classifica limitata ai record dimostrativi presenti in questa prima versione.</p></section>
+<section class="page hidden" id="tech"><div class="eyebrow">ENGINEERING LIBRARY</div><h2>Tecnologie BMW</h2><div class="grid" id="techGrid"></div></section>
+<section class="page hidden" id="components">
+<div class="eyebrow">ENGINEERING DEEP DIVE</div>
+<h2>Componenti ingegneristici</h2>
+<p class="muted">La vettura vista da dentro: componenti, materiali, cinematismi e sistemi di controllo. Le schede spiegano cosa fa ogni elemento, come lavora e perché influenza il comportamento dell'auto.</p>
+<div class="toolbar" style="margin:18px 0"><input id="componentSearch" placeholder="Cerca componente, sistema o principio fisico..."/><select id="componentCategory"><option value="">Tutte le aree</option><option>Motore</option><option>Trasmissione</option><option>Telaio e dinamica</option><option>Freni e sterzo</option><option>Aerodinamica</option><option>Elettronica e ibrido</option><option>Sicurezza e struttura</option><option>Materiali e costruzione</option><option>Sicurezza e struttura</option></select></div>
+<div class="grid" id="componentGrid"></div>
+<div class="notice" style="margin-top:14px"><b>Sicurezza alta tensione:</b> le schede descrivono principi e architetture. Diagnosi, disconnessione e riparazione di componenti HV e batterie devono essere eseguite esclusivamente da personale qualificato, seguendo procedure e attrezzature specifiche BMW.</div><div class="notice" style="margin-top:12px"><b>Nota sulle trasmissioni:</b> ZF 8HP, DCT, cambi manuali e ripartitori xDrive hanno varianti differenti per coppia ammessa, rapporti, software e lubrificante. Identificare sempre il codice esatto del gruppo prima di usare dati o procedure di manutenzione.</div><div class="notice">Nota tecnica: le soluzioni cambiano tra modello, generazione, allestimento e mercato. Le schede descrivono il principio ingegneristico; l'applicazione su una specifica BMW sarà indicata nella relativa scheda modello quando verificata.</div>
+</section>
+<section class="page hidden" id="detail"><button class="btn" onclick="showPage('models')" type="button">← Torna ai risultati</button><div id="detailContent"></div></section>
+<div class="footer">AUTOTECH ATLAS · GLOBAL EDITION · RELEASE 6.3 · ARCHIVIO BMW ATTIVO · MULTI-BRAND IN ESPANSIONE.</div>
 </main>
 </div>
 <script>
