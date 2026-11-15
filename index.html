@@ -102,6 +102,52 @@ h2:after{content:'';display:block;width:54px;height:3px;background:var(--red);ma
 
 /* BMW generation photo gallery */
 .photo-panel{margin:18px 0;overflow:hidden}.photo-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.photo-gallery figure{margin:0;background:#0c1014;border:1px solid var(--line,#303640);border-radius:12px;overflow:hidden}.photo-gallery img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}.photo-gallery figcaption{padding:9px 12px;font-size:.82rem;color:#aeb6c2}.photo-credit{font-size:.76rem;color:#8993a2;margin-top:10px}
+
+/* AUTOTECH ATLAS v6.6 · PREMIUM EDITORIAL NAVIGATION */
+:root{--bg:#070809;--panel:#101215;--panel2:#171a1e;--line:#303238;--red:#e52b36;--muted:#a3a6aa;--white:#f4f2ee;--accent:#d66b32}
+body{background:#070809;color:var(--white);font-family:Inter,Arial,sans-serif}
+.shell{display:block;min-height:100vh}
+.side{position:sticky;z-index:100;top:0;height:auto;min-height:0;overflow:visible;display:grid;grid-template-columns:230px minmax(0,1fr);align-items:center;gap:0;padding:17px clamp(18px,3vw,48px) 0;background:rgba(7,8,9,.96);border-right:0;border-bottom:1px solid #343438;backdrop-filter:blur(18px);box-shadow:0 12px 35px rgba(0,0,0,.28)}
+.brand{font-family:'Barlow Condensed',Impact,sans-serif;font-size:27px;letter-spacing:2.2px;line-height:.86;text-transform:uppercase}
+.brand span{color:var(--red)}
+.tag{display:none}
+.nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(3px,.55vw,10px);overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;padding:0 0 14px;white-space:nowrap}
+.nav::-webkit-scrollbar{display:none}
+.nav button{flex:0 0 auto;border:0;border-radius:0;border-bottom:2px solid transparent;background:transparent;color:#c6c7c9;text-align:center;padding:13px 10px 11px;font-family:'Barlow Condensed',Impact,sans-serif;font-size:15px;letter-spacing:1.1px;text-transform:uppercase;transition:.2s}
+.nav button.active,.nav button:hover{background:transparent;color:#fff;border-left:0;border-bottom-color:var(--red)}
+.sidefoot{display:none}
+.main{max-width:1680px;padding:0 clamp(18px,4vw,64px) 60px}
+.top{margin:0 - clamp(18px,4vw,64px) 0;padding:13px clamp(18px,4vw,64px);background:#0b0c0e;border-bottom:1px solid #24262a}
+.top .eyebrow{font-size:10px;letter-spacing:3px}
+.pill{border-radius:2px;color:#e6a08a;border-color:#604039;letter-spacing:1.5px}
+.quick-search{margin:22px 0 24px;background:#101215;border:1px solid #35383d;border-radius:3px;padding:10px;display:flex;gap:10px}
+.quick-search input{background:transparent;border:0;color:#fff;min-width:0;flex:1;padding:12px;font-size:15px;outline:none}
+.hero{position:relative;isolation:isolate;min-height:min(690px,70vh);border-radius:2px;border:0;border-bottom:1px solid #454044;padding:clamp(28px,5vw,76px);overflow:hidden;background:linear-gradient(90deg,rgba(4,5,6,.96) 0%,rgba(4,5,6,.76) 44%,rgba(4,5,6,.1) 100%),linear-gradient(0deg,rgba(4,5,6,.68),transparent 58%),url('https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=2200&q=90') center/cover}
+.hero:before{content:'AUTOMOTIVE KNOWLEDGE / 001';position:absolute;right:24px;top:23px;color:rgba(255,255,255,.65);font:600 10px 'Barlow Condensed',sans-serif;letter-spacing:3px}
+.hero:after{content:'ATLAS';position:absolute;right:2%;bottom:-.22em;z-index:-1;color:rgba(255,255,255,.055);font:900 clamp(130px,25vw,360px)/.8 'Barlow Condensed',Impact,sans-serif;letter-spacing:-.06em}
+.hero>*{position:relative;z-index:1}
+.hero .eyebrow{font-size:13px;letter-spacing:4px;color:#ef574f}
+.hero h1{font:900 clamp(66px,10vw,154px)/.78 'Barlow Condensed',Impact,sans-serif;letter-spacing:-.025em;text-transform:uppercase;max-width:1050px;margin:28px 0 30px}
+.hero h1 em{color:#ed3944;font-style:normal;display:inline-block;transform:skewX(-6deg)}
+.hero p{max-width:470px;font-size:14px;line-height:1.8;color:#e0e0df;border-left:2px solid var(--accent);padding-left:17px}
+.hero .btn{font:700 17px 'Barlow Condensed',Impact,sans-serif;letter-spacing:1.5px;text-transform:uppercase;border-radius:2px;padding:14px 22px}
+.btn{border-radius:2px;text-transform:uppercase;letter-spacing:.7px}
+.btn.primary{background:#df2935;border-color:#df2935}
+.stats{gap:0;border-top:1px solid #3a3b3d;border-bottom:1px solid #3a3b3d;margin:0 0 42px}
+.stat{background:transparent;border:0;border-right:1px solid #33363a;border-radius:0;padding:20px 22px}
+.stat:last-child{border-right:0}
+.stat b{font:800 clamp(28px,3vw,44px)/1 'Barlow Condensed',Impact,sans-serif;letter-spacing:1px;color:#f5f2ed}
+.stat small{font-size:10px;text-transform:uppercase;letter-spacing:1.5px}
+h2,.page-title{font:800 clamp(30px,4vw,52px)/.95 'Barlow Condensed',Impact,sans-serif;letter-spacing:.3px;text-transform:uppercase}
+.card,.panel,.stat{border-radius:2px}
+.card{background:#101215;border-color:#33363b}
+.card h3{font:700 25px 'Barlow Condensed',Impact,sans-serif;text-transform:uppercase}
+.card:hover{border-color:#d93b43;transform:translateY(-3px)}
+.detail .panel{border-radius:2px}
+.footer{border-top:1px solid #2b2d30;padding-top:18px}
+@media(max-width:900px){.side{grid-template-columns:1fr;gap:8px;padding:14px 18px 0}.brand{font-size:24px}.nav{justify-content:flex-start;padding-bottom:9px}.nav button{font-size:14px;padding:10px 9px}.main{padding-left:18px;padding-right:18px}.top{margin-left:-18px;margin-right:-18px;padding-left:18px;padding-right:18px}.hero{min-height:520px}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid #33363a}}
+@media(max-width:600px){.hero{min-height:470px;padding:27px 22px}.hero h1{font-size:clamp(60px,17vw,94px);line-height:.8}.hero p{font-size:13px}.top{gap:6px}.top .muted{font-size:11px}.quick-search{margin:15px 0 20px}.stats{grid-template-columns:repeat(2,1fr)}.stat{padding:15px 12px}.nav button{font-size:13px}}
+
 </style>
 </head>
 <body>
