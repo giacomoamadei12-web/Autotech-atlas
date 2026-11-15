@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <title>AUTOTECH ATLAS | The Science of Automotive Performance</title>
 <meta name="description" content="AUTOTECH ATLAS: enciclopedia automobilistica indipendente. Modelli, generazioni, motori, prestazioni e tecnologie dei grandi marchi automobilistici.">
 <meta name="theme-color" content="#090a0c">
@@ -66,6 +69,36 @@ button,input,select{font:inherit}button{cursor:pointer}.shell{display:grid;grid-
 
 .row-between{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .tablewrap{max-width:100%;overflow-x:auto}
+
+/* v6.5: motorsport editorial identity */
+:root{--red:#f12b3b;--red-deep:#8f101d;--acid:#e7e9ed}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;letter-spacing:.005em}
+.brand,.hero h1,h2,.eyebrow,.nav button,.stat b,.btn,.pill{font-family:'Barlow Condensed',Impact,'Arial Narrow',sans-serif}
+.brand{font-size:29px;letter-spacing:2.4px;font-weight:900;text-transform:uppercase}
+.brand span{color:#ff3344}
+.tag{font-size:10px;letter-spacing:2.8px;text-transform:uppercase}
+.nav button{font-size:18px;letter-spacing:.65px;font-weight:600;text-transform:uppercase}
+.hero{position:relative;isolation:isolate;min-height:430px;border-radius:5px;border:1px solid #3a2529;padding:clamp(28px,5vw,64px);overflow:hidden;background:linear-gradient(90deg,rgba(5,7,9,.97) 0%,rgba(5,7,9,.86) 44%,rgba(5,7,9,.28) 100%),linear-gradient(0deg,rgba(5,7,9,.45),transparent 55%),url('https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=2000&q=90') center/cover}
+.hero:before{content:'ATLAS / 001';position:absolute;right:22px;top:20px;color:rgba(255,255,255,.48);font:700 11px 'Barlow Condensed',sans-serif;letter-spacing:3px;z-index:-0}
+.hero:after{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,#ff3546,#8e111d);z-index:0}
+.hero>*{position:relative;z-index:1}
+.hero .eyebrow{font-size:15px;letter-spacing:4px;font-weight:800;color:#ff4351}
+.hero h1{font-size:clamp(58px,8.2vw,112px);line-height:.82;margin:20px 0 22px;letter-spacing:-.025em;font-weight:900;text-transform:uppercase;max-width:900px;text-shadow:0 5px 28px rgba(0,0,0,.35)}
+.hero h1 em{color:#ff3344;font-style:normal;display:inline-block;transform:skewX(-7deg);text-shadow:0 0 24px rgba(241,43,59,.2)}
+.hero p{font-size:15px;line-height:1.7;max-width:560px;color:#d4d8dd;border-left:2px solid rgba(241,43,59,.8);padding-left:14px}
+.hero .btn{font-size:18px;letter-spacing:1.2px;text-transform:uppercase;font-weight:800;padding:12px 19px;border-radius:3px}
+.btn.primary{background:linear-gradient(135deg,#ff3949,#c9182a);box-shadow:0 8px 25px rgba(220,25,45,.22)}
+.stats{gap:9px;margin:14px 0 34px}
+.stat,.card,.panel{border-radius:5px}
+.stat{background:linear-gradient(145deg,#15191e,#0e1115);border-top:2px solid #3b252a}
+.stat b{font-size:38px;line-height:1.05;font-weight:800;letter-spacing:.3px}
+.stat small{text-transform:uppercase;letter-spacing:1px;font-size:10px}
+h2{font-size:34px;line-height:1;text-transform:uppercase;letter-spacing:.5px;font-weight:800}
+h2:after{content:'';display:block;width:54px;height:3px;background:var(--red);margin-top:10px}
+.card{border-radius:5px;background:linear-gradient(145deg,#171b20,#101317)}
+.card .meta{letter-spacing:1.5px}
+.pill{font-size:14px;letter-spacing:1px;text-transform:uppercase}
+@media(max-width:600px){.hero{min-height:360px;padding:25px 22px}.hero h1{font-size:clamp(53px,15vw,76px);letter-spacing:-.02em}.hero .eyebrow{font-size:12px;letter-spacing:2.5px}.hero p{font-size:13px}.nav button{font-size:16px}}
 
 /* BMW generation photo gallery */
 .photo-panel{margin:18px 0;overflow:hidden}.photo-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.photo-gallery figure{margin:0;background:#0c1014;border:1px solid var(--line,#303640);border-radius:12px;overflow:hidden}.photo-gallery img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}.photo-gallery figcaption{padding:9px 12px;font-size:.82rem;color:#aeb6c2}.photo-credit{font-size:.76rem;color:#8993a2;margin-top:10px}
@@ -138,7 +171,7 @@ button,input,select{font:inherit}button{cursor:pointer}.shell{display:grid;grid-
 </section>
 
   <section id="home" class="page">
-    <div class="hero"><div class="eyebrow">WELCOME TO THE MACHINE</div><h1>THE ENGINEERING<br>BEHIND <em>EVERY CAR.</em></h1><p>Un atlante indipendente per esplorare marchi, modelli, generazioni, motori, prestazioni e tecnologie: dal design alla meccanica.</p><div class="actions"><button class="btn primary" onclick="showPage('brands')">ESPLORA I MARCHI</button><button class="btn" onclick="showPage('models')">ESPLORA BMW</button></div></div>
+    <div class="hero"><div class="eyebrow">AUTOMOTIVE KNOWLEDGE PLATFORM · GLOBAL EDITION</div><h1>THE ENGINEERING<br>BEHIND <em>EVERY CAR.</em></h1><p>Non solo automobili. Architetture, motori, materiali e prestazioni. Entra dentro la macchina e scopri cosa la rende unica.</p><div class="actions"><button class="btn primary" onclick="showPage('brands')">ESPLORA I MARCHI</button><button class="btn" onclick="showPage('models')">ESPLORA BMW</button></div></div>
     <div class="stats"><div class="stat"><b>8</b><small>Famiglie Serie</small></div><div class="stat"><b>7</b><small>Famiglie SUV X</small></div><div class="stat"><b>4</b><small>Famiglie motori in evidenza</small></div><div class="stat"><b>20+</b><small>Marchi previsti</small></div></div>
     <h2>Esplora l'universo BMW</h2><div class="grid" id="homeCards"></div>
     <div class="notice">Questa è la prima versione navigabile. Le schede iniziali contengono dati dimostrativi e valori indicativi: prima della pubblicazione definitiva ogni specifica dovrà essere verificata per anno, mercato e variante.</div>
