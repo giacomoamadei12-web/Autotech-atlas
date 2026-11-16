@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&amp;family=Bebas+Neue&amp;family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<title>AUTOTECH ATLAS | Editorial Automotive Atlas</title>
+<title>AUTOTECH ATLAS | Editorial Automotive Atlas · v12.0</title>
 <meta content="AUTOTECH ATLAS: enciclopedia automobilistica indipendente. Modelli, generazioni, motori, prestazioni e tecnologie dei grandi marchi automobilistici." name="description"/>
 <meta content="#090a0c" name="theme-color"/>
 <meta content="AUTOTECH ATLAS" property="og:title"/>
@@ -294,7 +294,7 @@ body{background:#050505;color:#f1eee9}
 <div class="nav-group"><span class="nav-group-title">CATALOGO BMW</span>
 <button data-page="models">MODELLI</button><button data-page="generations">GENERAZIONI</button><button data-page="variants">VERSIONI &amp; MOTORI</button><button data-page="specials">SPECIALI &amp; ALPINA</button><button data-page="markets">MERCATI</button><button data-page="regional">USA &amp; GIAPPONE</button></div>
 <div class="nav-group"><span class="nav-group-title">POWERTRAIN</span>
-<button data-page="engines">ARCHIVIO MOTORI</button><button data-page="engineTech">TECNOLOGIE MOTORE</button><button data-page="engineCodes">CODICI MOTORE</button><button data-page="transmissions">TRASMISSIONI</button><button data-page="audit">VERIFICA APPLICAZIONI</button></div>
+<button data-page="engines">ARCHIVIO MOTORI</button><button data-page="engineTech">TECNOLOGIE MOTORE</button><button data-page="engineCodes">CODICI MOTORE</button><button data-page="transmissions">TRASMISSIONI</button><button data-page="auditApplications">VERIFICA APPLICAZIONI</button><button data-page="auditQuality">QUALITÀ DATABASE</button></div>
 <div class="nav-group"><span class="nav-group-title">ENGINEERING</span>
 <button data-page="platforms">PIATTAFORME</button><button data-page="chassis">TELAIO &amp; FRENI</button><button data-page="electronics">ELETTRONICA</button><button data-page="tech">TECNOLOGIE</button><button data-page="components">COMPONENTI</button></div>
 <div class="nav-group"><span class="nav-group-title">STRUMENTI</span>
@@ -360,7 +360,7 @@ body{background:#050505;color:#f1eee9}
 <div class="notice">AUTOTECH ATLAS is an independent automotive knowledge project. Technical values are presented by model, year, market and variant where verified.</div>
 </section>
 <section class="page hidden" id="models"><div class="eyebrow">BMW MODEL DATABASE</div><h2>Modelli e generazioni</h2><p class="muted">Archivio ampliato con schede di gamma e generazione. Le schede aggregate non sostituiscono le singole motorizzazioni: potenza, coppia, massa e prestazioni restano da verificare per variante, anno e mercato.</p><div class="toolbar"><input id="search" placeholder="Cerca modello, generazione, motore o codice telaio..." type="search"/><select id="family"><option value="">Tutte le famiglie</option><option>Serie</option><option>Serie 1</option><option>Serie 2</option><option>Serie 3</option><option>Serie 4</option><option>Serie 5</option><option>Serie 6</option><option>Serie 7</option><option>Serie 8</option><option>SUV X</option><option>Roadster Z</option><option>BMW M</option><option>BMW i</option></select><button class="btn" id="resetModelFilters" type="button">AZZERA FILTRI</button></div><div class="catalog-status"><span aria-live="polite" id="modelCount"></span><span>Seleziona “APRI SCHEDA” per i dati tecnici</span></div><div class="catalog-status"><span id="techCoverage"></span><span>Le schede aggregate non equivalgono a una singola variante omologata</span></div><div class="grid" id="modelGrid"></div></section>
-<section class="page hidden" id="generations"><div class="eyebrow">BMW GENERATION ARCHIVE</div><h2>Tutte le famiglie e generazioni</h2><div class="toolbar"><input id="genSearch" placeholder="Cerca serie, codice telaio o modello..."/><select id="genFamily"><option value="">Tutte le famiglie</option></select></div><div class="tablewrap"><table><thead><tr><th>Famiglia</th><th>Generazione / codice</th><th>Periodo</th><th>Modelli e varianti</th></tr></thead><tbody id="generationRows"></tbody></table></div><p class="muted">Indice generale ricostruito dal materiale raccolto. Date e disponibilità possono variare in base al mercato.</p></section>
+<section class="page hidden" id="generations"><div class="eyebrow">BMW GENERATION ARCHIVE</div><h2>Tutte le famiglie e generazioni</h2><div class="toolbar"><input id="genSearch" placeholder="Cerca serie, codice telaio o modello..."/><select id="genFamily"><option value="">Tutte le famiglie</option></select></div><div class="tablewrap"><table><thead><tr><th>Famiglia</th><th>Generazione / codice</th><th>Periodo</th><th>Modelli e varianti</th></tr></thead><tbody id="generationRows"></tbody></table></div><h2 style="margin-top:28px">Dossier storico e tecnico · Serie 3</h2><p class="muted">Sette generazioni raccontate attraverso scocca, dinamica, motori e trasformazioni della gamma. Gli anni possono sovrapporsi per carrozzeria e mercato.</p><div class="grid" id="generationDossiers"></div><p class="muted">Indice generale ricostruito dal materiale raccolto. Date e disponibilità possono variare in base al mercato.</p></section>
 <section class="page hidden" id="variants"><div class="eyebrow">BMW POWERTRAIN DATABASE</div><h2>Versioni e motorizzazioni</h2><p class="muted">Archivio tecnico esteso: motore, cilindrata, potenza, coppia e schema di trazione. I valori sono indicativi e possono cambiare per anno, mercato, omologazione e aggiornamento.</p><div class="toolbar"><input id="variantSearch" placeholder="Cerca modello, telaio, motore o potenza..."/><select id="variantFamily"><option value="">Tutte le famiglie</option></select></div><p aria-live="polite" class="muted" id="variantStatus"></p><div class="tablewrap"><table><thead><tr><th>Famiglia</th><th>Generazione</th><th>Versione</th><th>Motore</th><th>Cilindrata</th><th>Potenza</th><th>Coppia</th><th>Trazione</th></tr></thead><tbody id="variantRows"></tbody></table></div><p class="muted">Nota editoriale: prima base dati strutturata. Le varianti regionali e le differenze di anno modello saranno ulteriormente dettagliate e verificate nelle prossime revisioni.</p></section>
 <section class="page hidden" id="engines"><div class="eyebrow">POWERTRAIN ARCHIVE</div><h2>Motori BMW</h2><p class="muted">Una prima selezione di famiglie motoristiche. Le potenze dipendono dalla specifica applicazione.</p><div class="tablewrap"><table><thead><tr><th>Famiglia</th><th>Architettura</th><th>Cilindrata</th><th>Alimentazione</th><th>Applicazioni indicative</th></tr></thead><tbody id="engineRows"></tbody></table></div>
 <h2 style="margin-top:28px">Atlante tecnico dei propulsori</h2>
@@ -401,13 +401,14 @@ body{background:#050505;color:#f1eee9}
 <article class="card"><div class="meta">BMW TECHNICAL TRAINING</div><h3>Engine Technology</h3><p>Manuale tecnico BMW sulla tecnologia dei motori e sulla nomenclatura delle famiglie.</p><a href="https://bmwtechinfo.bmwgroup.com/tech_training_manual/ST501%20Engine%20Technology.pdf" rel="noopener" target="_blank">Apri manuale tecnico BMW ↗</a></article>
 </div>
 </section>
-<section class="page hidden" id="audit">
+
+<section class="page hidden" id="auditApplications">
 <div class="eyebrow">ENGINE APPLICATION / DATA INTEGRITY</div>
 <h2>Audit vetture ↔ motori</h2>
 <p class="muted">Questa sezione introduce un metodo di verifica delle applicazioni motore. Un codice famiglia (es. N55) non identifica da solo ogni variante: servono codice completo, model year, mercato e omologazione. I dossier BMW Training mostrano anche codici motore a 7 posizioni in alcune generazioni: il decoder a 8 caratteri va quindi considerato uno schema utile, non una regola universale.</p>
-<div class="grid" id="auditStats"></div>
-<div class="toolbar"><input id="auditSearch" placeholder="Cerca motore, modello o generazione..."/><select id="auditStatus"><option value="">Tutti gli stati</option><option>Applicazione documentata</option><option>Da verificare</option><option>Nota metodologica</option></select></div>
-<div class="grid" id="auditGrid"></div>
+<div class="grid" id="auditApplicationStats"></div>
+<div class="toolbar"><input id="auditApplicationSearch" placeholder="Cerca motore, modello o generazione..."/><select id="auditApplicationStatus"><option value="">Tutti gli stati</option><option>Applicazione documentata</option><option>Da verificare</option><option>Nota metodologica</option></select></div>
+<div class="grid" id="auditApplicationGrid"></div>
 <div class="notice"><b>Livelli di affidabilità Atlas:</b> documentato = fonte tecnica specifica per quella vettura; corroborato = più fonti coerenti ma manca il documento primario dell'esemplare; da verificare = dato incompleto o dipendente da mercato/anno. Non trasformare mai un dato mancante in un valore presunto.</div>
 <h2>Documentazione BMW di riferimento</h2>
 <div class="grid">
@@ -459,14 +460,14 @@ body{background:#050505;color:#f1eee9}
 <div class="grid" id="transmissionGrid"></div>
 <div class="notice"><b>Nota di identificazione:</b> una stessa denominazione commerciale può corrispondere a rapporti, tarature, capacità di coppia e componenti differenti. Non usare questa libreria per ordinare ricambi senza identificazione tramite VIN e codice componente.</div>
 </section>
-<section class="page hidden" id="audit">
+<section class="page hidden" id="auditQuality">
 <div class="eyebrow">DATABASE QUALITY CONTROL</div>
 <h2>Controllo qualità del database</h2>
 <p class="muted">Una banca dati tecnica deve rendere visibili anche i dati mancanti. Questa pagina separa i record censiti da quelli con specifiche prestazionali disponibili e segnala le schede da completare.</p>
-<div class="stats" id="auditStats"></div>
+<div class="stats" id="auditQualityStats"></div>
 <h2>Record da completare</h2>
-<div class="toolbar"><input id="auditSearch" placeholder="Cerca modello, generazione o motore..."/><select id="auditFilter"><option value="all">Tutti i record</option><option value="missing">Dati prestazionali incompleti</option><option value="complete">Dati prestazionali presenti</option><option value="tech">Con dossier tecnico aggiuntivo</option></select></div>
-<div class="tablewrap"><table><thead><tr><th>Modello</th><th>Generazione</th><th>Motore</th><th>Potenza</th><th>Coppia</th><th>0-100</th><th>Dossier</th></tr></thead><tbody id="auditRows"></tbody></table></div>
+<div class="toolbar"><input id="auditQualitySearch" placeholder="Cerca modello, generazione o motore..."/><select id="auditQualityFilter"><option value="all">Tutti i record</option><option value="missing">Dati prestazionali incompleti</option><option value="complete">Dati prestazionali presenti</option><option value="tech">Con dossier tecnico aggiuntivo</option></select></div>
+<div class="tablewrap"><table><thead><tr><th>Modello</th><th>Generazione</th><th>Motore</th><th>Potenza</th><th>Coppia</th><th>0-100</th><th>Dossier</th></tr></thead><tbody id="auditQualityRows"></tbody></table></div>
 <div class="notice"><b>Regola editoriale:</b> un valore vuoto non viene ricostruito per supposizione. Potenza, coppia, massa e prestazioni possono cambiare per anno modello, carrozzeria, omologazione e mercato. Le schede incomplete restano visibili ma sono identificate come da verificare.</div>
 </section>
 <section class="page hidden" id="platforms">
@@ -1081,7 +1082,6 @@ const generationCatalog = [
 ];
 
 const engines=[
-["B38","3 cilindri in linea","1.5 L","Benzina turbo","Serie 1, Serie 2, X1"],
 ["M40","4 cilindri in linea","1.6–1.8 L","Benzina aspirato","Serie 3 E30/E36, Serie 5"],
 ["M43","4 cilindri in linea","1.6–1.9 L","Benzina aspirato","Serie 3 E36/E46, Z3"],
 ["N42","4 cilindri in linea","2.0 L","Benzina aspirato Valvetronic","Serie 3 E46, Compact"],
@@ -1093,7 +1093,7 @@ const engines=[
 ["S63TU4","V8 a 90°","4.4 L","Benzina biturbo BMW M","M5, M8, X5 M, X6 M"],
 ["B46TU","4 cilindri in linea","2.0 L","Benzina turbo","BMW/MINI Nord America"],
 ["S58B30T0/T1","6 cilindri in linea","3.0 L","Benzina biturbo BMW M","M3, M4, X3 M, X4 M"],
-["B58B30M2","6 cilindri in linea","3.0 L","Benzina turbo TU","M340i, Z4 M40i, X3 M40i"]
+["B58B30M2","6 cilindri in linea","3.0 L","Benzina turbo TU","M340i, Z4 M40i, X3 M40i"],
 ["B48","4 cilindri in linea","2.0 L","Benzina turbo","Serie 1–5, X1, X3"],
 ["B58","6 cilindri in linea","3.0 L","Benzina turbo","M140i, M240i, M340i, Z4"],
 ["S54","6 cilindri in linea","3.2 L","Benzina aspirato","M3 E46, Z4 M"],
@@ -1135,12 +1135,21 @@ const engines=[
 ["S50/S38","6 cilindri in linea","3.0–3.8 L","BMW M aspirato","M3 E36, M5 E34"]
 ];
 const tech=[
-["Valvetronic","Alzata variabile delle valvole di aspirazione per regolare il carico del motore."],
-["Double VANOS","Varia la fasatura degli alberi a camme di aspirazione e scarico."],
-["TwinPower Turbo","Denominazione commerciale BMW per diverse soluzioni di sovralimentazione."],
-["xDrive","Sistema di trazione integrale BMW, con logiche e hardware differenti secondo modello."],
-["M xDrive","Trazione integrale M con gestione specifica della ripartizione della coppia."],
-[" recupero energia","La frenata rigenerativa recupera energia nelle vetture elettrificate."]
+["VANOS e Double VANOS","Varia la fase degli alberi a camme in funzione di regime e carico.","Il sistema modifica il rapporto angolare tra albero motore e alberi a camme. VANOS singolo agisce su un albero, Double VANOS su aspirazione e scarico quando previsto. L'obiettivo è adattare riempimento, coppia, emissioni e risposta ai diversi regimi. Attuatori, tenute, elettrovalvole e logiche cambiano tra famiglie M, N e B."],
+["Valvetronic","Controlla l'alzata delle valvole di aspirazione per regolare il carico del motore.","Un albero eccentrico e un sistema di leve modificano l'alzata effettiva delle valvole. In molte condizioni riduce le perdite di pompaggio associate alla farfalla. Non è presente su tutti i motori BMW e non va confuso con la sola fasatura variabile."],
+["TwinPower Turbo","Nome commerciale che comprende diverse soluzioni di sovralimentazione BMW.","La denominazione non indica sempre due turbocompressori: su molti quattro e sei cilindri identifica un turbo TwinScroll, mentre altre famiglie adottano configurazioni biturbo. Per capire il sistema occorre identificare codice motore, generazione e schema dei collettori."],
+["Iniezione diretta benzina","Il carburante viene iniettato direttamente nella camera di combustione.","Pompa ad alta pressione, rail e iniettori gestiscono pressione e quantità in modo preciso. Le pressioni e le strategie cambiano tra generazioni. La diagnosi deve considerare anche depositi, qualità del carburante, misfire e pressione effettiva."],
+["Common Rail diesel","Un accumulatore comune alimenta gli iniettori ad alta pressione.","La centralina dosa più eventi di iniezione durante il ciclo, controllando rumore, emissioni e coppia. Iniettori, pompa, pressione rail e strategie di post-trattamento variano con normativa e generazione."],
+["EGR, DPF e SCR","Tre sistemi distinti per il controllo delle emissioni diesel.","EGR ricircola una parte dei gas per contenere gli NOx; il DPF trattiene il particolato e richiede rigenerazioni; SCR usa una soluzione di urea per ridurre gli NOx a valle. Non sono sinonimi e non sono presenti con identica configurazione su tutti i diesel."],
+["xDrive","Trazione integrale con logiche di ripartizione della coppia specifiche per piattaforma.","Sulle architetture longitudinali la ripartizione verso l'asse anteriore è gestita da un gruppo di rinvio e da una frizione multidisco controllata elettronicamente. Le architetture trasversali adottano schemi diversi. Pneumatici non coerenti possono generare stress sul sistema."],
+["M xDrive","Trazione integrale BMW M con calibrazione dinamica dedicata.","Il sistema integra controllo di stabilità, gestione motore, differenziale posteriore e ripartizione della coppia. Su alcuni modelli consente modalità specifiche e, se previsto, una configurazione orientata alla sola trazione posteriore. Le logiche dipendono dal modello M."],
+["Brake Energy Regeneration","Recupero dell'energia durante le fasi di decelerazione.","L'alternatore intelligente aumenta la produzione elettrica nelle condizioni più adatte, riducendo il carico sul motore in altre fasi. La strategia richiede gestione coordinata di batteria, alternatore e centraline e non equivale alla frenata rigenerativa di un veicolo elettrico."],
+["Mild hybrid 48 V","Un sistema elettrico a 48 volt supporta il motore termico e recupera energia.","Un generatore-starter a cinghia o integrato, una batteria dedicata e convertitori DC/DC permettono recupero energetico e assistenza limitata. Non consente normalmente la marcia elettrica prolungata come un plug-in hybrid. Applicazioni e hardware cambiano per motore e anno."],
+["Plug-in hybrid eDrive","Motore termico ed elettrico lavorano insieme con batteria ricaricabile dall'esterno.","La batteria ad alta tensione, l'elettronica di potenza, il motore elettrico e la gestione termica si integrano con la trasmissione. Autonomia, potenza combinata e capacità di ricarica dipendono dalla generazione e dall'omologazione."],
+["Gestione termica integrata","Pompe, valvole e scambiatori regolano temperature diverse in base alle condizioni.","I moderni propulsori possono avere circuiti separati per testata, basamento, turbocompressore e aria di sovralimentazione. Il controllo termico influenza efficienza, riscaldamento, prestazioni e protezione dei componenti. Gli schemi non sono universali."],
+["DSC, ABS e DTC","Sistemi elettronici che coordinano frenata e stabilità.","ABS limita il bloccaggio delle ruote in frenata; DSC confronta traiettoria richiesta e comportamento effettivo intervenendo su freni e coppia; DTC consente una soglia di intervento più permissiva su alcune vetture. Funzioni e nomi cambiano con la generazione."],
+["Differenziale attivo M","Gestisce elettronicamente il trasferimento di coppia tra le ruote posteriori.","Il sistema può usare frizioni multidisco controllate per modificare il bloccaggio in funzione di acceleratore, sterzo, imbardata e aderenza. È diverso da un differenziale aperto con intervento frenante e da un autobloccante meccanico tradizionale."],
+["Reti CAN e FlexRay","Le centraline scambiano dati attraverso reti di comunicazione di bordo.","Le reti consentono coordinamento tra motore, cambio, ABS/DSC, sterzo e sistemi comfort. Architettura, gateway, velocità e topologia dipendono dalla piattaforma. Una diagnosi corretta richiede schemi elettrici e identificazione del modulo coinvolto."]
 ];
 const families=[
 ["Serie 1–2","Compatte, coupé, Gran Coupé e Active Tourer","Serie"],
@@ -1151,7 +1160,7 @@ const families=[
 ["BMW M","Modelli M, M Performance e serie speciali","BMW M"],
 ["BMW i","i3, i4, i5, i7, iX e iX1","BMW i"]
 ];
-const sectionLabels={home:'OVERVIEW',brands:'TUTTI I MARCHI',models:'CATALOGO / MODELLI',generations:'CATALOGO / GENERAZIONI',variants:'CATALOGO / VERSIONI TECNICHE',engines:'POWERTRAIN / ARCHIVIO MOTORI',engineTech:'POWERTRAIN / TECNOLOGIE MOTORE',engineCodes:'POWERTRAIN / CODICI MOTORE',audit:'POWERTRAIN / VERIFICA APPLICAZIONI',regional:'CATALOGO / USA & GIAPPONE',markets:'CATALOGO / MERCATI',specials:'CATALOGO / SPECIALI & ALPINA',transmissions:'POWERTRAIN / TRASMISSIONI',platforms:'ENGINEERING / PIATTAFORME',chassis:'ENGINEERING / TELAIO & FRENI',electronics:'ENGINEERING / ELETTRONICA',compare:'STRUMENTI / CONFRONTO',rankings:'STRUMENTI / CLASSIFICHE',tech:'ENGINEERING / TECNOLOGIE',components:'ENGINEERING / COMPONENTI',detail:'SCHEDA VETTURA'};
+const sectionLabels={home:'OVERVIEW',brands:'TUTTI I MARCHI',models:'CATALOGO / MODELLI',generations:'CATALOGO / GENERAZIONI',variants:'CATALOGO / VERSIONI TECNICHE',engines:'POWERTRAIN / ARCHIVIO MOTORI',engineTech:'POWERTRAIN / TECNOLOGIE MOTORE',engineCodes:'POWERTRAIN / CODICI MOTORE',auditApplications:'POWERTRAIN / VERIFICA APPLICAZIONI',auditQuality:'DATABASE / CONTROLLO QUALITÀ',regional:'CATALOGO / USA & GIAPPONE',markets:'CATALOGO / MERCATI',specials:'CATALOGO / SPECIALI & ALPINA',transmissions:'POWERTRAIN / TRASMISSIONI',platforms:'ENGINEERING / PIATTAFORME',chassis:'ENGINEERING / TELAIO & FRENI',electronics:'ENGINEERING / ELETTRONICA',compare:'STRUMENTI / CONFRONTO',rankings:'STRUMENTI / CLASSIFICHE',tech:'ENGINEERING / TECNOLOGIE',components:'ENGINEERING / COMPONENTI',detail:'SCHEDA VETTURA'};
 function showPage(id){const target=document.getElementById(id);if(!target){console.warn('Pagina non trovata:',id);return;}document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));target.classList.remove('hidden');document.querySelectorAll('.atlas-nav button[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));const nav=document.querySelector('.atlas-nav');if(nav)nav.classList.remove('nav-open');const menuButton=document.querySelector('.mobile-menu');if(menuButton){menuButton.setAttribute('aria-expanded','false');menuButton.textContent='MENU +';}const crumb=document.getElementById('sectionCurrent');if(crumb)crumb.textContent=sectionLabels[id]||'AUTOTECH ATLAS';const strip=document.getElementById('sectionToolbar');if(strip)strip.classList.toggle('home-toolbar',id==='home');if(id==='models')renderModels();window.scrollTo({top:0,behavior:'auto'});}
 document.querySelectorAll('.atlas-nav button[data-page]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
 document.querySelector('.atlas-identity')?.addEventListener('click',e=>{e.preventDefault();showPage('home');});
@@ -1271,6 +1280,15 @@ function renderBMWPhotoGallery(car){
 function openDetail(id){let c=cars.find(x=>String(x.id)===String(id));if(!c){console.warn('Vettura non trovata:',id);return;}document.getElementById('detailContent').innerHTML=`<div class="eyebrow" style="margin-top:22px">${c.family} · ${c.generation} · ${c.years}</div><h2>${c.name}</h2><p class="muted">${c.desc}</p>${renderBMWPhotoGallery(c)}${renderBMWGenerationDossier(c)}<div class="detail"><div class="panel"><h3>Identità tecnica</h3><div class="specs"><div class="spec"><small>Motore</small><b>${c.engine}</b></div><div class="spec"><small>Architettura</small><b>${c.layout}</b></div><div class="spec"><small>Cilindrata</small><b>${c.cc?c.cc.toLocaleString('it-IT')+' cm³':'Elettrica'}</b></div><div class="spec"><small>Potenza</small><b>${c.hp==null?"Da verificare":c.hp+" CV"}</b></div><div class="spec"><small>Coppia</small><b>${c.nm==null?"Da verificare":c.nm+" Nm"}</b></div><div class="spec"><small>0-100 km/h</small><b>${c.zero==null?"Da verificare":c.zero+" s"}</b></div><div class="spec"><small>Massa indicativa</small><b>${c.weight==null?"Da verificare":c.weight+" kg"}</b></div><div class="spec"><small>Trazione</small><b>${c.drive}</b></div></div></div><div class="panel"><h3>Configurazione</h3><p><b>Carrozzeria:</b> ${c.body}</p><p><b>Generazione:</b> ${c.generation}</p><p><b>Periodo:</b> ${c.years}</p>${(()=>{const matches=engineProfiles.filter(e=>engineMatchesCar(c,e.code));return matches.length?`<div class="notice"><b>Dossier motore collegati</b><div class="chips">${matches.map(ep=>`<button class="btn" onclick="openEngineFromCar('${ep.code}')">${ep.code} ↗</button>`).join(' ')}</div><small class="muted">Collegamenti ricavati dai codici motore censiti; verificare sempre indice e variante di produzione.</small></div>`:`<div class="notice">Dossier motore specifico non ancora collegato: codice da verificare.</div>`})()}<div class="notice">Valori indicativi di una specifica versione. La scheda definitiva distinguerà anno modello, mercato, cambio e optional.</div></div></div>${renderCarVariantSection(c)}<div class="panel" style="margin-top:18px"><h3>Sistemi ingegneristici da consultare</h3><p class="muted">Dossier generali collegati alla famiglia tecnica. La presenza e la configurazione sulla singola vettura vanno verificate per generazione, anno e allestimento.</p><div class="chips"><button class="btn" onclick="openComponentSearch('${c.engine}')">Motore · ${c.engine} ↗</button><button class="btn" onclick="openComponentSearch('trasmissione cambio differenziale')">Trasmissione ↗</button><button class="btn" onclick="openComponentSearch('sospensione telaio')">Telaio e sospensioni ↗</button><button class="btn" onclick="openComponentSearch('freni DSC ABS')">Freni e DSC ↗</button><button class="btn" onclick="openComponentSearch('elettronica centralina')">Elettronica ↗</button></div></div>${c.tech?`<div class="panel" style="margin-top:18px"><h3>Approfondimento tecnico</h3><div class="specs"><div class="spec"><small>Dimensioni</small><b>${c.tech.dimensions}</b></div><div class="spec"><small>Passo</small><b>${c.tech.wheelbase}</b></div><div class="spec"><small>Trasmissione</small><b>${c.tech.gearbox}</b></div><div class="spec"><small>Differenziale</small><b>${c.tech.differential}</b></div></div><p><b>Motore:</b> ${c.tech.engineDetail}</p><p><b>Telaio:</b> ${c.tech.chassis}</p><p><b>Freni:</b> ${c.tech.brakes}</p><div class="notice">${c.tech.notes}</div></div>`:''}`;showPage('detail')}
 window.openDetail=openDetail;
 
+const generationDossiers = [
+{name:"E21 · La nascita",period:"1975–1983",summary:"La prima Serie 3 raccoglie l'eredità della 02 in una berlina-coupé compatta a due porte, con abitacolo orientato al guidatore e trazione posteriore.",body:"La gamma nasce con carrozzeria a due porte. Il progetto privilegia dimensioni compatte, cofano lungo e abitacolo raccolto. L'avantreno MacPherson e lo sterzo a cremagliera contribuiscono a una risposta diretta.",engines:"Quattro cilindri M10 nelle 316, 318, 320 e 320i; dal 1977 arriva il sei cilindri 323i. Le potenze variano secondo versione e mercato.",evolution:"Nel 1977 la 323i porta il sei cilindri nella gamma. Nel 1981 arriva la 315 d'accesso. La produzione supera 1,36 milioni di unità.",caution:"La E21 non ebbe una berlina quattro porte di fabbrica. Le trasformazioni Baur non equivalgono a una cabriolet BMW di serie."},
+{name:"E30 · La gamma si moltiplica",period:"1982–1994",summary:"La E30 trasforma la Serie 3 in una famiglia: berlina, Touring, Cabriolet e Compact non sono ancora presenti tutte insieme, ma la varietà cresce enormemente.",body:"Scocca più efficiente e abitacolo più sfruttabile; avantreno evoluto e retrotreno a bracci semi-trailing. Dal 1985 viene introdotta la trazione integrale 325iX.",engines:"M10 e M40 quattro cilindri, M20 sei cilindri; diesel M21 su alcune versioni. La M3 E30 usa il quattro cilindri S14, derivato dal programma Motorsport.",evolution:"La Touring arriva nel 1987. La M3 debutta nel 1985 e diventa una base importante per l'omologazione e le competizioni. Esistono differenze significative tra pre-restyling, restyling e mercati.",caution:"M3, 325iX, Cabriolet e Touring hanno componenti specifici. Non trasferire automaticamente dati di una berlina standard a queste varianti."},
+{name:"E36 · Modernizzazione",period:"1990–2000",summary:"La terza generazione porta linee più arrotondate, maggiore abitabilità e una gamma di carrozzerie senza precedenti per la Serie 3.",body:"Passo e carreggiate crescono. Il retrotreno multilink a bracci centrali migliora il controllo della ruota. ABS, ASC e successivamente ASC+T ampliano il controllo della dinamica.",engines:"M40/M43 quattro cilindri, M42/M44 16 valvole, M50/M52 sei cilindri; M3 con S50 in Europa e S52 in Nord America, da non confondere.",evolution:"La Coupé indipendente arriva nel 1992, la Cabriolet nel 1993, la Compact nel 1994 e la Touring nel 1995. La M3 E36 evolve da 3.0 a 3.2 litri in alcune aree.",caution:"Le specifiche M3 europee e nordamericane differiscono sensibilmente. Compact, Coupé e berlina non condividono ogni componente di telaio."},
+{name:"E46 · Maturità e precisione",period:"1997–2006",summary:"La E46 consolida la formula con una scocca più rigida, un abitacolo curato e un equilibrio tra comfort, precisione e uso quotidiano.",body:"La piattaforma utilizza avantreno MacPherson e retrotreno multilink a cinque bracci. La condizione dei punti di attacco posteriori e dei supporti è importante nell'ispezione delle vetture usate.",engines:"M43 e N42/N46 quattro cilindri secondo periodo; M52TU e M54 sei cilindri; diesel M47/M57. La M3 adotta il sei cilindri S54 da 3,2 litri.",evolution:"La gamma comprende berlina, Touring, Coupé, Cabriolet e Compact. La M3 CSL alleggerita è una variante speciale con soluzioni dedicate.",caution:"M3 CSL, M3 standard, Compact e versioni xDrive non sono intercambiabili a livello di telaio, freni, differenziale e tarature."},
+{name:"E90/E91/E92/E93 · Elettronica ed efficienza",period:"2005–2013",summary:"La quinta generazione separa i codici di carrozzeria: E90 berlina, E91 Touring, E92 Coupé ed E93 Cabriolet.",body:"Avantreno a doppio snodo e retrotreno multilink. Arrivano funzioni EfficientDynamics come recupero dell'energia in frenata e, secondo versione, Start-Stop.",engines:"N43/N46 e N52/N53 benzina, N54 biturbo, N55 in alcune evoluzioni, diesel M47/N47 e sei cilindri M57/N57 secondo anno e mercato. M3 con V8 S65.",evolution:"La gamma offre molte combinazioni di carrozzeria e propulsore. Il restyling e i cambi di motore avvengono in momenti differenti tra mercati.",caution:"Verificare il codice carrozzeria e il mese di produzione. Le problematiche e i componenti cambiano tra N47, N54, N55 e le altre famiglie."},
+{name:"F30/F31/F34 · La separazione dalla Serie 4",period:"2011–2019",summary:"La sesta generazione porta la berlina e la Touring verso una forte modularità tecnica; la Coupé, la Cabriolet e la Gran Coupé passano alla nuova famiglia Serie 4.",body:"Passo e carreggiate aumentano rispetto alla E90. La piattaforma longitudinale offre trazione posteriore o xDrive, con sospensioni e tarature differenziate per versione.",engines:"N13/N20/N55 e successivi B38/B48/B58 benzina; N47/N57 e poi B47 diesel, secondo modello e mercato. La 330e introduce la propulsione plug-in hybrid.",evolution:"La gamma include berlina F30, Touring F31 e Gran Turismo F34. La M3 diventa berlina F80, mentre Coupé e Cabriolet ad alte prestazioni sono M4.",caution:"Dal 2013 la Coupé e la Cabriolet sono Serie 4. Non catalogarle come carrozzerie F30 della Serie 3."},
+{name:"G20/G21 · Digitalizzazione e ibridazione",period:"Dal 2018",summary:"La settima generazione affina la dinamica, aumenta la digitalizzazione e amplia l'elettrificazione, mantenendo berlina e Touring al centro della Serie 3.",body:"Scocca e attacchi sospensione più rigidi, ammortizzatori a smorzamento dipendente dalla corsa e aerodinamica ottimizzata. Disponibili trazione posteriore e xDrive secondo motorizzazione.",engines:"B48 quattro cilindri, B58 sei cilindri, B47/B57 diesel e 330e plug-in hybrid. M340i e M3 adottano configurazioni e tarature specifiche; le potenze variano per anno e mercato.",evolution:"La Touring G21 arriva nel 2019; il restyling 2022 introduce il Curved Display e aggiornamenti di interni e tecnologia. La M3 Touring amplia la gamma M dal 2022.",caution:"Distinguere G20 berlina, G21 Touring, G28 a passo lungo per mercati selezionati e G80 M3. La presenza di mild hybrid 48 V dipende dalla motorizzazione e dall'anno."}
+];
 const genFamilies=[...new Set(generationCatalog.map(x=>x[0]))];
 document.getElementById('genFamily').innerHTML='<option value="">Tutte le famiglie</option>'+genFamilies.map(x=>`<option>${x}</option>`).join('');
 
@@ -1610,6 +1628,7 @@ document.getElementById('variantFamily').addEventListener('change',renderVariant
 renderVariants();
 
 function renderGenerations(){const q=document.getElementById('genSearch').value.toLowerCase(),f=document.getElementById('genFamily').value;document.getElementById('generationRows').innerHTML=generationCatalog.filter(x=>(!f||x[0]===f)&&x.join(' ').toLowerCase().includes(q)).map(x=>`<tr>${x.map(v=>`<td>${v}</td>`).join('')}</tr>`).join('')||'<tr><td colspan="4">Nessun risultato</td></tr>'}
+document.getElementById('generationDossiers').innerHTML=generationDossiers.map(g=>`<article class="card"><div class="meta">BMW SERIE 3 · ${g.period}</div><h3>${g.name}</h3><p>${g.summary}</p><details class="eng-details"><summary>APRI DOSSIER GENERAZIONE</summary><div class="eng-grid"><div class="eng-block"><small>Scocca e telaio</small><p>${g.body}</p></div><div class="eng-block"><small>Famiglie motore</small><p>${g.engines}</p></div><div class="eng-block"><small>Evoluzione della gamma</small><p>${g.evolution}</p></div><div class="eng-block"><small>Attenzione alle varianti</small><p>${g.caution}</p></div></div></details></article>`).join('');
 document.getElementById('genSearch').addEventListener('input',renderGenerations);document.getElementById('genFamily').addEventListener('change',renderGenerations);renderGenerations();
 
 document.getElementById('engineRows').innerHTML=engines.filter(e=>Array.isArray(e)).map(e=>`<tr>${e.map(v=>`<td>${v}</td>`).join('')}</tr>`).join('');
@@ -1729,7 +1748,7 @@ document.getElementById('engineAtlas').addEventListener('click',e=>{const b=e.ta
 renderEngineAtlas();
 
 document.getElementById('homeCards').innerHTML=families.map(f=>`<article class="card"><div class="meta">BMW ATLAS</div><h3>${f[0]}</h3><p>${f[1]}</p><button class="btn" onclick="showPage('models');document.getElementById('family').value='${f[2]}';renderModels()">ESPLORA →</button></article>`).join('');
-document.getElementById('techGrid').innerHTML=tech.map(t=>`<article class="card"><div class="meta">ENGINEERING</div><h3>${t[0].trim()}</h3><p>${t[1]}</p></article>`).join('');
+document.getElementById('techGrid').innerHTML=tech.map(t=>`<article class="card"><div class="meta">ENGINEERING · BMW SYSTEMS</div><h3>${t[0].trim()}</h3><p>${t[1]}</p><details class="eng-details"><summary>APPROFONDISCI</summary><div class="eng-block"><p>${t[2]}</p></div></details></article>`).join('');
 
 const engineeringComponents = [
 ["Trasmissione","Cambio automatico ZF 8HP","Automatico epicicloidale a otto rapporti con convertitore di coppia e frizione lock-up. La meccatronica coordina frizioni e freni interni per cambiate rapide ed efficienza in marcia stabilizzata.","Trasmissione"],
@@ -2005,8 +2024,8 @@ renderTransmissionAtlas();
 
 
 function renderDatabaseAudit(){
- const q=(document.getElementById('auditSearch').value||'').toLowerCase();
- const f=document.getElementById('auditFilter').value;
+ const q=(document.getElementById('auditQualitySearch').value||'').toLowerCase();
+ const f=document.getElementById('auditQualityFilter').value;
  const missing=c=>c.hp==null||c.nm==null||c.zero==null||c.weight==null;
  const stats=[
   ['Record vettura',cars.length],
@@ -2014,15 +2033,15 @@ function renderDatabaseAudit(){
   ['Con coppia censita',cars.filter(c=>c.nm!=null).length],
   ['Con dossier tecnico',cars.filter(c=>c.tech).length]
  ];
- document.getElementById('auditStats').innerHTML=stats.map(x=>`<div class="stat"><b>${x[1]}</b><small>${x[0]}</small></div>`).join('');
+ document.getElementById('auditQualityStats').innerHTML=stats.map(x=>`<div class="stat"><b>${x[1]}</b><small>${x[0]}</small></div>`).join('');
  const rows=cars.filter(c=>{
   const text=[c.name,c.generation,c.engine].join(' ').toLowerCase();
   return text.includes(q)&&(f==='all'||(f==='missing'&&missing(c))||(f==='complete'&&!missing(c))||(f==='tech'&&c.tech));
  }).sort((a,b)=>a.name.localeCompare(b.name));
- document.getElementById('auditRows').innerHTML=rows.map(c=>`<tr><td><button class="btn" onclick="openDetail('${c.id}')">${c.name}</button></td><td>${c.generation}</td><td>${c.engine}</td><td>${c.hp==null?'Da verificare':c.hp+' CV'}</td><td>${c.nm==null?'Da verificare':c.nm+' Nm'}</td><td>${c.zero==null?'Da verificare':c.zero+' s'}</td><td>${c.tech?'Presente':'Da ampliare'}</td></tr>`).join('')||'<tr><td colspan="7">Nessun record trovato.</td></tr>';
+ document.getElementById('auditQualityRows').innerHTML=rows.map(c=>`<tr><td><button class="btn" onclick="openDetail('${c.id}')">${c.name}</button></td><td>${c.generation}</td><td>${c.engine}</td><td>${c.hp==null?'Da verificare':c.hp+' CV'}</td><td>${c.nm==null?'Da verificare':c.nm+' Nm'}</td><td>${c.zero==null?'Da verificare':c.zero+' s'}</td><td>${c.tech?'Presente':'Da ampliare'}</td></tr>`).join('')||'<tr><td colspan="7">Nessun record trovato.</td></tr>';
 }
-document.getElementById('auditSearch').addEventListener('input',renderDatabaseAudit);
-document.getElementById('auditFilter').addEventListener('change',renderDatabaseAudit);
+document.getElementById('auditQualitySearch').addEventListener('input',renderDatabaseAudit);
+document.getElementById('auditQualityFilter').addEventListener('change',renderDatabaseAudit);
 renderDatabaseAudit();
 
 
@@ -2108,13 +2127,13 @@ decodeEngineCode();
 
 
 function renderEngineAudit(){
- const q=document.getElementById('auditSearch').value.toLowerCase(), st=document.getElementById('auditStatus').value;
+ const q=document.getElementById('auditApplicationSearch').value.toLowerCase(), st=document.getElementById('auditApplicationStatus').value;
  const shown=auditProfiles.filter(x=>(!st||x.status===st)&&[x.code,x.family,x.application,x.status,x.note].join(' ').toLowerCase().includes(q));
- document.getElementById('auditGrid').innerHTML=shown.map(x=>`<article class="card"><div class="meta">${x.status}</div><h3>${x.code}</h3><p><b>Famiglia:</b> ${x.family}</p><p><b>Applicazioni da verificare:</b> ${x.application}</p><p>${x.note}</p></article>`).join('')||'<p class="muted">Nessun risultato.</p>';
+ document.getElementById('auditApplicationGrid').innerHTML=shown.map(x=>`<article class="card"><div class="meta">${x.status}</div><h3>${x.code}</h3><p><b>Famiglia:</b> ${x.family}</p><p><b>Applicazioni da verificare:</b> ${x.application}</p><p>${x.note}</p></article>`).join('')||'<p class="muted">Nessun risultato.</p>';
 }
-document.getElementById('auditSearch').addEventListener('input',renderEngineAudit);
-document.getElementById('auditStatus').addEventListener('change',renderEngineAudit);
-document.getElementById('auditStats').innerHTML=`<article class="card"><div class="meta">DOSSIER AUDIT</div><h3>${auditProfiles.length}</h3><p>Famiglie e casi metodologici campionati</p></article><article class="card"><div class="meta">APPLICAZIONI</div><h3>3 livelli</h3><p>Documentato · da verificare · nota metodologica</p></article><article class="card"><div class="meta">REGOLA</div><h3>Codice completo</h3><p>Mercato + model year + motore + variante</p></article>`;
+document.getElementById('auditApplicationSearch').addEventListener('input',renderEngineAudit);
+document.getElementById('auditApplicationStatus').addEventListener('change',renderEngineAudit);
+document.getElementById('auditApplicationStats').innerHTML=`<article class="card"><div class="meta">DOSSIER AUDIT</div><h3>${auditProfiles.length}</h3><p>Famiglie e casi metodologici campionati</p></article><article class="card"><div class="meta">APPLICAZIONI</div><h3>3 livelli</h3><p>Documentato · da verificare · nota metodologica</p></article><article class="card"><div class="meta">REGOLA</div><h3>Codice completo</h3><p>Mercato + model year + motore + variante</p></article>`;
 renderEngineAudit();
 
 function renderRegionalRegistry(){
