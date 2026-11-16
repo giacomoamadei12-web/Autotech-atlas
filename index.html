@@ -288,6 +288,24 @@ body{background:#050505;color:#f1eee9}
 /* AUTOTECH ATLAS v14.0 · BMW X/M editorial dossier */
 .v14-dossier{margin:18px 0;border-color:#41464d;background:linear-gradient(135deg,#15191e,#0d1014)}.v14-dossier h4{margin:20px 0 6px;color:#f0eee9;font:700 12px Inter,sans-serif;letter-spacing:1px;text-transform:uppercase}.v14-dossier p{line-height:1.7;color:#c6cbd1}.v14-atlas-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}.v14-family{min-height:260px;padding:26px;border:1px solid #454b54;background:linear-gradient(140deg,rgba(11,14,18,.94),rgba(31,35,40,.94)),url('https://mediapool.bmwgroup.com/cache/P9/202105/P90421931/P90421931-bmw-x5-bmw-x6-bmw-x7-bmw-ix-06-2021-2666px.jpg') center/cover}.v14-m-family{background:linear-gradient(140deg,rgba(11,14,18,.94),rgba(31,35,40,.94)),url('https://cdn.bmwblog.com/wp-content/uploads/2021/04/The-BMW-M3-Six-generations-14.jpg') center/cover}.v14-family h3{font:800 clamp(34px,5vw,58px)/.95 'Barlow Condensed',sans-serif;margin:28px 0 10px}.v14-family p{max-width:550px}.v14-family .btn{margin-top:16px}@media(max-width:700px){.v14-atlas-grid{grid-template-columns:1fr}}
 
+
+/* AUTOTECH ATLAS v15.0 · BMW Complete Edition */
+.bmw-complete-card{overflow:hidden;border:1px solid #343a42;background:#111519;display:flex;flex-direction:column;min-height:320px}
+.bmw-complete-card .family-photo{height:155px;background:#0b0e11 center/cover no-repeat;position:relative}
+.bmw-complete-card .family-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,7,9,.86),transparent 75%)}
+.bmw-complete-card .family-body{padding:17px;display:flex;flex-direction:column;flex:1}
+.bmw-complete-card h3{font:800 25px 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:2px 0 7px}
+.bmw-complete-card p{font-size:12px;line-height:1.6;color:#b9c0c7}
+.bmw-complete-card .meta{color:#e47b3c;font-size:10px;letter-spacing:1px;text-transform:uppercase}
+.engineering-atlas{margin:22px 0}.engineering-atlas>p{max-width:900px;line-height:1.7;color:#b9c0c7}
+.engineering-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.engineering-plate{background:#0d1115;border:1px solid #343c45;padding:12px;min-width:0}
+.engineering-plate h4{font:700 16px 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:7px 0;color:#f0eee9}
+.engineering-plate p{font-size:11px;line-height:1.55;color:#aeb6bf}
+.engineering-plate svg{width:100%;height:auto;display:block;background:radial-gradient(circle at 50% 45%,#1b232b,#0a0d10 75%);border:1px solid #242b32}.engineering-photo{width:100%;height:190px;object-fit:contain;background:#e7e9eb;border:1px solid #343c45;display:block}.engineering-credit{font-size:9px;color:#9ca8b4;margin-top:6px}.engineering-plate .btn{margin:5px 4px 0 0}
+.engineering-note{font-size:10px;color:#d2a17d;margin-top:10px}
+@media(max-width:700px){.engineering-grid{grid-template-columns:1fr}.bmw-complete-card .family-photo{height:135px}}
+
 </style>
 </head>
 <body>
@@ -296,7 +314,7 @@ body{background:#050505;color:#f1eee9}
 <div class="nav-group"><span class="nav-group-title">ESPLORA</span>
 <button class="active" data-page="home">01 · OVERVIEW</button><button data-page="brands">02 · TUTTI I MARCHI</button></div>
 <div class="nav-group"><span class="nav-group-title">CATALOGO BMW</span>
-<button data-page="xMAtlas">FAMIGLIE X &amp; M</button><button data-page="models">MODELLI</button><button data-page="generations">GENERAZIONI</button><button data-page="variants">VERSIONI &amp; MOTORI</button><button data-page="specials">SPECIALI &amp; ALPINA</button><button data-page="markets">MERCATI</button><button data-page="regional">USA &amp; GIAPPONE</button></div>
+<button data-page="bmwComplete">BMW · ARCHIVIO COMPLETO</button><button data-page="xMAtlas">FAMIGLIE X &amp; M</button><button data-page="models">MODELLI</button><button data-page="generations">GENERAZIONI</button><button data-page="variants">VERSIONI &amp; MOTORI</button><button data-page="specials">SPECIALI &amp; ALPINA</button><button data-page="markets">MERCATI</button><button data-page="regional">USA &amp; GIAPPONE</button></div>
 <div class="nav-group"><span class="nav-group-title">POWERTRAIN</span>
 <button data-page="engines">ARCHIVIO MOTORI</button><button data-page="engineTech">TECNOLOGIE MOTORE</button><button data-page="engineCodes">CODICI MOTORE</button><button data-page="transmissions">TRASMISSIONI</button><button data-page="auditApplications">VERIFICA APPLICAZIONI</button><button data-page="auditQuality">QUALITÀ DATABASE</button></div>
 <div class="nav-group"><span class="nav-group-title">ENGINEERING</span>
@@ -305,8 +323,8 @@ body{background:#050505;color:#f1eee9}
 <button data-page="compare">CONFRONTO</button><button data-page="rankings">CLASSIFICHE</button></div>
 </nav><button aria-label="Apri menu" class="mobile-menu" aria-expanded="false" type="button">MENU +</button></header>
 <main class="main">
-<div class="section-toolbar" id="sectionToolbar" aria-label="Posizione nel sito"><button type="button" class="back-home" onclick="showPage('home')">← HOME</button><span class="section-divider">/</span><span class="section-current" id="sectionCurrent">OVERVIEW</span><span class="section-hint">AUTOTECH ATLAS · BMW DATABASE · V14.0</span></div>
-<div class="top"><div><div class="eyebrow">INDEPENDENT AUTOMOTIVE KNOWLEDGE PLATFORM</div><div class="muted">Engineering · Design · Performance · Heritage</div></div><span class="pill">GLOBAL EDITION / 2026 · V14.0</span></div>
+<div class="section-toolbar" id="sectionToolbar" aria-label="Posizione nel sito"><button type="button" class="back-home" id="atlasBackButton" onclick="goBack()">← INDIETRO</button><button type="button" class="back-home" onclick="showPage('home')">⌂ HOME</button><span class="section-divider">/</span><span class="section-current" id="sectionCurrent">OVERVIEW</span><span class="section-hint">AUTOTECH ATLAS · BMW DATABASE · V15.0</span></div>
+<div class="top"><div><div class="eyebrow">INDEPENDENT AUTOMOTIVE KNOWLEDGE PLATFORM</div><div class="muted">Engineering · Design · Performance · Heritage</div></div><span class="pill">GLOBAL EDITION / 2026 · V15.0</span></div>
 
 <section class="page hidden" id="brands">
 <div class="eyebrow">GLOBAL AUTOMOTIVE INDEX</div>
@@ -363,8 +381,8 @@ body{background:#050505;color:#f1eee9}
 <h2>EXPLORE THE AUTOMOTIVE UNIVERSE</h2><div class="grid" id="homeCards"></div>
 <div class="notice">AUTOTECH ATLAS is an independent automotive knowledge project. Technical values are presented by model, year, market and variant where verified.</div>
 </section>
-<section class="page hidden" id="models"><div class="eyebrow">BMW MODEL DATABASE</div><h2>Modelli e generazioni</h2><p class="muted">Archivio ampliato con schede di gamma e generazione. Le schede aggregate non sostituiscono le singole motorizzazioni: potenza, coppia, massa e prestazioni restano da verificare per variante, anno e mercato.</p><div class="toolbar"><input id="search" placeholder="Cerca modello, generazione, motore o codice telaio..." type="search"/><select id="family"><option value="">Tutte le famiglie</option><option>Serie</option><option>Serie 1</option><option>Serie 2</option><option>Serie 3</option><option>Serie 4</option><option>Serie 5</option><option>Serie 6</option><option>Serie 7</option><option>Serie 8</option><option>SUV X</option><option>Roadster Z</option><option>BMW M</option><option>BMW i</option></select><button class="btn" id="resetModelFilters" type="button">AZZERA FILTRI</button></div><div class="catalog-status"><span aria-live="polite" id="modelCount"></span><span>Seleziona “APRI SCHEDA” per i dati tecnici</span></div><div class="catalog-status"><span id="techCoverage"></span><span>Le schede aggregate non equivalgono a una singola variante omologata</span></div><div class="grid" id="modelGrid"></div></section>
-<section class="page hidden" id="generations"><div class="eyebrow">BMW GENERATION ARCHIVE</div><h2>Tutte le famiglie e generazioni</h2><div class="toolbar"><input id="genSearch" placeholder="Cerca serie, codice telaio o modello..."/><select id="genFamily"><option value="">Tutte le famiglie</option></select></div><div class="tablewrap"><table><thead><tr><th>Famiglia</th><th>Generazione / codice</th><th>Periodo</th><th>Modelli e varianti</th></tr></thead><tbody id="generationRows"></tbody></table></div><h2 style="margin-top:28px">Dossier storico e tecnico · Serie 3</h2><p class="muted">Sette generazioni raccontate attraverso scocca, dinamica, motori e trasformazioni della gamma. Gli anni possono sovrapporsi per carrozzeria e mercato.</p><div class="grid" id="generationDossiers"></div><p class="muted">Indice generale ricostruito dal materiale raccolto. Date e disponibilità possono variare in base al mercato.</p></section>
+<section class="page hidden" id="models"><div class="eyebrow">BMW MODEL DATABASE</div><h2>Modelli e generazioni</h2><p class="muted">Archivio ampliato con schede di gamma e generazione. Le schede aggregate non sostituiscono le singole motorizzazioni: potenza, coppia, massa e prestazioni restano da verificare per variante, anno e mercato.</p><div class="toolbar"><input id="search" placeholder="Cerca modello, generazione, motore o codice telaio..." type="search"/><select id="family"><option value="">Tutte le famiglie</option><option>Serie</option><option>Serie 1</option><option>Serie 2</option><option>Serie 3</option><option>Serie 4</option><option>Serie 5</option><option>Serie 6</option><option>Serie 7</option><option>Serie 8</option><option>SUV X</option><option>Roadster Z</option><option>BMW M</option><option>BMW i</option><option>Classiche</option></select><button class="btn" id="resetModelFilters" type="button">AZZERA FILTRI</button></div><div class="catalog-status"><span aria-live="polite" id="modelCount"></span><span>Seleziona “APRI SCHEDA” per i dati tecnici</span></div><div class="catalog-status"><span id="techCoverage"></span><span>Le schede aggregate non equivalgono a una singola variante omologata</span></div><div class="grid" id="modelGrid"></div></section>
+<section class="page hidden" id="generations"><div class="eyebrow">BMW GENERATION ARCHIVE</div><h2>Tutte le famiglie e generazioni</h2><div class="toolbar"><input id="genSearch" placeholder="Cerca serie, codice telaio o modello..."/><select id="genFamily"><option value="">Tutte le famiglie</option></select></div><div class="tablewrap"><table><thead><tr><th>Famiglia</th><th>Generazione / codice</th><th>Periodo</th><th>Modelli e varianti</th></tr></thead><tbody id="generationRows"></tbody></table></div><h2 style="margin-top:28px">Dossier storico e tecnico · tutte le famiglie BMW</h2><p class="muted">Dossier per famiglia: architetture, motori, carrozzerie, trasformazioni e differenze tra mercati. Gli anni possono sovrapporsi per carrozzeria e mercato.</p><div class="grid" id="generationDossiers"></div><p class="muted">Indice generale ricostruito dal materiale raccolto. Date e disponibilità possono variare in base al mercato.</p></section>
 <section class="page hidden" id="variants"><div class="eyebrow">BMW POWERTRAIN DATABASE</div><h2>Versioni e motorizzazioni</h2><p class="muted">Archivio tecnico esteso: motore, cilindrata, potenza, coppia e schema di trazione. I valori sono indicativi e possono cambiare per anno, mercato, omologazione e aggiornamento.</p><div class="toolbar"><input id="variantSearch" placeholder="Cerca modello, telaio, motore o potenza..."/><select id="variantFamily"><option value="">Tutte le famiglie</option></select></div><p aria-live="polite" class="muted" id="variantStatus"></p><div class="tablewrap"><table><thead><tr><th>Famiglia</th><th>Generazione</th><th>Versione</th><th>Motore</th><th>Cilindrata</th><th>Potenza</th><th>Coppia</th><th>Trazione</th></tr></thead><tbody id="variantRows"></tbody></table></div><p class="muted">Nota editoriale: prima base dati strutturata. Le varianti regionali e le differenze di anno modello saranno ulteriormente dettagliate e verificate nelle prossime revisioni.</p></section>
 <section class="page hidden" id="engines"><div class="eyebrow">POWERTRAIN ARCHIVE</div><h2>Motori BMW</h2><p class="muted">Una prima selezione di famiglie motoristiche. Le potenze dipendono dalla specifica applicazione.</p><div class="tablewrap"><table><thead><tr><th>Famiglia</th><th>Architettura</th><th>Cilindrata</th><th>Alimentazione</th><th>Applicazioni indicative</th></tr></thead><tbody id="engineRows"></tbody></table></div>
 <h2 style="margin-top:28px">Atlante tecnico dei propulsori</h2>
@@ -509,9 +527,18 @@ body{background:#050505;color:#f1eee9}
 <div class="grid" id="componentGrid"></div>
 <div class="notice" style="margin-top:14px"><b>Sicurezza alta tensione:</b> le schede descrivono principi e architetture. Diagnosi, disconnessione e riparazione di componenti HV e batterie devono essere eseguite esclusivamente da personale qualificato, seguendo procedure e attrezzature specifiche BMW.</div><div class="notice" style="margin-top:12px"><b>Nota sulle trasmissioni:</b> ZF 8HP, DCT, cambi manuali e ripartitori xDrive hanno varianti differenti per coppia ammessa, rapporti, software e lubrificante. Identificare sempre il codice esatto del gruppo prima di usare dati o procedure di manutenzione.</div><div class="notice">Nota tecnica: le soluzioni cambiano tra modello, generazione, allestimento e mercato. Le schede descrivono il principio ingegneristico; l'applicazione su una specifica BMW sarà indicata nella relativa scheda modello quando verificata.</div>
 </section>
-<section class="page hidden" id="xMAtlas"><div class="top"><div><div class="eyebrow">BMW ATLAS / V14.0</div><h2>BMW X &amp; BMW M · ARCHIVIO COMPLETO</h2><p class="muted">Dossier per famiglia, generazione, architettura e motorizzazioni. Apri una scheda per consultare dati e galleria.</p></div></div><div class="v14-atlas-grid"><article class="v14-family"><div class="eyebrow">01 / SAV &amp; SAC</div><h3>BMW X FAMILY</h3><p>X1 · X2 · X3 · X4 · X5 · X6 · X7 · XM</p><p class="muted">Dalle origini della X5 alla gamma compatta, elettrificata e di lusso. Confronto tra architetture longitudinali e trasversali, SAV e SAC.</p><button class="btn primary" onclick="showFamily('SUV X')">ESPLORA MODELLI X →</button></article><article class="v14-family v14-m-family"><div class="eyebrow">02 / MOTORSPORT DNA</div><h3>BMW M</h3><p>M1 · M2 · M3 · M4 · M5 · M6 · M8 · X M</p><p class="muted">Dalle omologazioni turismo alle M Hybrid moderne. Distinzione tra BMW M High Performance e M Performance.</p><button class="btn primary" onclick="showFamily('BMW M')">ESPLORA MODELLI M →</button></article></div><div class="panel" style="margin-top:18px"><h3>Guida alla classificazione BMW</h3><div class="specs"><div class="spec"><small>BMW M High Performance</small><b>M2, M3, M4, M5, M8, X3 M, X4 M, X5 M, X6 M, XM</b></div><div class="spec"><small>M Performance</small><b>M135i, M240i, M340i, M440i, M550i, X1 M35i, X3 M50, X5 M60i</b></div><div class="spec"><small>Pacchetto M Sport</small><b>Allestimento estetico/dinamico, non trasforma il modello in una BMW M</b></div><div class="spec"><small>BMW M Hybrid</small><b>Powertrain ibridi ad alte prestazioni, con architetture specifiche per modello</b></div></div><div class="notice">Le sigle M40i, M50i, M60i e M Sport non indicano automaticamente una BMW M High Performance. La classificazione segue la gamma BMW M e la documentazione del costruttore.</div></div></section>
-<section class="page hidden" id="detail"><button class="btn" onclick="showPage('models')" type="button">← Torna ai risultati</button><div id="detailContent"></div></section>
-<div class="footer">AUTOTECH ATLAS · GLOBAL EDITION · RELEASE 6.3 · ARCHIVIO BMW ATTIVO · MULTI-BRAND IN ESPANSIONE.</div>
+<section class="page hidden" id="bmwComplete">
+<div class="eyebrow">BMW BRAND ARCHIVE · COMPLETE EDITION</div><h2>BMW · ENCICLOPEDIA DEL MARCHIO</h2>
+<p class="muted">Indice generale delle famiglie BMW: berline, coupé, cabriolet, Touring, roadster, SAV/SAC, modelli elettrici, Motorsport e modelli storici. Gli anni indicano intervalli generali di produzione; carrozzerie, motori e disponibilità variano per mercato.</p>
+<div class="stats" style="margin:20px 0"><div class="stat"><b>01</b><small>Marchio attivo</small></div><div class="stat"><b>7</b><small>Macro-famiglie</small></div><div class="stat"><b>100+</b><small>Linee generazionali indicizzate</small></div><div class="stat"><b>ENGINEERING</b><small>Atlante tecnico integrato</small></div></div>
+<div class="toolbar"><input id="bmwFamilySearch" placeholder="Cerca famiglia, modello o codice telaio…"/><select id="bmwFamilyFilter"><option value="">Tutte le famiglie</option><option>Serie</option><option>Serie 2</option><option>BMW M</option><option>SUV X</option><option>Roadster Z</option><option>BMW i</option><option>Classiche</option></select></div>
+<div class="grid" id="bmwFamilyCards"></div>
+<div class="panel" style="margin-top:20px"><h3>Metodo di lettura delle schede</h3><div class="specs"><div class="spec"><small>Generazione</small><b>Codice carrozzeria, anni, varianti e restyling</b></div><div class="spec"><small>Powertrain</small><b>Famiglia motore, codice, cilindrata, sovralimentazione e applicazioni</b></div><div class="spec"><small>Engineering</small><b>Trasmissione, telaio, freni, elettronica e sistemi di controllo</b></div><div class="spec"><small>Fonti e precisione</small><b>Dati separati per anno, mercato e variante; valori non verificati marcati come tali</b></div></div><div class="notice">La copertura storica è organizzata per famiglie e generazioni. Non tutte le combinazioni di motore, carrozzeria e mercato sono ancora schede autonome: le varianti non verificate non vengono presentate come dati certi.</div></div>
+</section>
+
+<section class="page hidden" id="xMAtlas"><div class="top"><div><div class="eyebrow">BMW ATLAS / V15.0</div><h2>BMW X &amp; BMW M · ARCHIVIO COMPLETO</h2><p class="muted">Dossier per famiglia, generazione, architettura e motorizzazioni. Apri una scheda per consultare dati e galleria.</p></div></div><div class="v14-atlas-grid"><article class="v14-family"><div class="eyebrow">01 / SAV &amp; SAC</div><h3>BMW X FAMILY</h3><p>X1 · X2 · X3 · X4 · X5 · X6 · X7 · XM</p><p class="muted">Dalle origini della X5 alla gamma compatta, elettrificata e di lusso. Confronto tra architetture longitudinali e trasversali, SAV e SAC.</p><button class="btn primary" onclick="showFamily('SUV X')">ESPLORA MODELLI X →</button></article><article class="v14-family v14-m-family"><div class="eyebrow">02 / MOTORSPORT DNA</div><h3>BMW M</h3><p>M1 · M2 · M3 · M4 · M5 · M6 · M8 · X M</p><p class="muted">Dalle omologazioni turismo alle M Hybrid moderne. Distinzione tra BMW M High Performance e M Performance.</p><button class="btn primary" onclick="showFamily('BMW M')">ESPLORA MODELLI M →</button></article></div><div class="panel" style="margin-top:18px"><h3>Guida alla classificazione BMW</h3><div class="specs"><div class="spec"><small>BMW M High Performance</small><b>M2, M3, M4, M5, M8, X3 M, X4 M, X5 M, X6 M, XM</b></div><div class="spec"><small>M Performance</small><b>M135i, M240i, M340i, M440i, M550i, X1 M35i, X3 M50, X5 M60i</b></div><div class="spec"><small>Pacchetto M Sport</small><b>Allestimento estetico/dinamico, non trasforma il modello in una BMW M</b></div><div class="spec"><small>BMW M Hybrid</small><b>Powertrain ibridi ad alte prestazioni, con architetture specifiche per modello</b></div></div><div class="notice">Le sigle M40i, M50i, M60i e M Sport non indicano automaticamente una BMW M High Performance. La classificazione segue la gamma BMW M e la documentazione del costruttore.</div></div></section>
+<section class="page hidden" id="detail"><button class="btn" onclick="goBack()" type="button">← Torna alla schermata precedente</button><div id="detailContent"></div></section>
+<div class="footer">AUTOTECH ATLAS · GLOBAL EDITION · BMW COMPLETE EDITION V15.0 · ARCHIVIO BMW IN ESPANSIONE CONTROLLATA.</div>
 </main>
 </div>
 <script>
@@ -1017,6 +1044,764 @@ const v14NewCars = [{"id":"x1_e84","name":"X1 E84","family":"SUV X","generation"
 const v14ExistingIds = new Set(cars.map(c=>String(c.id)));
 const v14ExistingNames = new Set(cars.map(c=>String(c.name||'').trim().toLowerCase()));
 cars.push(...v14NewCars.filter(c=>!v14ExistingIds.has(String(c.id))&&!v14ExistingNames.has(String(c.name||'').trim().toLowerCase())));
+const v15BMWCars = [
+  {
+    "id": "serie5_e12",
+    "name": "BMW 520 / Serie 5 E12",
+    "family": "Serie",
+    "generation": "E12",
+    "years": "1972–1981",
+    "engine": "M10 / M20 / M30",
+    "layout": "Benzina 4/6 cilindri in linea",
+    "cc": 1990,
+    "hp": 130,
+    "nm": 181,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Berlina",
+    "desc": "Prima generazione della Serie 5 e debutto della nomenclatura a tre cifre. Gamma e potenze cambiano per anno e mercato."
+  },
+  {
+    "id": "serie5_e28",
+    "name": "BMW Serie 5 E28",
+    "family": "Serie",
+    "generation": "E28",
+    "years": "1981–1988",
+    "engine": "M20 / M30 / M21",
+    "layout": "Benzina 4/6 cilindri; diesel 6 cilindri",
+    "cc": 1990,
+    "hp": 184,
+    "nm": 240,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Berlina",
+    "desc": "Seconda generazione; introduce la prima M5 di serie e sviluppa la gamma diesel."
+  },
+  {
+    "id": "serie5_e34",
+    "name": "BMW Serie 5 E34",
+    "family": "Serie",
+    "generation": "E34",
+    "years": "1987–1996",
+    "engine": "M20 / M30 / M50 / M60 / M51 / M21",
+    "layout": "4/6 cilindri; V8; diesel",
+    "cc": 2494,
+    "hp": 192,
+    "nm": 250,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Berlina / Touring",
+    "desc": "Terza generazione con Touring, sei cilindri moderni e V8 su versioni selezionate."
+  },
+  {
+    "id": "serie5_e39",
+    "name": "BMW Serie 5 E39",
+    "family": "Serie",
+    "generation": "E39",
+    "years": "1995–2004",
+    "engine": "M52 / M54 / M62 / M57",
+    "layout": "6 cilindri; V8; diesel",
+    "cc": 2793,
+    "hp": 193,
+    "nm": 280,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Berlina / Touring",
+    "desc": "Quarta generazione nota per equilibrio dinamico e scocca evoluta; motori e dotazioni differiscono per anno."
+  },
+  {
+    "id": "serie5_e60",
+    "name": "BMW Serie 5 E60/E61",
+    "family": "Serie",
+    "generation": "E60/E61",
+    "years": "2003–2010",
+    "engine": "N52 / N53 / N54 / N62 / S85 / M57 / N47",
+    "layout": "6 cilindri; V8; V10; diesel",
+    "cc": 2996,
+    "hp": 258,
+    "nm": 300,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore / xDrive",
+    "body": "Berlina / Touring",
+    "desc": "Quinta generazione con architettura elettronica più complessa, iDrive e ampia varietà di motori."
+  },
+  {
+    "id": "serie5_f10",
+    "name": "BMW Serie 5 F10/F11/F07",
+    "family": "Serie",
+    "generation": "F10/F11/F07",
+    "years": "2009–2017",
+    "engine": "N20 / N55 / N63 / N47 / N57 / B47 / B57",
+    "layout": "4/6 cilindri; V8; diesel",
+    "cc": 1997,
+    "hp": 184,
+    "nm": 270,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore / xDrive",
+    "body": "Berlina / Touring / Gran Turismo",
+    "desc": "Sesta generazione su architettura modulare longitudinale; la Gran Turismo F07 ha carrozzeria distinta."
+  },
+  {
+    "id": "serie5_g30",
+    "name": "BMW Serie 5 G30/G31",
+    "family": "Serie",
+    "generation": "G30/G31",
+    "years": "2016–2023",
+    "engine": "B48 / B58 / B47 / B57 / N63",
+    "layout": "4/6 cilindri; V8; PHEV",
+    "cc": 1998,
+    "hp": 184,
+    "nm": 290,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore / xDrive",
+    "body": "Berlina / Touring",
+    "desc": "Settima generazione con piattaforma CLAR, mild hybrid e plug-in hybrid su versioni selezionate."
+  },
+  {
+    "id": "serie5_g60",
+    "name": "BMW Serie 5 G60/G61",
+    "family": "Serie",
+    "generation": "G60/G61",
+    "years": "2023–oggi",
+    "engine": "B48 / B58 / B47 / B57 / S68 + elettrico",
+    "layout": "Benzina, diesel, PHEV e BEV i5",
+    "cc": 1998,
+    "hp": 208,
+    "nm": 330,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore / xDrive",
+    "body": "Berlina / Touring",
+    "desc": "Ottava generazione con i5 elettrica, interfaccia digitale evoluta e motorizzazioni elettrificate."
+  },
+  {
+    "id": "serie6_e24",
+    "name": "BMW Serie 6 E24",
+    "family": "Serie",
+    "generation": "E24",
+    "years": "1976–1989",
+    "engine": "M30 / M88 / S38",
+    "layout": "6 cilindri in linea",
+    "cc": 3430,
+    "hp": 218,
+    "nm": 310,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Coupé",
+    "desc": "Prima Serie 6: coupé gran turismo con sei cilindri, culminata nelle M635CSi/M6."
+  },
+  {
+    "id": "serie6_e63",
+    "name": "BMW Serie 6 E63/E64",
+    "family": "Serie",
+    "generation": "E63/E64",
+    "years": "2003–2010",
+    "engine": "N52 / N62 / S85",
+    "layout": "6 cilindri; V8; V10",
+    "cc": 4398,
+    "hp": 333,
+    "nm": 450,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Coupé / Cabrio",
+    "desc": "Ritorno della Serie 6 con motori sei cilindri e V8; M6 adotta il V10 S85."
+  },
+  {
+    "id": "serie6_f12",
+    "name": "BMW Serie 6 F06/F12/F13",
+    "family": "Serie",
+    "generation": "F06/F12/F13",
+    "years": "2011–2018",
+    "engine": "N55 / N63 / N57 / B57",
+    "layout": "6 cilindri; V8; diesel",
+    "cc": 2979,
+    "hp": 320,
+    "nm": 450,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore / xDrive",
+    "body": "Gran Coupé / Cabrio / Coupé",
+    "desc": "Tre carrozzerie: Coupé, Cabrio e Gran Coupé a quattro porte."
+  },
+  {
+    "id": "serie6_g32",
+    "name": "BMW Serie 6 GT G32",
+    "family": "Serie",
+    "generation": "G32",
+    "years": "2017–2023",
+    "engine": "B48 / B58 / B47 / B57",
+    "layout": "4/6 cilindri benzina e diesel",
+    "cc": 1998,
+    "hp": 190,
+    "nm": 400,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore / xDrive",
+    "body": "Gran Turismo",
+    "desc": "Gran Turismo a cinque porte, erede concettuale della Serie 5 GT e non coupé tradizionale."
+  },
+  {
+    "id": "serie7_e23",
+    "name": "BMW Serie 7 E23",
+    "family": "Serie",
+    "generation": "E23",
+    "years": "1977–1986",
+    "engine": "M30",
+    "layout": "6 cilindri in linea",
+    "cc": 2788,
+    "hp": 184,
+    "nm": 240,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Berlina lusso",
+    "desc": "Prima generazione dell'ammiraglia Serie 7; motori sei cilindri e introduzione progressiva di elettronica di bordo."
+  },
+  {
+    "id": "serie7_e32",
+    "name": "BMW Serie 7 E32",
+    "family": "Serie",
+    "generation": "E32",
+    "years": "1986–1994",
+    "engine": "M30 / M70 / M60",
+    "layout": "6 cilindri; V8; V12",
+    "cc": 2997,
+    "hp": 197,
+    "nm": 280,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Berlina / passo lungo",
+    "desc": "Seconda generazione: introduce V12 nella gamma BMW moderna e versioni a passo lungo."
+  },
+  {
+    "id": "serie7_e38",
+    "name": "BMW Serie 7 E38",
+    "family": "Serie",
+    "generation": "E38",
+    "years": "1994–2001",
+    "engine": "M52 / M60 / M62 / M67 / M73",
+    "layout": "6 cilindri; V8; V12; diesel",
+    "cc": 2793,
+    "hp": 193,
+    "nm": 280,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Berlina / passo lungo",
+    "desc": "Terza generazione, celebre per proporzioni classiche e gamma da sei cilindri a V12."
+  },
+  {
+    "id": "serie7_e65",
+    "name": "BMW Serie 7 E65/E66",
+    "family": "Serie",
+    "generation": "E65/E66",
+    "years": "2001–2008",
+    "engine": "N62 / N73 / M57",
+    "layout": "V8; V12; diesel",
+    "cc": null,
+    "hp": null,
+    "nm": null,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Berlina / passo lungo",
+    "desc": "Quarta generazione con iDrive e architettura elettronica profondamente rinnovata."
+  },
+  {
+    "id": "serie7_f01",
+    "name": "BMW Serie 7 F01/F02",
+    "family": "Serie",
+    "generation": "F01/F02",
+    "years": "2008–2015",
+    "engine": "N55 / N63 / N74 / N57",
+    "layout": "6 cilindri; V8; V12; diesel",
+    "cc": 2979,
+    "hp": 320,
+    "nm": 450,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore / xDrive",
+    "body": "Berlina / passo lungo",
+    "desc": "Quinta generazione con ampia elettrificazione ausiliaria e sistemi di assistenza evoluti."
+  },
+  {
+    "id": "serie7_g11",
+    "name": "BMW Serie 7 G11/G12",
+    "family": "Serie",
+    "generation": "G11/G12",
+    "years": "2015–2022",
+    "engine": "B48 / B58 / N63 / B57 / B47",
+    "layout": "4/6 cilindri; V8; diesel; PHEV",
+    "cc": 1998,
+    "hp": 265,
+    "nm": 400,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore / xDrive",
+    "body": "Berlina / passo lungo",
+    "desc": "Sesta generazione con struttura Carbon Core, PHEV e aggiornamenti di guida assistita."
+  },
+  {
+    "id": "serie7_g70",
+    "name": "BMW Serie 7 G70",
+    "family": "Serie",
+    "generation": "G70",
+    "years": "2022–oggi",
+    "engine": "B58 / S68 / diesel selezionati / elettrico i7",
+    "layout": "6 cilindri; V8 PHEV; BEV",
+    "cc": 2998,
+    "hp": 381,
+    "nm": 520,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore / xDrive",
+    "body": "Berlina lusso",
+    "desc": "Settima generazione con i7 elettrica, display Theatre Screen e diverse architetture di propulsione."
+  },
+  {
+    "id": "serie8_e31",
+    "name": "BMW Serie 8 E31",
+    "family": "Serie",
+    "generation": "E31",
+    "years": "1989–1999",
+    "engine": "M60 / M70 / S70",
+    "layout": "V8 / V12",
+    "cc": 4988,
+    "hp": 300,
+    "nm": 450,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Coupé",
+    "desc": "Gran turismo con V8 e V12, struttura e dotazioni tecnologiche avanzate per l'epoca."
+  },
+  {
+    "id": "serie8_g14",
+    "name": "BMW Serie 8 G14/G15/G16",
+    "family": "Serie",
+    "generation": "G14/G15/G16",
+    "years": "2018–2025 circa",
+    "engine": "B58 / N63 / S63 / B57",
+    "layout": "6 cilindri; V8; diesel",
+    "cc": 2998,
+    "hp": 340,
+    "nm": 500,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore / xDrive",
+    "body": "Cabrio / Coupé / Gran Coupé",
+    "desc": "Ritorno della Serie 8 in tre carrozzerie; M8 deriva dalla stessa famiglia ma ha componenti M specifici."
+  },
+  {
+    "id": "z1_e30",
+    "name": "BMW Z1",
+    "family": "Roadster Z",
+    "generation": "Z1",
+    "years": "1989–1991",
+    "engine": "M20B25",
+    "layout": "6 cilindri in linea",
+    "cc": 2494,
+    "hp": 170,
+    "nm": 222,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Roadster",
+    "desc": "Roadster sperimentale con porte scorrevoli verticalmente nella soglia e pannelli carrozzeria sostituibili."
+  },
+  {
+    "id": "z3_e36",
+    "name": "BMW Z3",
+    "family": "Roadster Z",
+    "generation": "E36/7-E36/8",
+    "years": "1995–2002",
+    "engine": "M43 / M44 / M52 / M54 / S50 / S54",
+    "layout": "4/6 cilindri",
+    "cc": 2793,
+    "hp": 193,
+    "nm": 280,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Roadster / Coupé",
+    "desc": "Roadster compatta prodotta a Spartanburg; gamma da quattro cilindri a sei cilindri e versioni M."
+  },
+  {
+    "id": "z4_e85",
+    "name": "BMW Z4 E85/E86",
+    "family": "Roadster Z",
+    "generation": "E85/E86",
+    "years": "2002–2008",
+    "engine": "M54 / N52 / S54",
+    "layout": "6 cilindri in linea",
+    "cc": 2996,
+    "hp": 265,
+    "nm": 315,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Roadster / Coupé",
+    "desc": "Prima Z4 con roadster E85 e coupé E86; la Z4 M utilizza il sei cilindri S54."
+  },
+  {
+    "id": "z4_e89",
+    "name": "BMW Z4 E89",
+    "family": "Roadster Z",
+    "generation": "E89",
+    "years": "2009–2016",
+    "engine": "N20 / N52 / N54 / N55",
+    "layout": "4/6 cilindri turbo e aspirati",
+    "cc": 1997,
+    "hp": 245,
+    "nm": 350,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Roadster hard-top retrattile",
+    "desc": "Seconda generazione con tetto rigido retrattile e motori turbo a quattro e sei cilindri."
+  },
+  {
+    "id": "z4_g29",
+    "name": "BMW Z4 G29",
+    "family": "Roadster Z",
+    "generation": "G29",
+    "years": "2018–oggi",
+    "engine": "B48 / B58",
+    "layout": "4/6 cilindri turbo",
+    "cc": 1998,
+    "hp": 258,
+    "nm": 400,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Roadster soft-top",
+    "desc": "Terza generazione con capote in tela; la M40i adotta il sei cilindri B58."
+  },
+  {
+    "id": "i3_i01",
+    "name": "BMW i3 I01",
+    "family": "BMW i",
+    "generation": "I01",
+    "years": "2013–2022",
+    "engine": "Motore elettrico; REx bicilindrico opzionale",
+    "layout": "BEV / range extender",
+    "cc": 0,
+    "hp": 170,
+    "nm": 250,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Hatchback elettrica",
+    "desc": "Vettura elettrica con cellula passeggeri in CFRP e struttura LifeDrive; range extender disponibile in mercati selezionati."
+  },
+  {
+    "id": "i8_i12",
+    "name": "BMW i8 I12/I15",
+    "family": "BMW i",
+    "generation": "I12/I15",
+    "years": "2014–2020",
+    "engine": "B38 + motore elettrico",
+    "layout": "Plug-in hybrid 3 cilindri",
+    "cc": 1499,
+    "hp": 374,
+    "nm": 570,
+    "zero": null,
+    "weight": null,
+    "drive": "Integrale ibrida",
+    "body": "Coupé / Roadster",
+    "desc": "Sportiva plug-in hybrid con tre cilindri turbo posteriore e motore elettrico anteriore."
+  },
+  {
+    "id": "ix_i20",
+    "name": "BMW iX I20",
+    "family": "BMW i",
+    "generation": "I20",
+    "years": "2021–oggi",
+    "engine": "Dual motor elettrico",
+    "layout": "BEV dual motor",
+    "cc": 0,
+    "hp": 326,
+    "nm": 630,
+    "zero": null,
+    "weight": null,
+    "drive": "Integrale elettrica",
+    "body": "SAV elettrico",
+    "desc": "SAV elettrico dedicato con struttura eDrive, batteria ad alta tensione e gestione termica integrata."
+  },
+  {
+    "id": "i4_g26",
+    "name": "BMW i4 G26",
+    "family": "BMW i",
+    "generation": "G26",
+    "years": "2021–oggi",
+    "engine": "Motore elettrico singolo o dual motor",
+    "layout": "BEV",
+    "cc": 0,
+    "hp": 340,
+    "nm": 430,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore / integrale elettrica",
+    "body": "Gran Coupé",
+    "desc": "Gran Coupé elettrica derivata dalla famiglia Serie 4; versioni eDrive e M Performance i4 M50."
+  },
+  {
+    "id": "i5_g60",
+    "name": "BMW i5 G60/G61",
+    "family": "BMW i",
+    "generation": "G60/G61",
+    "years": "2023–oggi",
+    "engine": "Motore elettrico singolo o dual motor",
+    "layout": "BEV",
+    "cc": 0,
+    "hp": 340,
+    "nm": 400,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore / integrale elettrica",
+    "body": "Berlina / Touring",
+    "desc": "Versione elettrica della famiglia Serie 5, con i5 M60 a doppio motore e trazione integrale."
+  },
+  {
+    "id": "i7_g70",
+    "name": "BMW i7 G70",
+    "family": "BMW i",
+    "generation": "G70",
+    "years": "2022–oggi",
+    "engine": "Dual motor elettrico",
+    "layout": "BEV",
+    "cc": 0,
+    "hp": 455,
+    "nm": 650,
+    "zero": null,
+    "weight": null,
+    "drive": "Integrale elettrica",
+    "body": "Berlina lusso",
+    "desc": "Ammiraglia elettrica della famiglia Serie 7, con batteria ad alta tensione e architettura eDrive."
+  },
+  {
+    "id": "classic_1500",
+    "name": "BMW 1500 Neue Klasse",
+    "family": "Classiche",
+    "generation": "115",
+    "years": "1962–1966",
+    "engine": "M10",
+    "layout": "4 cilindri benzina",
+    "cc": 1499,
+    "hp": 80,
+    "nm": 118,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Berlina",
+    "desc": "Modello cardine della Neue Klasse, alla base della rinascita commerciale BMW degli anni Sessanta."
+  },
+  {
+    "id": "classic_2002",
+    "name": "BMW 2002 / 2002 tii / Turbo",
+    "family": "Classiche",
+    "generation": "02",
+    "years": "1968–1975",
+    "engine": "M10",
+    "layout": "4 cilindri benzina",
+    "cc": 1990,
+    "hp": 130,
+    "nm": 178,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Berlina 2 porte",
+    "desc": "Famiglia 02 che anticipa la formula della Serie 3; la 2002 Turbo è una delle prime sportive turbo di serie europee."
+  }
+];
+const v15ExistingIds = new Set(cars.map(c=>String(c.id)));
+const v15ExistingNames = new Set(cars.map(c=>String(c.name||'').trim().toLowerCase()));
+cars.push(...v15BMWCars.filter(c=>!v15ExistingIds.has(String(c.id))&&!v15ExistingNames.has(String(c.name||'').trim().toLowerCase())));
+const v15bBMWCars = [
+  {
+    "id": "serie2_f22",
+    "name": "BMW Serie 2 Coupé F22/F23",
+    "family": "Serie 2",
+    "generation": "F22/F23",
+    "years": "2013–2021",
+    "engine": "N20 / N55 / B48 / B58 / B47",
+    "layout": "4/6 cilindri longitudinali",
+    "cc": 1997,
+    "hp": 184,
+    "nm": 270,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore / xDrive selezionato",
+    "body": "Coupé / Cabrio",
+    "desc": "Prima Serie 2 Coupé e Cabrio, con architettura longitudinale derivata dalla Serie 1 F20. La M2 F87 è trattata separatamente."
+  },
+  {
+    "id": "serie2_f44",
+    "name": "BMW Serie 2 Gran Coupé F44",
+    "family": "Serie 2",
+    "generation": "F44",
+    "years": "2019–2024",
+    "engine": "B38 / B48 / B47",
+    "layout": "3/4 cilindri trasversali",
+    "cc": 1499,
+    "hp": 140,
+    "nm": 220,
+    "zero": null,
+    "weight": null,
+    "drive": "Anteriore / xDrive",
+    "body": "Gran Coupé 4 porte",
+    "desc": "Gran Coupé compatta su architettura UKL/FAAR trasversale, distinta dalla Serie 2 Coupé F22."
+  },
+  {
+    "id": "serie2_u06",
+    "name": "BMW Serie 2 Active Tourer U06",
+    "family": "Serie 2",
+    "generation": "U06",
+    "years": "2021–oggi",
+    "engine": "B38 / B48 / B47 + elettrico",
+    "layout": "3/4 cilindri trasversali; PHEV",
+    "cc": 1499,
+    "hp": 136,
+    "nm": 230,
+    "zero": null,
+    "weight": null,
+    "drive": "Anteriore / xDrive",
+    "body": "Active Tourer",
+    "desc": "Seconda generazione Active Tourer con motore trasversale, PHEV e sistemi mild hybrid secondo versione."
+  },
+  {
+    "id": "serie2_g42",
+    "name": "BMW Serie 2 Coupé G42",
+    "family": "Serie 2",
+    "generation": "G42",
+    "years": "2021–oggi",
+    "engine": "B48 / B58 / B47",
+    "layout": "4/6 cilindri longitudinali",
+    "cc": 2998,
+    "hp": 374,
+    "nm": 500,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore / xDrive selezionato",
+    "body": "Coupé",
+    "desc": "Coupé a trazione posteriore su piattaforma longitudinale; M240i M Performance e M2 G87 sono modelli distinti."
+  },
+  {
+    "id": "serie2_f74",
+    "name": "BMW Serie 2 Gran Coupé F74",
+    "family": "Serie 2",
+    "generation": "F74",
+    "years": "2024–oggi",
+    "engine": "B38 / B48 / diesel secondo mercato",
+    "layout": "3/4 cilindri trasversali",
+    "cc": 1499,
+    "hp": 156,
+    "nm": 230,
+    "zero": null,
+    "weight": null,
+    "drive": "Anteriore / xDrive",
+    "body": "Gran Coupé 4 porte",
+    "desc": "Nuova generazione Gran Coupé su architettura trasversale, con motori e allestimenti variabili per mercato."
+  },
+  {
+    "id": "z8_e52",
+    "name": "BMW Z8 E52",
+    "family": "Roadster Z",
+    "generation": "E52",
+    "years": "2000–2003",
+    "engine": "S62B50",
+    "layout": "V8 aspirato anteriore",
+    "cc": 4941,
+    "hp": 400,
+    "nm": 500,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Roadster",
+    "desc": "Roadster di produzione limitata con V8 S62 derivato dalla M5 E39, struttura in alluminio e design ispirato alla BMW 507."
+  },
+  {
+    "id": "classic_328",
+    "name": "BMW 328 Roadster",
+    "family": "Classiche",
+    "generation": "Typ 328",
+    "years": "1936–1940",
+    "engine": "M328",
+    "layout": "6 cilindri in linea aspirato",
+    "cc": 1971,
+    "hp": 80,
+    "nm": 126,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Roadster",
+    "desc": "Sportiva anteguerra con sei cilindri da due litri, telaio leggero e importanti successi nelle competizioni."
+  },
+  {
+    "id": "classic_507",
+    "name": "BMW 507",
+    "family": "Classiche",
+    "generation": "Typ 507",
+    "years": "1956–1959",
+    "engine": "OHV V8",
+    "layout": "V8 aspirato",
+    "cc": 3168,
+    "hp": 150,
+    "nm": 225,
+    "zero": null,
+    "weight": null,
+    "drive": "Posteriore",
+    "body": "Roadster",
+    "desc": "Roadster di lusso con V8 in lega leggera, produzione molto limitata e ruolo iconico nella storia BMW."
+  },
+  {
+    "id": "ix1_u11",
+    "name": "BMW iX1 U11",
+    "family": "BMW i",
+    "generation": "U11",
+    "years": "2022–oggi",
+    "engine": "Motore elettrico singolo o dual motor",
+    "layout": "BEV",
+    "cc": 0,
+    "hp": 204,
+    "nm": 250,
+    "zero": null,
+    "weight": null,
+    "drive": "Anteriore / integrale elettrica",
+    "body": "SAV compatto elettrico",
+    "desc": "Versione elettrica della X1 U11, con varianti eDrive20 e xDrive30 secondo anno e mercato."
+  },
+  {
+    "id": "ix2_u10",
+    "name": "BMW iX2 U10",
+    "family": "BMW i",
+    "generation": "U10",
+    "years": "2023–oggi",
+    "engine": "Motore elettrico singolo o dual motor",
+    "layout": "BEV",
+    "cc": 0,
+    "hp": 204,
+    "nm": 250,
+    "zero": null,
+    "weight": null,
+    "drive": "Anteriore / integrale elettrica",
+    "body": "SAC compatto elettrico",
+    "desc": "Versione elettrica della X2 U10, con architettura eDrive e varianti secondo mercato."
+  }
+];
+const v15bIds=new Set(cars.map(c=>String(c.id)));const v15bNames=new Set(cars.map(c=>String(c.name||'').trim().toLowerCase()));cars.push(...v15bBMWCars.filter(c=>!v15bIds.has(String(c.id))&&!v15bNames.has(String(c.name||'').trim().toLowerCase())));
+
+
 
 const generationCatalog = [
 ["Serie 1","E8x","2004–2013","E81, E82, E87, E88 · 1M Coupé"],
@@ -1198,9 +1983,27 @@ const families=[
 ["BMW M","Modelli M, M Performance e serie speciali","BMW M"],
 ["BMW i","i3, i4, i5, i7, iX e iX1","BMW i"]
 ];
-const sectionLabels={xMAtlas:'FAMIGLIE X & M',home:'OVERVIEW',brands:'TUTTI I MARCHI',models:'CATALOGO / MODELLI',generations:'CATALOGO / GENERAZIONI',variants:'CATALOGO / VERSIONI TECNICHE',engines:'POWERTRAIN / ARCHIVIO MOTORI',engineTech:'POWERTRAIN / TECNOLOGIE MOTORE',engineCodes:'POWERTRAIN / CODICI MOTORE',auditApplications:'POWERTRAIN / VERIFICA APPLICAZIONI',auditQuality:'DATABASE / CONTROLLO QUALITÀ',regional:'CATALOGO / USA & GIAPPONE',markets:'CATALOGO / MERCATI',specials:'CATALOGO / SPECIALI & ALPINA',transmissions:'POWERTRAIN / TRASMISSIONI',platforms:'ENGINEERING / PIATTAFORME',chassis:'ENGINEERING / TELAIO & FRENI',electronics:'ENGINEERING / ELETTRONICA',compare:'STRUMENTI / CONFRONTO',rankings:'STRUMENTI / CLASSIFICHE',tech:'ENGINEERING / TECNOLOGIE',components:'ENGINEERING / COMPONENTI',detail:'SCHEDA VETTURA'};
-function showPage(id){const target=document.getElementById(id);if(!target){console.warn('Pagina non trovata:',id);return;}document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));target.classList.remove('hidden');document.querySelectorAll('.atlas-nav button[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));const nav=document.querySelector('.atlas-nav');if(nav)nav.classList.remove('nav-open');const menuButton=document.querySelector('.mobile-menu');if(menuButton){menuButton.setAttribute('aria-expanded','false');menuButton.textContent='MENU +';}const crumb=document.getElementById('sectionCurrent');if(crumb)crumb.textContent=sectionLabels[id]||'AUTOTECH ATLAS';const strip=document.getElementById('sectionToolbar');if(strip)strip.classList.toggle('home-toolbar',id==='home');if(id==='models')renderModels();window.scrollTo({top:0,behavior:'auto'});}
+const sectionLabels={bmwComplete:'BMW / ARCHIVIO COMPLETO',xMAtlas:'FAMIGLIE X & M',home:'OVERVIEW',brands:'TUTTI I MARCHI',models:'CATALOGO / MODELLI',generations:'CATALOGO / GENERAZIONI',variants:'CATALOGO / VERSIONI TECNICHE',engines:'POWERTRAIN / ARCHIVIO MOTORI',engineTech:'POWERTRAIN / TECNOLOGIE MOTORE',engineCodes:'POWERTRAIN / CODICI MOTORE',auditApplications:'POWERTRAIN / VERIFICA APPLICAZIONI',auditQuality:'DATABASE / CONTROLLO QUALITÀ',regional:'CATALOGO / USA & GIAPPONE',markets:'CATALOGO / MERCATI',specials:'CATALOGO / SPECIALI & ALPINA',transmissions:'POWERTRAIN / TRASMISSIONI',platforms:'ENGINEERING / PIATTAFORME',chassis:'ENGINEERING / TELAIO & FRENI',electronics:'ENGINEERING / ELETTRONICA',compare:'STRUMENTI / CONFRONTO',rankings:'STRUMENTI / CLASSIFICHE',tech:'ENGINEERING / TECNOLOGIE',components:'ENGINEERING / COMPONENTI',detail:'SCHEDA VETTURA'};
+
+const bmwFamilyHub=[
+{family:"Serie",title:"Serie 1–8 · berline e GT",models:"Serie 1 · 2 · 3 · 4 · 5 · 6 · 7 · 8",years:"1950s–oggi",desc:"Dalle compatte a trazione posteriore alle ammiraglie, coupé, cabrio e Touring.",image:"https://cdn.auto.it/images/2023/05/24/160250395-664e89ca-6dfe-466f-8b8b-6d7a6f2d2c5d.jpg"},
+{family:"Serie 2",title:"Serie 2 · Coupé, Gran Coupé e Active Tourer",models:"F22 · F23 · F44 · F45 · F46 · G42 · U06 · F74",years:"2013–oggi",desc:"Due architetture diverse: Coupé longitudinale a trazione posteriore e Gran Coupé/Active Tourer trasversali.",image:"https://mediapool.bmwgroup.com/cache/P9/201602/P90213724/P90213724-bmw-m240i-coupe-f22-02-2016-2247px.jpg"},
+{family:"BMW M",title:"BMW M · High Performance",models:"M1 · M2 · M3 · M4 · M5 · M6 · M8 · X M",years:"1978–oggi",desc:"Motori, telai, differenziali, freni e versioni Motorsport. Separazione da M Performance e M Sport.",image:"https://cdn.bmwblog.com/wp-content/uploads/2021/04/The-BMW-M3-Six-generations-14.jpg"},
+{family:"SUV X",title:"BMW X · SAV e SAC",models:"X1 · X2 · X3 · X4 · X5 · X6 · X7 · XM",years:"1999–oggi",desc:"Architetture trasversali e longitudinali, xDrive, PHEV, mild hybrid e modelli M.",image:"https://mediapool.bmwgroup.com/cache/P9/202105/P90421931/P90421931-bmw-x5-bmw-x6-bmw-x7-bmw-ix-06-2021-2666px.jpg"},
+{family:"Roadster Z",title:"BMW Z · Roadster",models:"Z1 · Z3 · Z4 · Z8",years:"1989–oggi",desc:"Roadster e coupé sportive, dalle soluzioni sperimentali Z1 alle Z4 moderne.",image:"https://mediapool.bmwgroup.com/download/edown/pressclub/public?actEvent=zoomImage&dokNo=P0026687&filename=P0026687.JPG"},
+{family:"BMW i",title:"BMW i · Elettrico e ibrido",models:"i3 · i8 · iX · iX1 · iX2 · i4 · i5 · i7",years:"2013–oggi",desc:"Batterie, motori elettrici, inverter, riduttori, sistemi HV e architetture dedicate o derivate.",image:"https://mediapool.bmwgroup.com/cache/P9/201604/P90216955/P90216955-bmw-i3-94ah-bmw-i8-05-2016-2247px.jpg"},
+{family:"Classiche",title:"BMW Heritage · Neue Klasse e origini",models:"Dixi · 328 · 501/502 · Neue Klasse · 1500 · 02",years:"1928–1975",desc:"Le radici tecniche e industriali della BMW moderna, con modelli storici e antenati delle Serie.",image:"https://mediapool.bmwgroup.com/cache/P9/201707/P90268628/P90268628-the-bmw-7-series-edition-40-jahre-and-the-first-bmw-7-series-from-1977-07-2017-1996px.jpg"}
+];
+function renderBMWFamilyHub(){const q=normalizeSearch(document.getElementById('bmwFamilySearch')?.value||'');const f=document.getElementById('bmwFamilyFilter')?.value||'';const list=bmwFamilyHub.filter(x=>(!f||x.family===f)&&(!q||normalizeSearch([x.family,x.title,x.models,x.years,x.desc].join(' ')).includes(q)));document.getElementById('bmwFamilyCards').innerHTML=list.map(x=>`<article class="bmw-complete-card"><div class="family-photo" style="background-image:url('${x.image}')"></div><div class="family-body"><div class="meta">${x.years} · ${x.family}</div><h3>${x.title}</h3><p><b>${x.models}</b></p><p>${x.desc}</p><button class="btn" onclick="showFamily('${x.family}')">ESPLORA MODELLI →</button></div></article>`).join('')||'<p class="muted">Nessuna famiglia trovata.</p>';}
+document.getElementById('bmwFamilySearch')?.addEventListener('input',renderBMWFamilyHub);document.getElementById('bmwFamilyFilter')?.addEventListener('change',renderBMWFamilyHub);
+
+let atlasHistory=[];let atlasCurrentPage='home';
+function showPage(id,options={}){const target=document.getElementById(id);if(!target){console.warn('Pagina non trovata:',id);return;}if(!options.skipHistory&&atlasCurrentPage&&atlasCurrentPage!==id){atlasHistory.push(atlasCurrentPage);if(atlasHistory.length>80)atlasHistory.shift();}atlasCurrentPage=id;document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));target.classList.remove('hidden');document.querySelectorAll('.atlas-nav button[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));const nav=document.querySelector('.atlas-nav');if(nav)nav.classList.remove('nav-open');const menuButton=document.querySelector('.mobile-menu');if(menuButton){menuButton.setAttribute('aria-expanded','false');menuButton.textContent='MENU +';}const crumb=document.getElementById('sectionCurrent');if(crumb)crumb.textContent=sectionLabels[id]||'AUTOTECH ATLAS';const strip=document.getElementById('sectionToolbar');if(strip)strip.classList.toggle('home-toolbar',id==='home');const back=document.getElementById('atlasBackButton');if(back){back.disabled=atlasHistory.length===0;back.style.opacity=atlasHistory.length===0?'.45':'1';}if(id==='models')renderModels();if(id==='bmwComplete')renderBMWFamilyHub();window.scrollTo({top:0,behavior:'auto'});}
+function goBack(){const previous=atlasHistory.pop()||'home';showPage(previous,{skipHistory:true});}
+window.goBack=goBack;
+
 document.querySelectorAll('.atlas-nav button[data-page]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+window.addEventListener('keydown',e=>{if(e.altKey&&e.key==='ArrowLeft'){e.preventDefault();goBack();}});
 document.querySelector('.atlas-identity')?.addEventListener('click',e=>{e.preventDefault();showPage('home');});
 document.querySelector('.mobile-menu')?.addEventListener('click',()=>{const nav=document.querySelector('.atlas-nav');const open=nav.classList.toggle('nav-open');const btn=document.querySelector('.mobile-menu');btn.setAttribute('aria-expanded',String(open));btn.textContent=open?'CHIUDI ×':'MENU +';});
 document.getElementById('brandGrid')?.addEventListener('click',e=>{
@@ -1331,11 +2134,17 @@ const bmwV14PhotoSets={
   {url:'https://cdn.bmwblog.com/wp-content/uploads/2022/07/e30-m3-f82-m4-g80-m3-06.jpg',caption:'M3 E30 · M4 F82 · M3 G80'}
  ]
 };
+const v15FamilyPhotos={
+  "Serie": [{url:"https://cdn.auto.it/images/2023/05/24/160250395-664e89ca-6dfe-466f-8b8b-6d7a6f2d2c5d.jpg",caption:"Serie 5 · confronto tra generazioni, fonte editoriale Auto.it"},{url:"https://mediapool.bmwgroup.com/cache/P9/201707/P90268628/P90268628-the-bmw-7-series-edition-40-jahre-and-the-first-bmw-7-series-from-1977-07-2017-1996px.jpg",caption:"Serie 7 · confronto storico BMW Group"}],
+  "Roadster Z": [{url:"https://mediapool.bmwgroup.com/download/edown/pressclub/public?actEvent=zoomImage&dokNo=P0026687&filename=P0026687.JPG",caption:"Z1, Z3, Z8 e Z4 · archivio fotografico BMW Group"}],
+  "BMW i": [{url:"https://mediapool.bmwgroup.com/cache/P9/201604/P90216955/P90216955-bmw-i3-94ah-bmw-i8-05-2016-2247px.jpg",caption:"BMW i3 e i8 · fotografia BMW Group"}],
+  "Classiche": [{url:"https://mediapool.bmwgroup.com/cache/P9/201707/P90268628/P90268628-the-bmw-7-series-edition-40-jahre-and-the-first-bmw-7-series-from-1977-07-2017-1996px.jpg",caption:"Archivio BMW Group · evoluzione storica del marchio"}]
+};
 function renderBMWPhotoGallery(car){
  const code=String(car.generation||'').toUpperCase().match(/E21|E30|E36|E46|E90|F30|G20/);
  if(code){const photos=bmwGenerationPhotos[code[0]]||[];if(photos.length){const label=({E21:'Prima generazione · E21',E30:'Seconda generazione · E30',E36:'Terza generazione · E36',E46:'Quarta generazione · E46',E90:'Quinta generazione · E90/E91/E92/E93',F30:'Sesta generazione · F30/F31/F34',G20:'Settima generazione · G20/G21'})[code[0]];return `<div class="panel photo-panel"><h3>Galleria fotografica · ${label}</h3><div class="photo-gallery">${photos.map((photo,i)=>`<figure><a href="${photo.url}" target="_blank" rel="noopener"><img src="${photo.url}" alt="BMW Serie 3 ${code[0]} · ${photo.caption}" loading="lazy"></a><figcaption>${String(i+1).padStart(2,'0')} / ${photo.caption}</figcaption></figure>`).join('')}</div><p class="photo-credit">Fotografie BMW Group. <a href="https://www.bmwgroup.com/en/news/general/2025/50-years-BMW-3-series.html" target="_blank" rel="noopener">Fonte storica BMW</a>.</p></div>`;}}
- const group=car.family==='SUV X'?'SUV X':car.family==='BMW M'?'BMW M':null;if(!group)return '';
- let photos=bmwV14PhotoSets[group]||[];
+ const group=car.family==='SUV X'?'SUV X':car.family==='BMW M'?'BMW M':null;
+ let photos=group?(bmwV14PhotoSets[group]||[]):(v15FamilyPhotos[car.family]||[]); if(!photos.length)return '';
  if(car.name.startsWith('M1')) photos=[
   {url:'https://www.bmw-m.com/content/dam/bmw/marketBMW_M/www_bmw-m_com/topics/magazine-article-pool/2018/bmw-m1-portraet/bmw-m1-double-image-1-1.jpg',caption:'BMW M1 E26 · vista posteriore dall’alto'},
   {url:'https://www.bmw-m.com/content/dam/bmw/marketBMW_M/www_bmw-m_com/topics/magazine-article-pool/2018/bmw-m1-portraet/bmw-m1-double-image-1-2.jpg',caption:'BMW M1 E26 · dettaglio posteriore'},
@@ -1355,10 +2164,27 @@ function renderBMWPhotoGallery(car){
  else if(car.name.startsWith('X5 M')) photos=[
   {url:'https://cdn.motor1.com/images/mgl/P3nbM8/s1/bmw-x5-m-competition-2023.jpg',caption:'BMW X5 M Competition · aggiornamento 2023'},
  ];
- const archive=group==='SUV X'?'https://www.press.bmwgroup.com/global/tag/library/photo':'https://www.bmw-m.com/en/topics/m-heritage.html';
+ const archive=group==='SUV X'?'https://www.press.bmwgroup.com/global/tag/library/photo':group==='BMW M'?'https://www.bmw-m.com/en/topics/m-heritage.html':'https://www.bmwgroup-classic.com/en/models/bmw-classics.html';
  return `<div class="panel photo-panel"><h3>Galleria fotografica · ${car.name}</h3><div class="photo-gallery">${photos.map((photo,i)=>`<figure><a href="${photo.url}" target="_blank" rel="noopener"><img src="${photo.url}" alt="${car.name} · ${photo.caption}" loading="lazy"></a><figcaption>${String(i+1).padStart(2,'0')} / ${photo.caption}</figcaption></figure>`).join('')}</div><p class="photo-credit">Selezione fotografica di famiglia e immagini storiche, non tutte riferite alla specifica versione della scheda. Per fotografie della singola generazione consulta l’<a href="${archive}" target="_blank" rel="noopener">archivio ufficiale BMW</a>. Verificare le condizioni di riutilizzo prima della redistribuzione.</p></div>`;
 }
-function openDetail(id){let c=cars.find(x=>String(x.id)===String(id));if(!c){console.warn('Vettura non trovata:',id);return;}document.getElementById('detailContent').innerHTML=`<div class="eyebrow" style="margin-top:22px">${c.family} · ${c.generation} · ${c.years}</div><h2>${c.name}</h2><p class="muted">${c.desc}</p>${renderBMWPhotoGallery(c)}${renderBMWGenerationDossier(c)}${renderExtendedBMWDossier(c)}<div class="detail"><div class="panel"><h3>Identità tecnica</h3><div class="specs"><div class="spec"><small>Motore</small><b>${c.engine}</b></div><div class="spec"><small>Architettura</small><b>${c.layout}</b></div><div class="spec"><small>Cilindrata</small><b>${c.cc?c.cc.toLocaleString('it-IT')+' cm³':'Elettrica'}</b></div><div class="spec"><small>Potenza</small><b>${c.hp==null?"Da verificare":c.hp+" CV"}</b></div><div class="spec"><small>Coppia</small><b>${c.nm==null?"Da verificare":c.nm+" Nm"}</b></div><div class="spec"><small>0-100 km/h</small><b>${c.zero==null?"Da verificare":c.zero+" s"}</b></div><div class="spec"><small>Massa indicativa</small><b>${c.weight==null?"Da verificare":c.weight+" kg"}</b></div><div class="spec"><small>Trazione</small><b>${c.drive}</b></div></div></div><div class="panel"><h3>Configurazione</h3><p><b>Carrozzeria:</b> ${c.body}</p><p><b>Generazione:</b> ${c.generation}</p><p><b>Periodo:</b> ${c.years}</p>${(()=>{const matches=engineProfiles.filter(e=>engineMatchesCar(c,e.code));return matches.length?`<div class="notice"><b>Dossier motore collegati</b><div class="chips">${matches.map(ep=>`<button class="btn" onclick="openEngineFromCar('${ep.code}')">${ep.code} ↗</button>`).join(' ')}</div><small class="muted">Collegamenti ricavati dai codici motore censiti; verificare sempre indice e variante di produzione.</small></div>`:`<div class="notice">Dossier motore specifico non ancora collegato: codice da verificare.</div>`})()}<div class="notice">Valori indicativi di una specifica versione. La scheda definitiva distinguerà anno modello, mercato, cambio e optional.</div></div></div>${renderCarVariantSection(c)}<div class="panel" style="margin-top:18px"><h3>Sistemi ingegneristici da consultare</h3><p class="muted">Dossier generali collegati alla famiglia tecnica. La presenza e la configurazione sulla singola vettura vanno verificate per generazione, anno e allestimento.</p><div class="chips"><button class="btn" onclick="openComponentSearch('${c.engine}')">Motore · ${c.engine} ↗</button><button class="btn" onclick="openComponentSearch('trasmissione cambio differenziale')">Trasmissione ↗</button><button class="btn" onclick="openComponentSearch('sospensione telaio')">Telaio e sospensioni ↗</button><button class="btn" onclick="openComponentSearch('freni DSC ABS')">Freni e DSC ↗</button><button class="btn" onclick="openComponentSearch('elettronica centralina')">Elettronica ↗</button></div></div>${c.tech?`<div class="panel" style="margin-top:18px"><h3>Approfondimento tecnico</h3><div class="specs"><div class="spec"><small>Dimensioni</small><b>${c.tech.dimensions}</b></div><div class="spec"><small>Passo</small><b>${c.tech.wheelbase}</b></div><div class="spec"><small>Trasmissione</small><b>${c.tech.gearbox}</b></div><div class="spec"><small>Differenziale</small><b>${c.tech.differential}</b></div></div><p><b>Motore:</b> ${c.tech.engineDetail}</p><p><b>Telaio:</b> ${c.tech.chassis}</p><p><b>Freni:</b> ${c.tech.brakes}</p><div class="notice">${c.tech.notes}</div></div>`:''}`;showPage('detail')}
+function renderEngineeringAtlas(car){
+ const title=(car.engine||'Powertrain BMW').replace(/</g,'&lt;');
+ const engineSvg=`<svg viewBox="0 0 520 230" role="img" aria-label="Schema illustrativo motore BMW"><g fill="none" stroke="#e77c3d" stroke-width="3"><path d="M65 70h360l25 25v65H65z"/><path d="M95 70V45h60v25m30 0V45h60v25m30 0V45h60v25m30 0V45h60v25"/><path d="M110 95v55m65-55v55m65-55v55m65-55v55m65-55v55"/><path d="M65 170h385"/></g><g fill="#e8edf2" font-size="12"><text x="65" y="25">TESTATA / VALVOLE</text><text x="205" y="205">BASAMENTO · ALBERO MOTORE · COPPA OLIO</text></g><g fill="#778694"><circle cx="125" cy="122" r="13"/><circle cx="190" cy="122" r="13"/><circle cx="255" cy="122" r="13"/><circle cx="320" cy="122" r="13"/><circle cx="385" cy="122" r="13"/></g></svg>`;
+ const turboSvg=`<svg viewBox="0 0 520 230" role="img" aria-label="Schema illustrativo turbocompressore"><g fill="none" stroke="#e77c3d" stroke-width="4"><circle cx="150" cy="112" r="66"/><circle cx="365" cy="112" r="66"/><path d="M216 112h83m-150-66 22 24m-22 84 22-24m277-84-22 24m22 84-22-24M300 112h-25"/><path d="M85 112h-48v-40m278 40h-38v-40"/></g><g fill="#e8edf2" font-size="13"><text x="98" y="205">TURBINA · GAS DI SCARICO</text><text x="325" y="205">COMPRESSORE · ARIA</text><text x="240" y="95">ALBERO</text></g></svg>`;
+ const suspSvg=`<svg viewBox="0 0 520 230" role="img" aria-label="Schema illustrativo sospensione"><g fill="none" stroke="#e77c3d" stroke-width="4"><path d="M95 40v145m-25 0h50m-35-140h20l-10 26 10 26-10 26 10 26-10 26"/><path d="M115 95h110l75 50h100m-290 0 85 42h150"/><circle cx="390" cy="145" r="34"/><path d="M390 111v68m-34-34h68"/></g><g fill="#e8edf2" font-size="13"><text x="50" y="25">MONTANTE / MOLLA</text><text x="220" y="215">BRACCI · PORTAMOZZO · RUOTA</text></g></svg>`;
+ const brakeSvg=`<svg viewBox="0 0 520 230" role="img" aria-label="Schema illustrativo freno a disco"><g fill="none" stroke="#e77c3d" stroke-width="4"><circle cx="235" cy="115" r="78"/><circle cx="235" cy="115" r="22"/><path d="M320 50h90v130h-90l-15-28V78z"/><path d="M342 80h50v70h-50z"/><path d="M235 37v156m-78-78h156" stroke-dasharray="6 7"/></g><g fill="#e8edf2" font-size="13"><text x="30" y="25">DISCO VENTILATO</text><text x="355" y="205">PINZA · PISTONI · PASTIGLIE</text></g></svg>`;
+ const drivetrainSvg=`<svg viewBox="0 0 520 230" role="img" aria-label="Schema illustrativo trasmissione"><g fill="none" stroke="#e77c3d" stroke-width="4"><rect x="35" y="75" width="105" height="80" rx="10"/><path d="M140 115h80m0-25v50m0-25h75m0 0 60-45m-60 45 60 45m0-90v90"/><circle cx="395" cy="70" r="27"/><circle cx="395" cy="160" r="27"/><path d="M355 115h85"/></g><g fill="#e8edf2" font-size="13"><text x="38" y="55">CAMBIO</text><text x="180" y="55">ALBERO / RIPARTITORE</text><text x="365" y="25">DIFFERENZIALE</text></g></svg>`;
+ return `<section class="engineering-atlas"><div class="eyebrow">ENGINEERING VISUAL ATLAS</div><h2>Dentro la macchina · tavole tecniche</h2><p>Queste tavole sono schemi didattici originali, non fotografie di officina né disegni costruttivi BMW. Servono a riconoscere i gruppi e il loro principio di funzionamento. Per fotografie reali, sezioni ufficiali, procedure e coppie di serraggio consulta la documentazione tecnica specifica per VIN e codice componente.</p><div class="engineering-grid">
+ <article class="engineering-plate"><img class="engineering-photo" src="https://mediapool.bmwgroup.com/download/edown/pressclub/publicq?actEvent=scaleBig&attachment=0&dokNo=P90048088&quality=90&square=0" alt="BMW sei cilindri diesel in sezione, scheletro tecnico" loading="lazy">${engineSvg}<h4>01 · Motore ${title}</h4><div class="engineering-credit">Fotografia tecnica BMW Group PressClub · motore diesel sei cilindri in sezione, immagine di riferimento architetturale.</div><p>Basamento, cilindri, pistoni, albero motore, testata, valvole, distribuzione e circuiti di lubrificazione/raffreddamento. Architettura e disposizione dipendono dal codice motore.</p></article>
+ <article class="engineering-plate"><img class="engineering-photo" src="https://mediapool.bmwgroup.com/download/edown/pressclub/publicq?actEvent=image&attachment=1&dokNo=P90047645" alt="Dettaglio turbocompressore twin-scroll BMW" loading="lazy">${turboSvg}<h4>02 · Sovralimentazione</h4><div class="engineering-credit">Fotografia tecnica BMW Group PressClub · dettaglio twin-scroll turbo, riferimento tecnologico.</div><p>La turbina recupera energia dai gas di scarico e trascina il compressore. Intercooler, wastegate, attuatori e circuito di raffreddamento variano tra motori e generazioni.</p></article>
+ <article class="engineering-plate"><img class="engineering-photo" src="https://mediapool.bmwgroup.com/download/edown/pressclub/publicq?actEvent=image&attachment=1&dokNo=P90501252" alt="Schema fotografico BMW di telaio e sospensioni" loading="lazy">${suspSvg}<h4>03 · Sospensioni e cinematismi</h4><div class="engineering-credit">Immagine ingegneristica BMW Group PressClub · telaio e sospensioni.</div><p>Montante, molla, ammortizzatore, bracci e portamozzo controllano posizione e orientamento della ruota. Le geometrie BMW cambiano tra piattaforme e versioni M.</p></article>
+ <article class="engineering-plate"><img class="engineering-photo" src="https://bmw.scene7.com/is/image/BMW/u11-mp_dynamics_m-brake?hei=3000&wid=3000" alt="BMW M Compound brake, disco e pinza" loading="lazy">${brakeSvg}<h4>04 · Freni e gruppi ruota</h4><div class="engineering-credit">Fotografia BMW ufficiale · freno M Compound, immagine di riferimento per la famiglia di componenti; l’impianto effettivo varia per modello.</div><p>Disco, pinza, pistoni, pastiglie e circuito idraulico. Diametri, ventilazione, pinze fisse/flottanti e materiali vanno verificati per variante e impianto.</p></article>
+ <article class="engineering-plate"><img class="engineering-photo" src="https://mediapool.bmwgroup.com/cache/P9/202204/P90458363/P90458363-the-new-bmw-7-series-x-ray-pictures-04-2022-2692px.jpg" alt="Vista radiografica tecnica BMW 7 Series" loading="lazy">${drivetrainSvg}<h4>05 · Trasmissione, telaio e differenziali</h4><div class="engineering-credit">Immagine radiografica BMW Group PressClub · architettura sottoscocca della Serie 7.</div><p>Il cambio adatta coppia e regime; albero, ripartitore e differenziali distribuiscono la coppia agli assi e alle ruote secondo lo schema di trazione.</p></article>
+ <article class="engineering-plate"><div class="notice"><b>Fotografie ingegneristiche e documentazione reale</b><p>BMW Group Archive raccoglie pubblicazioni, manuali d'officina, letteratura tecnica e immagini. La ricerca va effettuata usando generazione, codice motore o codice ricambio.</p><a class="btn" href="https://www.bmwgroup-classic.com/en/services/archive.html" target="_blank" rel="noopener">APRI BMW GROUP ARCHIVE ↗</a><br><a class="btn" href="https://www.press.bmwgroup.com/global" target="_blank" rel="noopener">APRI BMW PRESSCLUB ↗</a></div><h4>06 · Fonte tecnica</h4><p class="engineering-note">Nessuna immagine generica viene etichettata come fotografia del componente specifico della vettura.</p></article>
+ </div></section>`;
+}
+
+function openDetail(id){let c=cars.find(x=>String(x.id)===String(id));if(!c){console.warn('Vettura non trovata:',id);return;}document.getElementById('detailContent').innerHTML=`<div class="eyebrow" style="margin-top:22px">${c.family} · ${c.generation} · ${c.years}</div><h2>${c.name}</h2><p class="muted">${c.desc}</p>${renderBMWPhotoGallery(c)}${renderBMWGenerationDossier(c)}${renderEngineeringAtlas(c)}${renderExtendedBMWDossier(c)}<div class="detail"><div class="panel"><h3>Identità tecnica</h3><div class="specs"><div class="spec"><small>Motore</small><b>${c.engine}</b></div><div class="spec"><small>Architettura</small><b>${c.layout}</b></div><div class="spec"><small>Cilindrata</small><b>${c.cc?c.cc.toLocaleString('it-IT')+' cm³':'Elettrica'}</b></div><div class="spec"><small>Potenza</small><b>${c.hp==null?"Da verificare":c.hp+" CV"}</b></div><div class="spec"><small>Coppia</small><b>${c.nm==null?"Da verificare":c.nm+" Nm"}</b></div><div class="spec"><small>0-100 km/h</small><b>${c.zero==null?"Da verificare":c.zero+" s"}</b></div><div class="spec"><small>Massa indicativa</small><b>${c.weight==null?"Da verificare":c.weight+" kg"}</b></div><div class="spec"><small>Trazione</small><b>${c.drive}</b></div></div></div><div class="panel"><h3>Configurazione</h3><p><b>Carrozzeria:</b> ${c.body}</p><p><b>Generazione:</b> ${c.generation}</p><p><b>Periodo:</b> ${c.years}</p>${(()=>{const matches=engineProfiles.filter(e=>engineMatchesCar(c,e.code));return matches.length?`<div class="notice"><b>Dossier motore collegati</b><div class="chips">${matches.map(ep=>`<button class="btn" onclick="openEngineFromCar('${ep.code}')">${ep.code} ↗</button>`).join(' ')}</div><small class="muted">Collegamenti ricavati dai codici motore censiti; verificare sempre indice e variante di produzione.</small></div>`:`<div class="notice">Dossier motore specifico non ancora collegato: codice da verificare.</div>`})()}<div class="notice">Valori indicativi di una specifica versione. La scheda definitiva distinguerà anno modello, mercato, cambio e optional.</div></div></div>${renderCarVariantSection(c)}<div class="panel" style="margin-top:18px"><h3>Sistemi ingegneristici da consultare</h3><p class="muted">Dossier generali collegati alla famiglia tecnica. La presenza e la configurazione sulla singola vettura vanno verificate per generazione, anno e allestimento.</p><div class="chips"><button class="btn" onclick="openComponentSearch('${c.engine}')">Motore · ${c.engine} ↗</button><button class="btn" onclick="openComponentSearch('trasmissione cambio differenziale')">Trasmissione ↗</button><button class="btn" onclick="openComponentSearch('sospensione telaio')">Telaio e sospensioni ↗</button><button class="btn" onclick="openComponentSearch('freni DSC ABS')">Freni e DSC ↗</button><button class="btn" onclick="openComponentSearch('elettronica centralina')">Elettronica ↗</button></div></div>${c.tech?`<div class="panel" style="margin-top:18px"><h3>Approfondimento tecnico</h3><div class="specs"><div class="spec"><small>Dimensioni</small><b>${c.tech.dimensions}</b></div><div class="spec"><small>Passo</small><b>${c.tech.wheelbase}</b></div><div class="spec"><small>Trasmissione</small><b>${c.tech.gearbox}</b></div><div class="spec"><small>Differenziale</small><b>${c.tech.differential}</b></div></div><p><b>Motore:</b> ${c.tech.engineDetail}</p><p><b>Telaio:</b> ${c.tech.chassis}</p><p><b>Freni:</b> ${c.tech.brakes}</p><div class="notice">${c.tech.notes}</div></div>`:''}`;showPage('detail')}
 window.openDetail=openDetail;
 
 const generationDossiers = [
@@ -1732,7 +2558,13 @@ document.getElementById('variantSearch').addEventListener('input',renderVariants
 document.getElementById('variantFamily').addEventListener('change',renderVariants);
 renderVariants();
 
+const v15GenerationRows=[...v15BMWCars,...v15bBMWCars].map(c=>[c.family,c.generation,c.years,`${c.name} · ${c.body}`]);
+const v15GenerationKeys=new Set(generationCatalog.map(r=>`${r[0]}|${r[1]}`));
+v15GenerationRows.forEach(r=>{const k=`${r[0]}|${r[1]}`;if(!v15GenerationKeys.has(k)){generationCatalog.push(r);v15GenerationKeys.add(k);}});
 function renderGenerations(){const q=document.getElementById('genSearch').value.toLowerCase(),f=document.getElementById('genFamily').value;document.getElementById('generationRows').innerHTML=generationCatalog.filter(x=>(!f||x[0]===f)&&x.join(' ').toLowerCase().includes(q)).map(x=>`<tr>${x.map(v=>`<td>${v}</td>`).join('')}</tr>`).join('')||'<tr><td colspan="4">Nessun risultato</td></tr>'}
+
+generationDossiers.push(...[{"name": "Serie 5 · E12–G60/G61", "family": "BMW SERIE 5", "period": "1972–oggi", "summary": "Otto generazioni di berlina executive: dalla Neue Klasse evoluta alla piattaforma CLAR e alla i5 elettrica.", "body": "La Serie 5 nasce nel 1972 con la E12 e introduce la nomenclatura numerica BMW. Le architetture restano prevalentemente longitudinali, con trazione posteriore e xDrive su molte versioni moderne. Touring, Gran Turismo e passo lungo hanno codici carrozzeria distinti.", "engines": "M10/M20/M30, M50/M52/M54, M60/M62, N52/N53/N54/N62/N63, N20/N55, N47/N57, B47/B48/B57/B58 e S68 su specifiche versioni; i5 è BEV. Non tutte le famiglie sono state offerte in ogni generazione.", "evolution": "E12 (1972–81), E28 (1981–88), E34 (1987–96), E39 (1995–2004), E60/E61 (2003–10), F10/F11/F07 (2009–17), G30/G31 (2016–23), G60/G61 (dal 2023). Le sovrapposizioni riflettono lanci e produzione per carrozzeria/mercato.", "caution": "Non confondere F07 Gran Turismo con Touring F11; i codici G30/G31 e G60/G61 identificano berlina e Touring. Motori e potenze richiedono anno e mercato."}, {"name": "Serie 6 · E24–G32", "family": "BMW SERIE 6", "period": "1976–2023", "summary": "La Serie 6 ha rappresentato la gran turismo BMW in più epoche, con coupé, cabriolet, Gran Coupé e Gran Turismo.", "body": "E24 è una coupé classica a sei cilindri. La generazione E63/E64 torna con proporzioni moderne e V8/V10. F06/F12/F13 amplia la famiglia a tre carrozzerie. G32 è una Gran Turismo a cinque porte tecnicamente affine alla Serie 5.", "engines": "M30, M88/S38, M60/M62, N52/N62, S85, N55/N63, N57/B57 e motori moderni secondo mercato. M6 usa powertrain e telaio specifici BMW M.", "evolution": "E24 (1976–89), E63/E64 (2003–10), F06/F12/F13 (2011–18), G32 (2017–23). La nomenclatura Serie 6 è stata usata per concetti di carrozzeria diversi.", "caution": "La G32 non è una coupé a due porte. M635CSi/M6 non sono semplici allestimenti: hanno meccanica M dedicata."}, {"name": "Serie 7 · E23–G70", "family": "BMW SERIE 7", "period": "1977–oggi", "summary": "Ammiraglia BMW: sei, otto e dodici cilindri, passo lungo, comfort posteriore, elettronica e oggi propulsione i7 elettrica.", "body": "Le generazioni adottano motore longitudinale e trazione posteriore o integrale sulle versioni recenti. E32 introduce il V12 moderno BMW; E65 porta iDrive; G11 utilizza Carbon Core; G70 integra la variante elettrica i7.", "engines": "M30, M70, M60/M62, M73, N62/N73, N74, N63, B58, B57, S68 e powertrain elettrico i7, secondo generazione e mercato.", "evolution": "E23 (1977–86), E32 (1986–94), E38 (1994–2001), E65/E66 (2001–08), F01/F02 (2008–15), G11/G12 (2015–22), G70 (dal 2022).", "caution": "E65/E66, F01/F02 e G11/G12 distinguono passo standard e lungo. Le versioni V12, diesel e PHEV hanno disponibilità variabile per mercato."}, {"name": "Serie 8 · E31 e G14/G15/G16", "family": "BMW SERIE 8", "period": "1989–1999 · 2018–2025 circa", "summary": "Due epoche di gran turismo di lusso: la prima E31 con V8/V12 e la seconda famiglia con tre carrozzerie.", "body": "E31 è una coupé a cofano lungo, con fari a scomparsa e soluzioni elettroniche avanzate. La generazione G14/G15/G16 nasce su architettura modulare longitudinale e propone cabrio, coupé e Gran Coupé.", "engines": "E31: M60 V8, M70 V12, S70 su prototipi/serie speciali. G: B58 sei cilindri, N63/S63 V8 e diesel B57 secondo mercato. M8 usa il V8 S63 e componenti M.", "evolution": "E31 (1989–99); G14 Cabrio, G15 Coupé e G16 Gran Coupé (dal 2018). La gamma si è conclusa progressivamente in base ai mercati e alle carrozzerie.", "caution": "Distinguere la 850CSi con S70B56 dalla 850i/850Ci. Le M8 F91/F92/F93 hanno codici e componenti specifici."}, {"name": "Z · Roadster e coupé sportive", "family": "BMW Z", "period": "1989–oggi", "summary": "La famiglia Z raccoglie roadster e coupé sportive, dalle soluzioni sperimentali della Z1 alla Z4 moderna.", "body": "Z1 usa pannelli esterni in materiale termoplastico e porte discendenti nelle soglie. Z3 nasce negli USA; Z4 evolve tra tetto rigido retrattile e capote in tela; Z8 è una roadster V8 di produzione limitata.", "engines": "M20, M43/M44, M52/M54, S50/S54, N52/N54/N55, N20 e B48/B58 a seconda del modello. Le Z M hanno powertrain e telaio dedicati.", "evolution": "Z1 (1989–91), Z3 (1995–2002), Z8 (2000–03), Z4 E85/E86 (2002–08), E89 (2009–16), G29 (dal 2018).", "caution": "Z3 Coupé e Roadster hanno codici E36/8 ed E36/7. Z4 E89 ha hard-top retrattile, G29 capote in tela. Z8 non è una Z4 speciale."}, {"name": "BMW i · Elettrificazione dedicata e derivata", "family": "BMW i", "period": "2013–oggi", "summary": "Dalla cellula CFRP di i3 alle piattaforme elettrificate della gamma attuale, BMW i è sia una famiglia di modelli dedicati sia un marchio tecnologico.", "body": "i3 usa architettura LifeDrive e cellula passeggeri in CFRP. i8 è una plug-in hybrid con motore termico posteriore e motore elettrico anteriore. i4, i5 e i7 sono varianti elettriche di famiglie BMW; iX è un SAV elettrico dedicato.", "engines": "Motori elettrici sincroni eccitati/rotore avvolto secondo generazione, inverter, riduttori monomarcia, batterie HV a celle prismatiche o moduli differenti. i8 abbina B38 a macchina elettrica.", "evolution": "i3 I01 (2013–22), i8 I12/I15 (2014–20), iX I20 (dal 2021), i4 G26 (dal 2021), i7 G70 (dal 2022), i5 G60/G61 (dal 2023), iX1 U11 e iX2 U10.", "caution": "La denominazione i non implica sempre piattaforma esclusiva: i4, i5 e i7 condividono la famiglia di base con modelli termici. Autonomia e potenza variano con anno, batteria, ruote e omologazione."}]);
+
 document.getElementById('generationDossiers').innerHTML=generationDossiers.map(g=>`<article class="card"><div class="meta">${g.family||"BMW SERIE 3"} · ${g.period}</div><h3>${g.name}</h3><p>${g.summary}</p><details class="eng-details"><summary>APRI DOSSIER GENERAZIONE</summary><div class="eng-grid"><div class="eng-block"><small>Scocca e telaio</small><p>${g.body}</p></div><div class="eng-block"><small>Famiglie motore</small><p>${g.engines}</p></div><div class="eng-block"><small>Evoluzione della gamma</small><p>${g.evolution}</p></div><div class="eng-block"><small>Attenzione alle varianti</small><p>${g.caution}</p></div></div></details></article>`).join('');
 document.getElementById('genSearch').addEventListener('input',renderGenerations);document.getElementById('genFamily').addEventListener('change',renderGenerations);renderGenerations();
 
