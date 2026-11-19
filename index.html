@@ -332,6 +332,18 @@ body{background:#050505;color:#f1eee9}
 .atlas-lightbox img{max-width:95vw;max-height:90vh;object-fit:contain;box-shadow:0 20px 80px rgba(0,0,0,.55);cursor:default}
 .atlas-lightbox-close{position:absolute;top:18px;right:24px;font-size:32px;color:white;background:rgba(25,30,35,.8);border:1px solid #59616c;border-radius:50%;width:48px;height:48px;cursor:pointer}
 .atlas-lightbox-caption{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#cbd3dc;font-size:13px}
+/* v20 expanded BMW galleries */
+.m-photo-expanded-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.m-photo-expanded-slot{min-width:0;padding:14px;border:1px solid rgba(140,160,180,.25);border-radius:14px}
+.m-photo-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+.m-photo-result-card{min-width:0;overflow:hidden;border-radius:10px;background:rgba(120,130,145,.08)}
+.m-photo-result-card img{display:block;width:100%;height:220px;object-fit:contain;background:#101419}
+.m-photo-result-card .m-photo-caption{padding:7px;font-size:12px;overflow-wrap:anywhere}
+.m-photo-result-card .m-photo-license{padding:0 7px 7px;font-size:11px;opacity:.75}
+.m-photo-result-card a{font-size:11px;padding:0 7px 7px;display:inline-block}
+@media(max-width:900px){.m-photo-expanded-grid{grid-template-columns:1fr}.m-photo-results{grid-template-columns:1fr 1fr}}
+@media(max-width:550px){.m-photo-results{grid-template-columns:1fr}.m-photo-result-card img{height:240px}}
+
 </style>
 </head>
 <body>
@@ -2173,45 +2185,13 @@ function renderBMWGenerationDossier(car){
 /* v15FamilyPhotos removed in v18: legacy shared family galleries caused incorrect photo reuse. */
 
 function renderBMWPhotoGallery(car){
- const gen=String(car.generation||'').trim();
- const model=String(car.name||'BMW');
- const pressBase='https://www.press.bmwgroup.com/global/photo/search/';
+ const gen=String(car.generation||'').trim(), model=String(car.name||'BMW');
  const safe=v=>String(v||'').replace(/[&<>"']/g,' ');
- // First hand-selected Commons candidates inserted directly into the E30/E36 records.
- // Only slots with a grounded, generation-specific candidate render a photograph.
- const selected={
-  E30:{
-   front:{file:'BMW M3 (E30).jpg',credit:'Wikimedia Commons · file page/licensing'},
-   rear:{file:'BMW M3 (E30) rear.JPG',credit:'Tokumeigakarinoaoshima · CC0'},
-   interior:{file:'BMW M3 E30 black interior.jpg',credit:'Ethan Llamas · CC BY-SA 4.0'},
-   engine:{file:'BMW S14 Engine.jpg',credit:'Sbscottw · CC BY-SA 4.0'}
-  },
-  E36:{
-   front:{file:'BMW M3 (E36, 1998) (55207590924).jpg',credit:'Charles · CC0'},
-   rear:{file:'BMW M3 (E36, 1998) (55207349456).jpg',credit:'Charles · CC0'},
-   interior:{file:'E36 interior.jpg',credit:'Tim Alexander · CC BY-SA 4.0'},
-   engine:{file:'BMW S50B32.jpg',credit:'Wikimedia Commons · file page/licensing'}
-  }
- };
- const slots=[
-  {id:'front',label:'01 · Anteriore',terms:'front front three quarter'},
-  {id:'rear',label:'02 · Posteriore',terms:'rear rear three quarter'},
-  {id:'side',label:'03 · Profilo',terms:'side profile side view'},
-  {id:'interior',label:'04 · Abitacolo',terms:'interior cockpit dashboard'},
-  {id:'engine',label:'05 · Vano motore',terms:'engine engine bay engine compartment'},
-  {id:'mechanics',label:'06 · Meccanica',terms:'chassis suspension brakes underbody'}
- ];
+ const selected={E30:{front:{file:'BMW M3 (E30).jpg',credit:'Wikimedia Commons · candidato'},rear:{file:'BMW M3 (E30) rear.JPG',credit:'Wikimedia Commons · candidato'},interior:{file:'BMW M3 E30 black interior.jpg',credit:'Wikimedia Commons · candidato'},engine:{file:'BMW S14 Engine.jpg',credit:'Wikimedia Commons · candidato'}},E36:{front:{file:'BMW M3 (E36, 1998) (55207590924).jpg',credit:'Wikimedia Commons · candidato'},rear:{file:'BMW M3 (E36, 1998) (55207349456).jpg',credit:'Wikimedia Commons · candidato'},interior:{file:'E36 interior.jpg',credit:'Wikimedia Commons · candidato'},engine:{file:'BMW S50B32.jpg',credit:'Wikimedia Commons · candidato'}}};
+ const slots=[{id:'front',label:'01 · Anteriore',terms:'front view front three quarter'},{id:'rear',label:'02 · Posteriore',terms:'rear view rear three quarter'},{id:'side',label:'03 · Profilo laterale',terms:'side profile'},{id:'interior',label:'04 · Abitacolo e plancia',terms:'interior dashboard cockpit'},{id:'seats',label:'05 · Sedili e dettagli interni',terms:'seats interior detail'},{id:'engine',label:'06 · Motore e vano motore',terms:'engine engine bay'},{id:'mechanics',label:'07 · Telaio e meccanica',terms:'chassis suspension brakes underbody'},{id:'details',label:'08 · Dettagli e particolari',terms:'detail close up badge wheels trim'}];
  const chosen=selected[gen]||{};
- const tiles=slots.map(slot=>{
-  const q=`BMW ${model} ${gen} ${slot.terms}`;
-  const commons=`https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=${encodeURIComponent(q)}`;
-  const press=`${pressBase}${encodeURIComponent(`BMW ${model} ${gen} ${slot.terms}`)}/?forceSitePreference=DESKTOP`;
-  const photo=chosen[slot.id];
-  const img=photo?`<img class="m-photo-thumb" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(photo.file)}?width=1200" alt="BMW ${gen} ${slot.label}"/><div class="m-photo-caption">${safe(photo.file)}</div><div class="m-photo-license">${safe(photo.credit)}</div>`:`<div class="m-photo-slot-result">Foto non ancora selezionata per questa vista. Candidato da verificare.</div>`;
-  return `<article class="m-photo-slot" data-photo-slot="${slot.id}" data-photo-terms="${safe(slot.terms)}"><div class="m-photo-slot-head"><b>${slot.label}</b><span class="m-photo-slot-status">${photo?'FOTO INSERITA':'DA COMPLETARE'}</span></div>${img}<div class="m-photo-slot-links"><a href="${commons}" target="_blank" rel="noopener">Wikimedia Commons ↗</a><a href="${press}" target="_blank" rel="noopener">BMW PressClub ↗</a></div></article>`;
- }).join('');
- const pressUrl=`${pressBase}${encodeURIComponent(`BMW ${model} ${gen}`)}/?forceSitePreference=DESKTOP`;
- return `<section class="panel photo-panel"><h3>Archivio fotografico · ${safe(model)}</h3><div class="photo-archive-intro"><b>${safe(model)} · ${safe(gen)}</b><p>Fotografie candidate inserite direttamente nella galleria per le viste già selezionate. Le altre viste restano esplicitamente da completare.</p></div><div class="m-photo-grid" data-bmw-live-gallery data-model="${safe(model)}" data-generation="${safe(gen)}" data-model-id="${safe(car.id)}">${tiles}</div><div class="photo-credit">Fonti e licenze indicate sotto le fotografie. Le immagini inserite sono candidate archivistiche e richiedono controllo visivo in pagina per confermare vista e qualità.</div><a class="btn" href="${pressUrl}" target="_blank" rel="noopener">APRI ARCHIVIO BMW PRESSCLUB ↗</a></section>`;
+ const tiles=slots.map(s=>{const q=`BMW ${model} ${gen} ${s.terms}`;const commons=`https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=${encodeURIComponent(q)}`;const press=`https://www.press.bmwgroup.com/global/photo/search/${encodeURIComponent(q)}/?forceSitePreference=DESKTOP`;const p=chosen[s.id];const seed=p?`<div class="m-photo-seed"><img class="m-photo-thumb" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(p.file)}?width=1200" alt="BMW ${gen} ${s.label}"><div class="m-photo-caption">${safe(p.file)}</div><div class="m-photo-license">${safe(p.credit)}</div></div>`:'';return `<article class="m-photo-slot m-photo-expanded-slot" data-photo-slot="${s.id}" data-photo-terms="${safe(s.terms)}"><div class="m-photo-slot-head"><b>${s.label}</b><span class="m-photo-slot-status">RICERCA FOTO</span></div>${seed}<div class="m-photo-results" data-photo-results="${s.id}"><div class="m-photo-slot-result">Caricamento archivio fotografico…</div></div><div class="m-photo-slot-links"><a href="${commons}" target="_blank" rel="noopener">Wikimedia Commons ↗</a><a href="${press}" target="_blank" rel="noopener">BMW PressClub ↗</a></div></article>`}).join('');
+ return `<section class="panel photo-panel"><h3>Archivio fotografico esteso · ${safe(model)}</h3><div class="photo-archive-intro"><b>${safe(model)} · ${safe(gen)}</b><p>Galleria estesa a otto sezioni. Il sito cerca automaticamente più fotografie specifiche per modello e generazione in Wikimedia Commons; immagini e attribuzioni sono presentate come risultati archivistici da verificare.</p></div><div class="m-photo-grid m-photo-expanded-grid" data-bmw-live-gallery data-model="${safe(model)}" data-generation="${safe(gen)}" data-model-id="${safe(car.id)}">${tiles}</div><div class="photo-credit">I risultati sono selezionati tramite ricerca per nome e codice generazione, non sono una certificazione di variante o anno. Apri le foto per ingrandirle.</div></section>`;
 }
 
 function renderEngineeringAtlas(car){
@@ -3353,7 +3333,7 @@ const mo=new MutationObserver(scan);mo.observe(document.body,{childList:true,sub
   if(thumb){
    e.preventDefault();close();
    var box=document.createElement('div');box.className='atlas-lightbox';box.setAttribute('role','dialog');box.setAttribute('aria-modal','true');
-   var image=document.createElement('img');image.src=thumb.src;image.alt=thumb.alt||'Fotografia';image.referrerPolicy='no-referrer';
+   var image=document.createElement('img');image.src=thumb.dataset.fullSrc||thumb.src;image.alt=thumb.alt||'Fotografia';image.referrerPolicy='no-referrer';
    var btn=document.createElement('button');btn.className='atlas-lightbox-close';btn.type='button';btn.setAttribute('aria-label','Chiudi');btn.innerHTML='&times;';
    var caption=document.createElement('div');caption.className='atlas-lightbox-caption';caption.textContent=thumb.alt||'';
    box.append(image,btn,caption);document.body.appendChild(box);btn.focus();
@@ -3363,6 +3343,20 @@ const mo=new MutationObserver(scan);mo.observe(document.body,{childList:true,sub
  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
 })();
 </script>
+<script>
+(function(){if(window.__atlasBulkPhotoSearch)return;window.__atlasBulkPhotoSearch=true;
+const categories=['front view','rear view','side profile','interior dashboard','seats interior detail','engine engine bay','chassis suspension brakes','detail wheels badge'];
+async function searchSlot(grid,slot){const model=grid.dataset.model||'BMW',gen=grid.dataset.generation||'';const terms=slot.dataset.photoTerms||'';const box=slot.querySelector('.m-photo-results');if(!box)return;
+const query=`${model} ${gen} ${terms}`;
+try{const url='https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch='+encodeURIComponent('file:'+query)+'&gsrnamespace=6&gsrlimit=4&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1000&format=json&origin=*';
+const res=await fetch(url);if(!res.ok)throw new Error('HTTP '+res.status);const data=await res.json();const pages=Object.values((data.query&&data.query.pages)||{});if(!pages.length){box.innerHTML='<div class="m-photo-slot-result">Nessuna foto trovata automaticamente.</div>';return;}
+box.innerHTML=pages.map(p=>{const ii=(p.imageinfo||[])[0];if(!ii)return '';const thumb=ii.thumburl||ii.url;const full=ii.url||thumb;const meta=ii.extmetadata||{};const author=(meta.Artist&&meta.Artist.value||'Autore non indicato').replace(/<[^>]*>/g,'');const license=(meta.LicenseShortName&&meta.LicenseShortName.value)||'Licenza da verificare';const title=(p.title||'').replace(/^File:/,'');return `<div class="m-photo-result-card"><img class="m-photo-thumb" loading="lazy" src="${thumb}" data-full-src="${full}" alt="${title.replace(/"/g,' ')}"><div class="m-photo-caption">${title}</div><div class="m-photo-license">${author} · ${license}</div><a href="${p.title?('https://commons.wikimedia.org/wiki/'+encodeURIComponent(p.title.replace(/ /g,'_'))):'https://commons.wikimedia.org'}" target="_blank" rel="noopener">Scheda file / licenza ↗</a></div>`}).join('')||'<div class="m-photo-slot-result">Risultati non utilizzabili.</div>';
+}catch(e){box.innerHTML='<div class="m-photo-slot-result">Archivio non raggiungibile in questo momento. Usa la ricerca Commons qui sotto.</div>';}}
+function run(){document.querySelectorAll('[data-bmw-live-gallery]').forEach(g=>{if(g.dataset.bulkLoaded)return;g.dataset.bulkLoaded='1';g.querySelectorAll('.m-photo-expanded-slot').forEach(s=>searchSlot(g,s));});}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();const observer=new MutationObserver(run);observer.observe(document.body,{childList:true,subtree:true});
+})();
+</script>
+
 </body></html>
 
 <style id="atlas-homepage-restoration">
