@@ -360,6 +360,18 @@ img.m-photo-thumb{height:620px!important;min-height:620px!important;width:100%!i
 .m-photo-grid{grid-template-columns:1fr!important}
 @media(max-width:900px){.m-photo-grid img.m-photo-thumb,.live-photo-results img,.m-photo-results img,img.m-photo-thumb{height:500px!important;min-height:500px!important}}
 @media(max-width:550px){.m-photo-grid img.m-photo-thumb,.live-photo-results img,.m-photo-results img,img.m-photo-thumb{height:380px!important;min-height:380px!important}}
+
+/* v23.3 - make the photograph itself substantially wider */
+.m-photo-results{grid-template-columns:minmax(0,1fr)!important;width:100%!important}
+.m-photo-results .m-photo-result-card{width:100%!important;max-width:none!important}
+.m-photo-results>a{width:100%!important;display:block!important;grid-column:1/-1!important}
+.m-photo-results img.m-photo-thumb,
+.m-photo-results .m-photo-result-card img,
+.m-photo-results img{width:100%!important;max-width:none!important;height:620px!important;min-height:620px!important;object-fit:contain!important}
+.m-photo-expanded-grid{grid-template-columns:minmax(0,1fr)!important}
+.m-photo-expanded-slot{width:100%!important;max-width:none!important}
+@media(max-width:900px){.m-photo-results img.m-photo-thumb,.m-photo-results .m-photo-result-card img,.m-photo-results img{height:500px!important;min-height:500px!important}}
+@media(max-width:550px){.m-photo-results img.m-photo-thumb,.m-photo-results .m-photo-result-card img,.m-photo-results img{height:380px!important;min-height:380px!important}}
 </style>
 </head>
 <body>
