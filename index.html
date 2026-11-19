@@ -3402,7 +3402,7 @@ async function loadExactModelPhotos(root){
  photoClaimsByCar.set(carId,prior);
 }
 
-function scan(){document.querySelectorAll('[data-atlas3d]').forEach(el=>{if(!atlas3dInstances.has(el)){try{initViewer(el).catch(err=>{console.error('Powertrain viewer init',err);const m=el.querySelector('[data-3d-loading]');if(m)m.textContent='Errore avvio 3D: '+(err?.message||err);});}catch(err){console.error('Powertrain viewer init',err);const m=el.querySelector('[data-3d-loading]');if(m)m.textContent='Errore avvio 3D: '+(err?.message||err);}}});document.querySelectorAll('[data-bmw-live-gallery]').forEach(el=>loadExactModelPhotos(el));}
+const ptIO=new IntersectionObserver(entries=>entries.forEach(e=>{const el=e.target;if(e.isIntersecting&&!atlas3dInstances.has(el)){try{initViewer(el).catch(err=>{console.error('Powertrain viewer init',err);const m=el.querySelector('[data-3d-loading]');if(m)m.textContent='Errore avvio 3D: '+(err?.message||err);});}catch(err){console.error('Powertrain viewer init',err);const m=el.querySelector('[data-3d-loading]');if(m)m.textContent='Errore avvio 3D: '+(err?.message||err);}}}),{rootMargin:'160px'});function scan(){document.querySelectorAll('[data-atlas3d]').forEach(el=>{if(!atlas3dInstances.has(el))ptIO.observe(el);});document.querySelectorAll('[data-bmw-live-gallery]').forEach(el=>loadExactModelPhotos(el));}
 const mo=new MutationObserver(scan);mo.observe(document.body,{childList:true,subtree:true});scan();
 </script>
 
@@ -3496,7 +3496,7 @@ function buildModel(el){if(mounted.has(el))return;const host=el;const scene=new 
  function resize(){if(!host.isConnected)return;const w=host.clientWidth,h=host.clientHeight;if(!w||!h)return;camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h);}const ro=new ResizeObserver(resize);ro.observe(host);resize();host.addEventListener('dblclick',()=>{camera.position.set(5,4,7);controls.target.set(0,0,0);});
  function animate(){if(!host.isConnected){ro.disconnect();controls.dispose();renderer.dispose();return;}requestAnimationFrame(animate);if(host.clientWidth&&host.clientHeight){controls.update();renderer.render(scene,camera);}}animate();mounted.add(el);
 }
-function scan(){document.querySelectorAll('.atlas-3d-view').forEach(buildModel);}scan();new MutationObserver(scan).observe(document.body,{childList:true,subtree:true});
+const engIO=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)buildModel(e.target);}),{rootMargin:'180px'});function scan(){document.querySelectorAll('.atlas-3d-view').forEach(el=>{if(!mounted.has(el))engIO.observe(el);});}scan();new MutationObserver(scan).observe(document.body,{childList:true,subtree:true});
 </script>
 
 </body></html>
@@ -3510,3 +3510,4 @@ function scan(){document.querySelectorAll('.atlas-3d-view').forEach(buildModel);
 <style id="atlas-v36-fix">.atlas-3d-view{min-height:300px}.atlas-3d-view canvas{width:100%;height:100%;min-height:300px}.atlas-3d-stage{min-height:340px}.atlas-3d-stage canvas{width:100%;height:100%}</style>
 
 <style id='atlas-v37-diagnostic-fixes'>.atlas-3d-stage{position:relative;min-height:340px;height:340px}.atlas-3d-stage canvas{display:block;width:100%;height:340px}.atlas-3d-view{position:relative;height:300px;min-height:300px;overflow:hidden}.atlas-3d-view canvas{display:block;width:100%;height:100%}</style>
+\n<style id="atlas-v38-webgl-context-recovery">.atlas-3d-view,.atlas-3d-stage{contain:content;min-height:300px}.atlas-3d-view canvas,.atlas-3d-stage canvas{display:block;width:100%;height:100%}</style>\n
