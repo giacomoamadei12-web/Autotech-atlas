@@ -3340,14 +3340,41 @@ function box(g,x,y,z,sx,sy,sz,material){const m=new THREE.Mesh(new THREE.BoxGeom
 function cyl(g,x,y,z,r1,r2,h,material,rotX=0,rotZ=0,segments=32){const m=new THREE.Mesh(new THREE.CylinderGeometry(r1,r2,h,segments),material);m.position.set(x,y,z);m.rotation.x=rotX;m.rotation.z=rotZ;g.add(m);return m;}
 function rod(g,a,b,r,material){const v1=new THREE.Vector3(...a),v2=new THREE.Vector3(...b),d=new THREE.Vector3().subVectors(v2,v1);const m=new THREE.Mesh(new THREE.CylinderGeometry(r,r,d.length(),12),material);m.position.copy(v1).add(v2).multiplyScalar(.5);m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());g.add(m);return m;}
 function torus(g,x,y,z,r,t,material,rx=0){const m=new THREE.Mesh(new THREE.TorusGeometry(r,t,12,72),material);m.position.set(x,y,z);m.rotation.x=rx;g.add(m);return m;}
-function makeEngine(layout,title){const g=new THREE.Group();const electric=/elettric|electric|ibrid/i.test(layout)||/^ELECTRIC/i.test(title);const v8=/V8/i.test(layout+' '+title),v10=/V10/i.test(layout+' '+title),v12=/V12/i.test(layout+' '+title);let count=electric?0:(v12?12:v10?10:v8?8:/4|quattro/i.test(layout+' '+title)?4:6);box(g,0,0,0,electric?2.3:2.5,.62,1.05,M.dark);box(g,0,.39,0,electric?2.1:.0,electric?.24:.0,.9,M.alloy);
-if(electric){cyl(g,0,.65,0,.55,.55,1.5,M.steel,Math.PI/2);torus(g,0,.65,0,.65,.12,M.orange,Math.PI/2);for(let i=0;i<10;i++){const a=i*Math.PI/5;box(g,Math.cos(a)*.75,.65,Math.sin(a)*.75,.12,.48,.12,M.blue);}box(g,0,-.48,0,2.4,.16,1.1,M.orange);}
-else{const banks=v8||v10||v12?2:1,per=banks===2?count/2:count;for(let bank=0;bank<banks;bank++){const angle=banks===2?(bank===0?-.34:.34):0;for(let i=0;i<per;i++){const x=(i-(per-1)/2)*.37,z=banks===2?(bank===0?-.35:.35):0;const cy=cyl(g,x,.68,z,.145,.145,.34,M.alloy,angle,0,24);cy.material=M.alloy;cyl(g,x,.39,z,.115,.115,.22,M.orange,angle,0,20);rod(g,[x,.28,z],[x*.85,-.38,0],.035,M.steel);}box(g,0,.62,banks===2?(bank===0?-.35:.35):0,per*.37+.4,.24,.48,M.dark);}
-// albero motore, pulegge e collettori
-cyl(g,0,-.28,0,.09,.09,count*.39+.65,M.orange,0,0,24).rotation.z=Math.PI/2;for(let i=0;i<count;i++){const x=(i-(count-1)/2)*.37;torus(g,x,-.27,0,.13,.035,M.gold,Math.PI/2);}box(g,0,1.0,0,count*.37+.7,.12,.7,M.alloy);for(let i=0;i<Math.min(count,6);i++){const x=(i-(Math.min(count,6)-1)/2)*.36;rod(g,[x,.98,-.35],[x*1.02,1.35,-.52],.055,M.orange);}}
-// Turbo schematic units when turbo is mentioned
-if(/turbo|biturbo|twinpower|compress/i.test(layout+' '+title)){for(let side of [-1,1]){const t=torus(g,side*1.35,.25,.85,.22,.08,M.orange,Math.PI/2);cyl(g,side*1.35,.25,.85,.13,.13,.2,M.steel,Math.PI/2);}}
-g.rotation.y=-.25;return g;}
+function makeEngine(layout,title){
+const g=new THREE.Group();const electric=/elettric|electric|ibrid/i.test(layout)||/^ELECTRIC/i.test(title);const v8=/V8/i.test(layout+' '+title);const v10=/V10/i.test(layout+' '+title);const v12=/V12/i.test(layout+' '+title);let count=electric?0:(v12?12:v10?10:v8?8:/4|quattro/i.test(layout+' '+title)?4:6);
+if(electric){box(g,0,0,0,2.35,.7,1.15,M.dark);cyl(g,0,.15,0,.5,.5,1.6,M.steel,Math.PI/2);torus(g,0,.15,0,.62,.11,M.orange,Math.PI/2);box(g,0,-.5,0,2.3,.2,1.1,M.blue);return g;}
+// Engine block and lower crankcase
+box(g,0,-.12,0,2.65,.72,1.18,M.dark);box(g,0,-.52,0,2.5,.3,1.12,M.alloy);box(g,0,-.72,0,2.35,.22,1.05,M.dark);
+const banks=(v8||v10||v12)?2:1,per=banks===2?count/2:count;const bankGroups=[];
+for(let bank=0;bank<banks;bank++){const bg=new THREE.Group();bg.position.set(0,.15,bank===0?-.36:.36);if(banks===2)bg.rotation.z=bank===0?-.36:.36;g.add(bg);bankGroups.push(bg);
+// cylinder bank, pistons, rods, liner rings and head
+for(let i=0;i<per;i++){const x=(i-(per-1)/2)*.48;const cylGroup=new THREE.Group();cylGroup.position.x=x;bg.add(cylGroup);
+// cylinder sleeve, piston body, crown and ring pack
+cyl(cylGroup,0,.08,0,.205,.205,.66,M.steel,0,0,32);cyl(cylGroup,0,-.02,0,.17,.17,.27,M.orange,0,0,32);cyl(cylGroup,0,.12,0,.175,.175,.08,M.alloy,0,0,32);
+for(let r=0;r<3;r++)torus(cylGroup,0,.14+r*.055,0,.178,.018,M.gold);
+// piston pin and connecting rod
+cyl(cylGroup,0,-.07,0,.07,.07,.24,M.steel,Math.PI/2,0,24);rod(cylGroup,[0,-.13,0],[0,-.55,0],.055,M.orange);cyl(cylGroup,0,-.53,0,.105,.105,.13,M.steel,0,0,24);
+// head, valve detail and cover
+box(cylGroup,0,.58,0,.43,.25,.48,M.alloy);box(cylGroup,0,.78,0,.4,.16,.45,M.dark);
+for(let side of [-1,1]){cyl(cylGroup,side*.12,.48,side*.12,.045,.045,.18,M.orange,0,0,16);}
+}
+// bank manifold/cover details
+box(bg,0,.88,0,per*.48+.45,.18,.58,M.dark);box(bg,0,.98,0,per*.48+.38,.08,.48,M.alloy);
+// camshafts on each bank
+for(let z of [-.22,.22]){cyl(bg,0,1.13,z,.075,.075,per*.48+.5,M.gold,0,0,24);for(let i=0;i<per*2;i++){const x=(i-(per*2-1)/2)*.23;const l=mesh(new THREE.SphereGeometry(.09,16,12),M.orange,x,1.13,z);l.scale.set(.65,1.35,.8);}}
+// runners for intake/exhaust and distinctive manifold geometry
+for(let i=0;i<per;i++){const x=(i-(per-1)/2)*.48;rod(bg,[x,.95,.38],[x,.55,.78],.07,M.blue);rod(bg,[x,.42,-.42],[x,.15,-.82],.07,M.orange);}
+}
+// shared crankshaft with throws, journals, counterweights and front pulley
+rod(g,[-1.65,-.56,0],[1.65,-.56,0],.095,M.orange);for(let i=0;i<count;i++){const x=(i-(count-1)/2)*.4;const w=box(g,x,-.56,0,.18,.36,.38,M.gold);w.rotation.z=(i%2?-.35:.35);cyl(g,x,-.56,0,.12,.12,.26,M.steel,Math.PI/2,0,24);}
+// timing/front cover, pulley stack and accessory blocks
+box(g,1.45,.22,0,.28,1.18,1.2,M.dark);cyl(g,1.6,.28,0,.38,.38,.16,M.steel,0,Math.PI/2,40);torus(g,1.62,.28,0,.31,.045,M.orange,Math.PI/2);box(g,-1.48,.18,.62,.42,.55,.35,M.alloy);box(g,-1.42,.18,-.62,.42,.45,.35,M.orange);
+// central intake plenum and throttle/air inlet
+box(g,0,1.18,0,1.5,.35,.72,M.blue);box(g,0,1.42,.05,1.22,.16,.48,M.alloy);cyl(g,0,1.45,.48,.22,.22,.42,M.dark,Math.PI/2,0,32);torus(g,0,1.45,.7,.22,.04,M.orange,Math.PI/2);
+// transmission-side flange
+cyl(g,-1.72,-.12,0,.42,.42,.22,M.steel,0,Math.PI/2,40);torus(g,-1.75,-.12,0,.35,.06,M.gold,Math.PI/2);
+g.rotation.y=-.22;return g;}
+
 function makeBrakes(){const g=new THREE.Group();cyl(g,0,0,0,1.05,1.05,.15,M.steel,Math.PI/2);torus(g,0,0,0,1.04,.08,M.orange,Math.PI/2);cyl(g,0,0,.1,.25,.25,.22,M.dark,Math.PI/2);for(let i=0;i<18;i++){const a=i*Math.PI/9;const h=box(g,Math.cos(a)*.72,Math.sin(a)*.72,.1,.08,.22,.12,M.dark);h.rotation.z=a;}
 const cal=box(g,.95,.25,.15,.48,.78,.48,M.orange);cal.rotation.z=-.25;box(g,.76,.22,.2,.15,.58,.48,M.dark);for(let i=0;i<4;i++)cyl(g,.9,.02+i*.14,.42,.07,.07,.18,M.steel,Math.PI/2);return g;}
 function makeTransmission(){const g=new THREE.Group();box(g,-.65,0,0,1.15,.85,.85,M.alloy);box(g,.45,-.05,0,.72,.7,.72,M.dark);for(let i=0;i<5;i++){const x=-.9+i*.28;cyl(g,x,.03,0,.24-i*.015,.24-i*.015,.13,M.steel,Math.PI/2);torus(g,x,.03,0,.22-i*.015,.035,M.orange,Math.PI/2);}rod(g,[.8,0,0],[1.65,0,0],.08,M.steel);cyl(g,1.8,0,0,.42,.42,.34,M.orange,0,Math.PI/2);for(let i=0;i<8;i++){const a=i*Math.PI/4;rod(g,[1.8,0,0],[1.8+Math.cos(a)*.42,Math.sin(a)*.42,0],.035,M.steel);}return g;}
