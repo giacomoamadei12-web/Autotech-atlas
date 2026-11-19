@@ -3470,6 +3470,9 @@ new MutationObserver(scan).observe(document.body,{childList:true,subtree:true});
 <style>
 .eng-real3d .atlas-3d-view{height:300px;position:relative;background:radial-gradient(ellipse at center,#283945,#090e13 80%);overflow:hidden;border-radius:10px;touch-action:none}.atlas-3d-view canvas{display:block;width:100%;height:100%;outline:none}.atlas3d-loading{position:absolute;inset:0;display:grid;place-items:center;color:#bdcbd5;font-size:13px;z-index:2}.eng-real3d figcaption{font-size:11px;color:#aebdca}.eng-real3d{border:1px solid #344450}
 </style>
+<style>
+.engine-lab-controls{position:absolute;top:8px;left:8px;right:8px;display:flex;gap:6px;flex-wrap:wrap;z-index:4;align-items:center}.engine-lab-controls button{background:#18232d;color:#dce7ef;border:1px solid #536575;border-radius:6px;padding:6px 9px;font-size:11px;cursor:pointer}.engine-lab-controls button.active{background:#d86c32;color:#fff}.engine-lab-note{font-size:10px;color:#b8c9d6;padding:3px 6px;background:#111b24c9;border-radius:5px}
+</style>
 <script type="module">
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
 import {OrbitControls} from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/OrbitControls.js';
@@ -3484,25 +3487,59 @@ function buildModel(el){if(mounted.has(el))return;const host=el;const scene=new 
  const raw=(host.dataset.title+' '+host.dataset.category).toLowerCase();
  // Construct category-specific, assembled teaching models from 3D geometry
  if(/motore|engine|powertrain|cylinder|piston|v[468]|inline|i[346]/.test(raw)){
-  const eg=new THREE.Group();root.add(eg);
-  eg.add(mesh(new THREE.BoxGeometry(2.55,.62,1.25),dark,0,-.15,0));
-  const xs=[-.72,-.24,.24,.72];
-  xs.forEach((x,i)=>{
-    eg.add(mesh(new THREE.CylinderGeometry(.19,.19,.82,32),steel,x,.38,0));
-    eg.add(mesh(new THREE.CylinderGeometry(.155,.155,.19,32),orange,x,.36,0));
-    for(let ring=0;ring<3;ring++){let rr=new THREE.Mesh(new THREE.TorusGeometry(.16,.018,8,32),gold);rr.position.set(x,.43+ring*.045,0);eg.add(rr);}
-    let conn=mesh(new THREE.CylinderGeometry(.045,.045,.72,16),silver,x,-.15,0);conn.rotation.z=.22*(i%2?1:-1);eg.add(conn);
-  });
-  let crank=mesh(new THREE.CylinderGeometry(.09,.09,2.15,32),orange,0,-.72,0);crank.rotation.z=Math.PI/2;eg.add(crank);
-  xs.forEach((x,i)=>{let web=mesh(new THREE.BoxGeometry(.16,.38,.2),gold,x,-.72,0);web.rotation.z=i%2?.35:-.35;eg.add(web);let j=mesh(new THREE.CylinderGeometry(.12,.12,.24,24),steel,x,-.72,0);j.rotation.z=Math.PI/2;eg.add(j);});
-  eg.add(mesh(new THREE.BoxGeometry(2.35,.38,1.15),steel,0,1.0,0));
-  eg.add(mesh(new THREE.BoxGeometry(2.15,.2,.92),dark,0,1.28,0));
-  for(let z of [-.32,.32]){let cam=mesh(new THREE.CylinderGeometry(.065,.065,2.05,24),gold,0,1.48,z);cam.rotation.z=Math.PI/2;eg.add(cam);for(let i=0;i<8;i++){let l=mesh(new THREE.SphereGeometry(.095,16,12),orange,(i-3.5)*.25,1.48,z);l.scale.set(.75,1.2,1);eg.add(l);}}
-  for(let i=0;i<4;i++){let x=(i-1.5)*.45;let intake=mesh(new THREE.CylinderGeometry(.07,.1,.55,20),blue,x,.72,.68);intake.rotation.x=.55;eg.add(intake);let ex=mesh(new THREE.CylinderGeometry(.07,.1,.55,20),red,x,.72,-.68);ex.rotation.x=-.55;eg.add(ex);}
-  let timing=mesh(new THREE.CylinderGeometry(.38,.38,.12,48),dark,1.35,.75,0);timing.rotation.z=Math.PI/2;eg.add(timing);
-  let tr=new THREE.Mesh(new THREE.TorusGeometry(.32,.045,12,48),gold);tr.position.set(1.42,.75,0);tr.rotation.y=Math.PI/2;eg.add(tr);
-  eg.add(mesh(new THREE.BoxGeometry(2.15,.28,1.05),black,0,-.62,0));
-  eg.add(mesh(new THREE.BoxGeometry(.55,.45,.4),steel,-1.45,.15,.55));eg.add(mesh(new THREE.BoxGeometry(.4,.4,.4),orange,-1.35,.15,-.55));eg.scale.setScalar(1.08);
+  // Detailed conceptual V8 assembly: block, liners, pistons, rods, crank, heads, valvetrain, intake and exhaust.
+  const eg=new THREE.Group();root.add(eg);eg.name='S65B40 conceptual V8';
+  const moving=new THREE.Group();eg.add(moving);
+  const partGroups=[];const mkGroup=(name)=>{const g=new THREE.Group();g.name=name;eg.add(g);partGroups.push(g);return g;};
+  const blockG=mkGroup('Block / crankcase'), pistG=mkGroup('Pistons / connecting rods'), crankG=mkGroup('Crankshaft'), headG=mkGroup('Cylinder heads'), valveG=mkGroup('Camshafts / valves'), intakeG=mkGroup('Intake'), exhaustG=mkGroup('Exhaust'), accessoryG=mkGroup('Front accessories');
+  blockG.add(mesh(new THREE.BoxGeometry(2.7,.82,1.55),dark,0,-.15,0));
+  blockG.add(mesh(new THREE.BoxGeometry(2.48,.22,1.38),steel,0,.30,0));
+  const positions=[];const pistonParts=[];const bankAngles=[-Math.PI/4,Math.PI/4];
+  for(let bank=0;bank<2;bank++){
+    const z=bank===0?-.62:.62, angle=bankAngles[bank];
+    const bankG=new THREE.Group();bankG.position.set(0,.55,z);bankG.rotation.z=angle;blockG.add(bankG);
+    bankG.add(mesh(new THREE.BoxGeometry(2.35,.36,.68),steel,0,.36,0));
+    for(let i=0;i<4;i++){
+      const x=(i-1.5)*.56;positions.push({x,z,angle,bank,i});
+      const sleeve=mesh(new THREE.CylinderGeometry(.205,.205,.70,40),steel,x,.04,0);bankG.add(sleeve);
+      const piston=new THREE.Group();piston.position.set(x,.08,0);bankG.add(piston);
+      piston.add(mesh(new THREE.CylinderGeometry(.175,.175,.23,36),silver,0,0,0));
+      for(let r=0;r<3;r++){const ring=new THREE.Mesh(new THREE.TorusGeometry(.176,.012,10,36),gold);ring.position.y=.07-r*.035;piston.add(ring);}
+      pistonParts.push({piston,bankG,x,phase:(i+(bank?2:0))*Math.PI/2,rod:null});
+      const rod=mesh(new THREE.CylinderGeometry(.052,.052,.62,18),orange,x,-.32,0);bankG.add(rod);pistonParts[pistonParts.length-1].rod=rod;
+      // Four valve hints per cylinder: intake/exhaust pair represented on both sides of cam assembly.
+      for(let v=0;v<4;v++){const valve=mesh(new THREE.CylinderGeometry(.035,.035,.24,16),gold,x+(v-1.5)*.10,.57,(v%2?-.18:.18));bankG.add(valve);}
+    }
+    // paired camshafts per bank, with lobes and bearing pedestals
+    for(let camSide=0;camSide<2;camSide++){
+      const zz=(camSide-.5)*.42;const cam=mesh(new THREE.CylinderGeometry(.075,.075,2.25,32),gold,0,.72,zz);cam.rotation.z=Math.PI/2;bankG.add(cam);
+      for(let l=0;l<8;l++){const lobe=mesh(new THREE.SphereGeometry(.095,18,14),orange,(l-3.5)*.27,.72,zz);lobe.scale.set(.72,1.35,.85);bankG.add(lobe);}
+      for(let b=0;b<5;b++)bankG.add(mesh(new THREE.BoxGeometry(.18,.20,.22),dark,(b-2)*.48,.60,zz));
+    }
+    // Head, cover and port runners on each bank
+    headG.add(mesh(new THREE.BoxGeometry(2.45,.38,.78),silver,0,1.00,z));
+    headG.add(mesh(new THREE.BoxGeometry(2.3,.18,.70),dark,0,1.25,z));
+    for(let i=0;i<4;i++){const x=(i-1.5)*.56;const port=mesh(new THREE.CylinderGeometry(.10,.14,.48,24),red,x,.88,z+(bank?-.52:.52));port.rotation.x=bank?-.4:.4;exhaustG.add(port);}
+    for(let i=0;i<4;i++){const x=(i-1.5)*.56;const trumpet=mesh(new THREE.CylinderGeometry(.12,.07,.58,24),blue,x,1.45,z+(bank?-.48:.48));trumpet.rotation.x=bank?-.42:.42;intakeG.add(trumpet);}
+  }
+  // crankshaft axis, main journals, crank throws and flywheel
+  const crankshaft=mesh(new THREE.CylinderGeometry(.12,.12,2.9,40),orange,0,-.78,0);crankshaft.rotation.z=Math.PI/2;crankG.add(crankshaft);
+  for(let i=0;i<5;i++){const x=(i-2)*.62;const journal=mesh(new THREE.CylinderGeometry(.15,.15,.34,32),steel,x,-.78,0);journal.rotation.z=Math.PI/2;crankG.add(journal);}
+  for(let i=0;i<4;i++){const x=(i-1.5)*.56;const web1=mesh(new THREE.BoxGeometry(.22,.48,.25),gold,x,-.78,.18);web1.rotation.z=(i%2?-.35:.35);crankG.add(web1);const web2=web1.clone();web2.position.z=-.18;crankG.add(web2);}
+  const fly=mesh(new THREE.CylinderGeometry(.42,.42,.18,48),dark,1.55,-.78,0);fly.rotation.z=Math.PI/2;crankG.add(fly);
+  // Sump and front timing/accessory envelope
+  accessoryG.add(mesh(new THREE.BoxGeometry(2.4,.36,1.35),black,0,-.72,0));
+  accessoryG.add(mesh(new THREE.CylinderGeometry(.36,.36,.20,40),dark,-1.48,.22,0));
+  accessoryG.add(mesh(new THREE.TorusGeometry(.30,.05,12,40),gold,-1.48,.22,0));
+  accessoryG.add(mesh(new THREE.BoxGeometry(.42,.42,.38),steel,1.42,.10,.48));
+  // Tags are kept on groups so the exploded state can be controlled cleanly.
+  eg.scale.setScalar(1.05);eg.rotation.y=-.18;
+  host._engineLab={eg,pistonParts,partGroups,crankG,intakeG,exhaustG,headG,blockG,playing:true,exploded:false,cutaway:false};
+  const lab=host._engineLab;
+  const ui=document.createElement('div');ui.className='engine-lab-controls';ui.innerHTML='<button type="button" data-lab-play>⏸ Cinematica</button><button type="button" data-lab-explode>Esploso</button><button type="button" data-lab-cut>Sezione</button><span class="engine-lab-note">Schema V8 a 90° · 8 pistoni · 4 alberi a camme · geometria concettuale</span>';host.appendChild(ui);
+  ui.querySelector('[data-lab-play]').onclick=e=>{lab.playing=!lab.playing;e.currentTarget.textContent=lab.playing?'⏸ Cinematica':'▶ Cinematica';};
+  ui.querySelector('[data-lab-explode]').onclick=e=>{lab.exploded=!lab.exploded;eg.position.y=lab.exploded?.45:0;headG.position.y=lab.exploded?.38:0;intakeG.position.y=lab.exploded?.65:0;exhaustG.position.y=lab.exploded?.55:0;crankG.position.y=lab.exploded?-.28:0;e.currentTarget.classList.toggle('active',lab.exploded);};
+  ui.querySelector('[data-lab-cut]').onclick=e=>{lab.cutaway=!lab.cutaway;blockG.children.forEach(o=>{if(o.material){o.material.transparent=lab.cutaway;o.material.opacity=lab.cutaway?.28:1;}});e.currentTarget.classList.toggle('active',lab.cutaway);};
  }
  else if(/freno|brake|disco|caliper/.test(raw)){let disc=mesh(new THREE.CylinderGeometry(1.25,1.25,.22,64),silver);disc.rotation.x=Math.PI/2;root.add(disc);let hat=mesh(new THREE.CylinderGeometry(.48,.48,.34,48),dark);hat.rotation.x=Math.PI/2;root.add(hat);for(let i=0;i<8;i++){let h=mesh(new THREE.CylinderGeometry(.1,.1,.12,16),gold,Math.cos(i*Math.PI/4)*.65,0,Math.sin(i*Math.PI/4)*.65);h.rotation.x=Math.PI/2;root.add(h);}let cal=mesh(new THREE.BoxGeometry(.5,.85,.45),red,1.05,.1,.15);root.add(cal);root.add(mesh(new THREE.BoxGeometry(.24,.5,.42),orange,.83,.05,.15));for(let i=0;i<22;i++){let vane=mesh(new THREE.BoxGeometry(.04,.12,.65),dark,0,0,0);vane.rotation.y=i*Math.PI/11;root.add(vane);}}
  else if(/sospension|ammort|barra antiroll|camber|caster|toe/.test(raw)){root.add(mesh(new THREE.BoxGeometry(2.8,.18,.25),silver,0,-.6,0));root.add(mesh(new THREE.BoxGeometry(2.5,.16,.22),silver,0,.6,0));let spring= new THREE.Mesh(new THREE.TorusGeometry(.38,.08,12,60),orange);for(let i=0;i<7;i++){let c=spring.clone();c.position.set(0,-.65+i*.2,0);c.rotation.x=Math.PI/2;root.add(c);}root.add(mesh(new THREE.CylinderGeometry(.16,.16,1.5,24),dark,0,0,0));root.add(mesh(new THREE.BoxGeometry(.5,.6,.5),steel,0,0,0));for(let x of [-1.25,1.25])root.add(mesh(new THREE.SphereGeometry(.25,24,24),orange,x,-.6,0));}
@@ -3516,7 +3553,7 @@ function buildModel(el){if(mounted.has(el))return;const host=el;const scene=new 
  // ground and subtle grid
  const floor=mesh(new THREE.PlaneGeometry(10,10),mat('#19232c',.1,.8),0,-2.05,0);floor.rotation.x=-Math.PI/2;floor.receiveShadow=true;scene.add(floor);
  function resize(){if(!host.isConnected)return;const w=host.clientWidth,h=host.clientHeight;if(!w||!h)return;camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h);}const ro=new ResizeObserver(resize);ro.observe(host);resize();host.addEventListener('dblclick',()=>{camera.position.set(5,4,7);controls.target.set(0,0,0);});
- function animate(){if(!host.isConnected){ro.disconnect();controls.dispose();renderer.dispose();return;}requestAnimationFrame(animate);if(host.clientWidth&&host.clientHeight){controls.update();renderer.render(scene,camera);}}animate();mounted.add(el);
+ function animate(){if(!host.isConnected){ro.disconnect();controls.dispose();renderer.dispose();return;}requestAnimationFrame(animate);if(host.clientWidth&&host.clientHeight){if(host._engineLab&&host._engineLab.playing){const lab=host._engineLab;const t=performance.now()*.003;lab.crankG.rotation.x=t;lab.pistonParts.forEach((p)=>{const q=t+p.phase;const stroke=Math.cos(q)*.22;p.piston.position.y=.08+stroke;p.rod.position.y=-.32+stroke*.5;p.rod.rotation.z=Math.sin(q)*.18;});}controls.update();renderer.render(scene,camera);}}animate();mounted.add(el);
 }
 const engIO=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)buildModel(e.target);}),{rootMargin:'180px'});function scan(){document.querySelectorAll('.atlas-3d-view').forEach(el=>{if(!mounted.has(el))engIO.observe(el);});}scan();new MutationObserver(scan).observe(document.body,{childList:true,subtree:true});
 </script>
