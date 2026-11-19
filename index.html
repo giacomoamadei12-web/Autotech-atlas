@@ -2186,14 +2186,10 @@ function renderBMWGenerationDossier(car){
 
 function renderBMWPhotoGallery(car){
  const gen=String(car.generation||'').trim(), model=String(car.name||'BMW'), safe=v=>String(v||'').replace(/[&<>"']/g,' ');
- // Curated seeds only for these two generations. Removed the earlier E30/E36 seeds that could resolve to books or unrelated objects.
- const seedByGen={E30:{file:'BMW M3 E30.jpg',page:'https://commons.wikimedia.org/wiki/File:BMW_M3_E30.jpg'},E36:{file:'BMW_m3_e36.jpg',page:'https://commons.wikimedia.org/wiki/File:BMW_m3_e36.jpg'}};
- const seed=seedByGen[gen];
  const q=`${model} ${gen} BMW car photograph`;
  const commons=`https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=${encodeURIComponent(q)}`;
  const press=`https://www.press.bmwgroup.com/global/photo/search/${encodeURIComponent(q)}/?forceSitePreference=DESKTOP`;
- const seedHTML=seed?`<a href="${seed.page}" target="_blank" rel="noopener"><img class="m-photo-thumb" data-full-src="https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(seed.file)}" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(seed.file)}?width=1200" alt="${safe(model)} ${safe(gen)}"></a><div class="m-photo-caption">${safe(seed.file)} · file Wikimedia</div><div class="m-photo-license">Immagine specifica candidata · apri la scheda Wikimedia per verifica e licenza</div>`:'';
- return `<section class="panel photo-panel"><h3>Galleria fotografica · ${safe(model)}</h3><div class="photo-archive-intro"><b>${safe(model)} · ${safe(gen)}</b><p>Obiettivo: almeno una fotografia identificabile della vettura per ogni scheda. I risultati automatici sono filtrati per evitare libri, modellini, poster e oggetti non automobilistici; se la selezione non è abbastanza affidabile, viene lasciata la ricerca manuale invece di mostrare una foto errata.</p></div><div class="m-photo-grid" data-bmw-live-gallery data-model="${safe(model)}" data-generation="${safe(gen)}" data-model-id="${safe(car.id)}"><article class="m-photo-slot"><div class="m-photo-slot-head"><b>Fotografia della vettura</b><span class="m-photo-slot-status">${seed?'FOTO CANDIDATA':'RICERCA'}</span></div>${seedHTML}<div class="m-photo-results" data-photo-results="main"><div class="m-photo-slot-result">${seed?'Foto candidata disponibile.':'Ricerca di una fotografia specifica in archivio…'}</div></div></article></div><div class="photo-credit"><a href="${commons}" target="_blank" rel="noopener">Ricerca Wikimedia Commons ↗</a> · <a href="${press}" target="_blank" rel="noopener">BMW PressClub ↗</a></div></section>`;
+ return `<section class="panel photo-panel"><h3>Galleria fotografica · ${safe(model)}</h3><div class="photo-archive-intro"><b>${safe(model)} · ${safe(gen)}</b><p>Una fotografia per scheda, con filtri per ridurre risultati non pertinenti.</p></div><div class="m-photo-grid" data-bmw-live-gallery data-model="${safe(model)}" data-generation="${safe(gen)}" data-model-id="${safe(car.id)}"><article class="m-photo-slot"><div class="m-photo-slot-head"><b>Fotografia della vettura</b><span class="m-photo-slot-status">RICERCA</span></div><div class="m-photo-results" data-photo-results="main"><div class="m-photo-slot-result">Ricerca di una fotografia…</div></div></article></div><div class="photo-credit"><a href="${commons}" target="_blank" rel="noopener">Ricerca Wikimedia Commons ↗</a> · <a href="${press}" target="_blank" rel="noopener">BMW PressClub ↗</a></div></section>`;
 }
 
 function renderEngineeringAtlas(car){
@@ -3348,20 +3344,19 @@ const mo=new MutationObserver(scan);mo.observe(document.body,{childList:true,sub
 
 
 <script>
-(function(){if(window.__atlasVerifiedOnePhoto)return;window.__atlasVerifiedOnePhoto=true;
+(function(){if(window.__atlasPhotoCoverage22)return;window.__atlasPhotoCoverage22=true;
 const blacklist=/book|magazine|catalog|catalogue|manual|brochure|poster|logo|model kit|scale model|toy|die.?cast|miniature|lego|painting|drawing|render|computer|desktop|wallpaper|parts|engine only|wheel only/i;
-const genPattern=/\b(e\d{2,3}|f\d{2,3}|g\d{2,3}|i\d{2,3}|u\d{2,3})\b/i;
-async function run(g){if(g.dataset.onePhotoLoaded)return;g.dataset.onePhotoLoaded='1';const model=g.dataset.model||'',gen=g.dataset.generation||'',box=g.querySelector('.m-photo-results');if(!box)return;
-if(g.querySelector('.m-photo-thumb')&&gen==='E30'||g.querySelector('.m-photo-thumb')&&gen==='E36')return;
-try{const q=`${model} ${gen} BMW`;const url='https://commons.wikimedia.org/w/api.php?'+new URLSearchParams({action:'query',generator:'search',gsrsearch:'file:'+q,gsrnamespace:'6',gsrlimit:'30',prop:'imageinfo',iiprop:'url|extmetadata',iiurlwidth:'1400',format:'json',origin:'*'});
-const r=await fetch(url);if(!r.ok)throw Error();const data=await r.json(),pages=Object.values(data.query?.pages||{});
-const genToken=(gen.match(genPattern)||[])[0]?.toLowerCase();const modelTokens=model.toLowerCase().replace(/bmw/g,'').split(/[^a-z0-9]+/).filter(x=>x.length>2);
-const picks=pages.filter(p=>{let t=(p.title||'').replace(/^File:/,'');let low=t.toLowerCase();if(blacklist.test(low))return false;if(!/\.(jpg|jpeg|png|webp)$/i.test(t))return false;if(genToken&&!low.includes(genToken))return false;if(!low.includes('bmw'))return false;if(modelTokens.length&&!modelTokens.some(tok=>low.includes(tok)))return false;return p.imageinfo?.[0]?.thumburl;});
-if(!picks.length){box.innerHTML='<div class="m-photo-slot-result">Nessuna fotografia che superi i filtri di identificazione. Meglio non mostrare un’immagine potenzialmente sbagliata.</div>';return;}
+function tokens(s){return s.toLowerCase().replace(/bmw/g,'').split(/[^a-z0-9]+/).filter(x=>x.length>2&&!/^20\d\d$/.test(x));}
+async function search(query){const url='https://commons.wikimedia.org/w/api.php?'+new URLSearchParams({action:'query',generator:'search',gsrsearch:'file:'+query,gsrnamespace:'6',gsrlimit:'40',prop:'imageinfo',iiprop:'url|extmetadata',iiurlwidth:'1400',format:'json',origin:'*'});const r=await fetch(url);if(!r.ok)throw Error();return Object.values((await r.json()).query?.pages||{});}
+async function load(g){if(g.dataset.photoCoverage22)return;g.dataset.photoCoverage22='1';const model=g.dataset.model||'',gen=g.dataset.generation||'',box=g.querySelector('.m-photo-results'),status=g.querySelector('.m-photo-slot-status');if(!box)return;
+let candidates=[];const queries=[`${model} ${gen} BMW`,`${model} BMW automobile`,`${gen} BMW car`];try{for(const q of queries){candidates=await search(q);if(candidates.length)break;}}catch(e){box.innerHTML='<div class="m-photo-slot-result">Archivio immagini non raggiungibile. Riprova online.</div>';if(status)status.textContent='ARCHIVIO NON DISPONIBILE';return;}
+const mt=tokens(model),gt=gen.toLowerCase(),gts=tokens(gen);
+let picks=candidates.filter(p=>{const title=(p.title||'').replace(/^File:/,''),low=title.toLowerCase();if(blacklist.test(low)||!(/\.(jpg|jpeg|png|webp)$/i.test(title))||!p.imageinfo?.[0]?.thumburl)return false;return low.includes('bmw')&&(!gt||low.includes(gt)||gts.some(t=>low.includes(t)));});
+picks.sort((a,b)=>{const score=p=>{let s=0,l=(p.title||'').toLowerCase();if(gt&&l.includes(gt))s+=6;for(const t of mt)if(l.includes(t))s+=2;for(const t of gts)if(l.includes(t))s+=3;return s;};return score(b)-score(a);});
+if(!picks.length){box.innerHTML='<div class="m-photo-slot-result">Nessuna foto identificata automaticamente. <a href="https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search='+encodeURIComponent(model+' '+gen+' BMW')+'" target="_blank" rel="noopener">Apri la ricerca mirata</a>.</div>';if(status)status.textContent='DA VERIFICARE';return;}
 const p=picks[0],ii=p.imageinfo[0],title=p.title.replace(/^File:/,''),meta=ii.extmetadata||{},author=(meta.Artist?.value||'Autore non indicato').replace(/<[^>]*>/g,''),lic=meta.LicenseShortName?.value||'licenza da verificare';
-box.innerHTML=`<a href="https://commons.wikimedia.org/wiki/${encodeURIComponent(p.title.replace(/ /g,'_'))}" target="_blank" rel="noopener"><img class="m-photo-thumb" data-full-src="${ii.url||ii.thumburl}" src="${ii.thumburl}" alt="${title.replace(/"/g,' ')}" loading="lazy"></a><div class="m-photo-caption">${title}</div><div class="m-photo-license">${author} · ${lic}</div>`;
-}catch(e){box.innerHTML='<div class="m-photo-slot-result">Ricerca automatica non disponibile. Consulta Wikimedia Commons o BMW PressClub.</div>';}}
-function scan(){document.querySelectorAll('[data-bmw-live-gallery]').forEach(run);}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',scan);else scan();new MutationObserver(scan).observe(document.body,{childList:true,subtree:true});})();
+box.innerHTML='<a href="https://commons.wikimedia.org/wiki/'+encodeURIComponent(p.title.replace(/ /g,'_'))+'" target="_blank" rel="noopener"><img class="m-photo-thumb" data-full-src="'+(ii.url||ii.thumburl)+'" src="'+ii.thumburl+'" alt="'+title.replace(/"/g,' ')+'" loading="lazy"></a><div class="m-photo-caption">'+title+'</div><div class="m-photo-license">'+author+' · '+lic+'</div>';if(status)status.textContent='FOTO TROVATA';}
+function scan(){document.querySelectorAll('[data-bmw-live-gallery]').forEach(load);}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',scan);else scan();new MutationObserver(scan).observe(document.body,{childList:true,subtree:true});})();
 </script>
 
 </body></html>
