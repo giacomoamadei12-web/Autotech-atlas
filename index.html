@@ -3402,7 +3402,7 @@ async function loadExactModelPhotos(root){
  photoClaimsByCar.set(carId,prior);
 }
 
-function scan(){document.querySelectorAll('[data-atlas3d]').forEach(el=>{if(!atlas3dInstances.has(el))initViewer(el);});document.querySelectorAll('[data-bmw-live-gallery]').forEach(el=>loadExactModelPhotos(el));}
+function scan(){document.querySelectorAll('[data-atlas3d]').forEach(el=>{if(!atlas3dInstances.has(el)){try{initViewer(el).catch(err=>{console.error('Powertrain viewer init',err);const m=el.querySelector('[data-3d-loading]');if(m)m.textContent='Errore avvio 3D: '+(err?.message||err);});}catch(err){console.error('Powertrain viewer init',err);const m=el.querySelector('[data-3d-loading]');if(m)m.textContent='Errore avvio 3D: '+(err?.message||err);}}});document.querySelectorAll('[data-bmw-live-gallery]').forEach(el=>loadExactModelPhotos(el));}
 const mo=new MutationObserver(scan);mo.observe(document.body,{childList:true,subtree:true});scan();
 </script>
 
@@ -3489,7 +3489,7 @@ function buildModel(el){if(mounted.has(el))return;const host=el;const scene=new 
  else if(/pneumatic|gomma|ruot/.test(raw)){root.add(torus(1,.34,black));let rim=torus(.65,.12,silver);root.add(rim);root.add(mesh(new THREE.CylinderGeometry(.45,.45,.35,32),dark));for(let i=0;i<10;i++){let spoke=mesh(new THREE.BoxGeometry(.12,.65,.1),silver,0,0,0);spoke.rotation.z=i*Math.PI/5;root.add(spoke);}for(let i=0;i<24;i++){let tread=mesh(new THREE.BoxGeometry(.13,.14,.55),dark,Math.cos(i*Math.PI/12)*.88,Math.sin(i*Math.PI/12)*.88,0);tread.rotation.z=i*Math.PI/12;root.add(tread);}}
  else if(/sterzo|eps/.test(raw)){root.add(torus(.9,.12,silver));root.add(mesh(new THREE.CylinderGeometry(.12,.12,1.7,24),silver,0,-.7,0));root.add(mesh(new THREE.BoxGeometry(2.5,.4,.5),dark,0,-1.4,0));root.add(mesh(new THREE.BoxGeometry(.4,.35,.35),orange,0,-1.4,0));for(let x of [-1.35,1.35])root.add(mesh(new THREE.SphereGeometry(.22,24,24),silver,x,-1.4,0));}
  else if(/aerodinam|diffusore|flap|cfd|fondo vettura/.test(raw)){root.add(mesh(new THREE.BoxGeometry(3.4,.16,1.8),dark));for(let i=0;i<5;i++){let fin=mesh(new THREE.BoxGeometry(.18,.5,1.5),silver,-1.2+i*.6,-.3,0);fin.rotation.z=-.25;root.add(fin);}root.add(mesh(new THREE.BoxGeometry(2,.15,.7),orange,0,.3,0));}
- else if(/scocca|telaio|struttur|material|cfrp|laminat|sottotela/.test(raw)){for(let x of [-1.4,1.4])for(let z of [-.7,.7])root.add(mesh(new THREE.BoxGeometry(.16,2.2,.16),silver,x,0,z));for(let y of [-1,0,1])root.add(mesh(new THREE.BoxGeometry(3,.15,.15),orange,0,y,.7));root.add(mesh(new THREE.BoxGeometry(3,.15,.15),silver,0,y,-.7));root.add(mesh(new THREE.BoxGeometry(1.4,.15,1.4),dark,0,0,0));}
+ else if(/scocca|telaio|struttur|material|cfrp|laminat|sottotela/.test(raw)){for(let x of [-1.4,1.4])for(let z of [-.7,.7])root.add(mesh(new THREE.BoxGeometry(.16,2.2,.16),silver,x,0,z));for(let y of [-1,0,1]){root.add(mesh(new THREE.BoxGeometry(3,.15,.15),orange,0,y,.7));root.add(mesh(new THREE.BoxGeometry(3,.15,.15),silver,0,y,-.7));}root.add(mesh(new THREE.BoxGeometry(1.4,.15,1.4),dark,0,0,0));}
  else {root.add(mesh(new THREE.BoxGeometry(2.5,1.5,1.5),dark));root.add(mesh(new THREE.CylinderGeometry(.65,.65,.7,32),orange,0,0,0));for(let i=0;i<8;i++){let detail=mesh(new THREE.BoxGeometry(.18,.8,.18),silver,Math.cos(i*Math.PI/4)*.8,Math.sin(i*Math.PI/4)*.8,.3);root.add(detail);}}
  // ground and subtle grid
  const floor=mesh(new THREE.PlaneGeometry(10,10),mat('#19232c',.1,.8),0,-2.05,0);floor.rotation.x=-Math.PI/2;floor.receiveShadow=true;scene.add(floor);
@@ -3508,3 +3508,5 @@ function scan(){document.querySelectorAll('.atlas-3d-view').forEach(buildModel);
 </style>
 
 <style id="atlas-v36-fix">.atlas-3d-view{min-height:300px}.atlas-3d-view canvas{width:100%;height:100%;min-height:300px}.atlas-3d-stage{min-height:340px}.atlas-3d-stage canvas{width:100%;height:100%}</style>
+
+<style id='atlas-v37-diagnostic-fixes'>.atlas-3d-stage{position:relative;min-height:340px;height:340px}.atlas-3d-stage canvas{display:block;width:100%;height:340px}.atlas-3d-view{position:relative;height:300px;min-height:300px;overflow:hidden}.atlas-3d-view canvas{display:block;width:100%;height:100%}</style>
