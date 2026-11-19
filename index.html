@@ -3483,7 +3483,27 @@ function buildModel(el){if(mounted.has(el))return;const host=el;const scene=new 
  const root=new THREE.Group();scene.add(root);const silver=mat('#b7c5ce'),dark=mat('#303d48'),black=mat('#171d23',.2,.7),orange=mat('#f07836'),steel=mat('#718795'),red=mat('#a52b28'),gold=mat('#d1a34d');
  const raw=(host.dataset.title+' '+host.dataset.category).toLowerCase();
  // Construct category-specific, assembled teaching models from 3D geometry
- if(/turbo|turbocompress|sovraliment|intercooler/.test(raw)){for(let side of [-1.25,1.25]){let casing=mesh(new THREE.SphereGeometry(.8,32,24),steel,side,0,0);casing.scale.set(1,.9,.9);root.add(casing);root.add(mesh(new THREE.CylinderGeometry(.22,.22,1.1,32),silver,side*1.45,0,0));let wheel=mesh(new THREE.CylinderGeometry(.65,.65,.18,48),orange,side,0,0);wheel.rotation.x=Math.PI/2;root.add(wheel);for(let i=0;i<12;i++){let blade=mesh(new THREE.BoxGeometry(.12,.55,.08),silver,side+Math.cos(i*Math.PI/6)*.38,Math.sin(i*Math.PI/6)*.38,0);blade.rotation.z=i*Math.PI/6+.3;root.add(blade);}root.add(mesh(new THREE.CylinderGeometry(.18,.18,.22,32),dark,side,0,0));}root.add(mesh(new THREE.BoxGeometry(1.4,.45,.7),dark,0,-1.05,0));root.add(mesh(new THREE.BoxGeometry(1.1,.3,.5),orange,0,-1.4,0));}
+ if(/motore|engine|powertrain|cylinder|piston|v[468]|inline|i[346]/.test(raw)){
+  const eg=new THREE.Group();root.add(eg);
+  eg.add(mesh(new THREE.BoxGeometry(2.55,.62,1.25),dark,0,-.15,0));
+  const xs=[-.72,-.24,.24,.72];
+  xs.forEach((x,i)=>{
+    eg.add(mesh(new THREE.CylinderGeometry(.19,.19,.82,32),steel,x,.38,0));
+    eg.add(mesh(new THREE.CylinderGeometry(.155,.155,.19,32),orange,x,.36,0));
+    for(let ring=0;ring<3;ring++){let rr=new THREE.Mesh(new THREE.TorusGeometry(.16,.018,8,32),gold);rr.position.set(x,.43+ring*.045,0);eg.add(rr);}
+    let conn=mesh(new THREE.CylinderGeometry(.045,.045,.72,16),silver,x,-.15,0);conn.rotation.z=.22*(i%2?1:-1);eg.add(conn);
+  });
+  let crank=mesh(new THREE.CylinderGeometry(.09,.09,2.15,32),orange,0,-.72,0);crank.rotation.z=Math.PI/2;eg.add(crank);
+  xs.forEach((x,i)=>{let web=mesh(new THREE.BoxGeometry(.16,.38,.2),gold,x,-.72,0);web.rotation.z=i%2?.35:-.35;eg.add(web);let j=mesh(new THREE.CylinderGeometry(.12,.12,.24,24),steel,x,-.72,0);j.rotation.z=Math.PI/2;eg.add(j);});
+  eg.add(mesh(new THREE.BoxGeometry(2.35,.38,1.15),steel,0,1.0,0));
+  eg.add(mesh(new THREE.BoxGeometry(2.15,.2,.92),dark,0,1.28,0));
+  for(let z of [-.32,.32]){let cam=mesh(new THREE.CylinderGeometry(.065,.065,2.05,24),gold,0,1.48,z);cam.rotation.z=Math.PI/2;eg.add(cam);for(let i=0;i<8;i++){let l=mesh(new THREE.SphereGeometry(.095,16,12),orange,(i-3.5)*.25,1.48,z);l.scale.set(.75,1.2,1);eg.add(l);}}
+  for(let i=0;i<4;i++){let x=(i-1.5)*.45;let intake=mesh(new THREE.CylinderGeometry(.07,.1,.55,20),blue,x,.72,.68);intake.rotation.x=.55;eg.add(intake);let ex=mesh(new THREE.CylinderGeometry(.07,.1,.55,20),red,x,.72,-.68);ex.rotation.x=-.55;eg.add(ex);}
+  let timing=mesh(new THREE.CylinderGeometry(.38,.38,.12,48),dark,1.35,.75,0);timing.rotation.z=Math.PI/2;eg.add(timing);
+  let tr=new THREE.Mesh(new THREE.TorusGeometry(.32,.045,12,48),gold);tr.position.set(1.42,.75,0);tr.rotation.y=Math.PI/2;eg.add(tr);
+  eg.add(mesh(new THREE.BoxGeometry(2.15,.28,1.05),black,0,-.62,0));
+  eg.add(mesh(new THREE.BoxGeometry(.55,.45,.4),steel,-1.45,.15,.55));eg.add(mesh(new THREE.BoxGeometry(.4,.4,.4),orange,-1.35,.15,-.55));eg.scale.setScalar(1.08);
+ }
  else if(/freno|brake|disco|caliper/.test(raw)){let disc=mesh(new THREE.CylinderGeometry(1.25,1.25,.22,64),silver);disc.rotation.x=Math.PI/2;root.add(disc);let hat=mesh(new THREE.CylinderGeometry(.48,.48,.34,48),dark);hat.rotation.x=Math.PI/2;root.add(hat);for(let i=0;i<8;i++){let h=mesh(new THREE.CylinderGeometry(.1,.1,.12,16),gold,Math.cos(i*Math.PI/4)*.65,0,Math.sin(i*Math.PI/4)*.65);h.rotation.x=Math.PI/2;root.add(h);}let cal=mesh(new THREE.BoxGeometry(.5,.85,.45),red,1.05,.1,.15);root.add(cal);root.add(mesh(new THREE.BoxGeometry(.24,.5,.42),orange,.83,.05,.15));for(let i=0;i<22;i++){let vane=mesh(new THREE.BoxGeometry(.04,.12,.65),dark,0,0,0);vane.rotation.y=i*Math.PI/11;root.add(vane);}}
  else if(/sospension|ammort|barra antiroll|camber|caster|toe/.test(raw)){root.add(mesh(new THREE.BoxGeometry(2.8,.18,.25),silver,0,-.6,0));root.add(mesh(new THREE.BoxGeometry(2.5,.16,.22),silver,0,.6,0));let spring= new THREE.Mesh(new THREE.TorusGeometry(.38,.08,12,60),orange);for(let i=0;i<7;i++){let c=spring.clone();c.position.set(0,-.65+i*.2,0);c.rotation.x=Math.PI/2;root.add(c);}root.add(mesh(new THREE.CylinderGeometry(.16,.16,1.5,24),dark,0,0,0));root.add(mesh(new THREE.BoxGeometry(.5,.6,.5),steel,0,0,0));for(let x of [-1.25,1.25])root.add(mesh(new THREE.SphereGeometry(.25,24,24),orange,x,-.6,0));}
  else if(/differenzial|xdrive|ripartitore|trasmission|cambio|frizione|ingran/.test(raw)){root.add(mesh(new THREE.BoxGeometry(2.3,1.2,1.2),dark));root.add(mesh(new THREE.BoxGeometry(1.5,.5,.5),silver,-1.5,0,0));root.add(mesh(new THREE.BoxGeometry(1.5,.5,.5),silver,1.5,0,0));for(let x of [-.65,.65]){let gear=mesh(new THREE.CylinderGeometry(.45,.45,.3,24),gold,x,0,0);gear.rotation.z=Math.PI/2;root.add(gear);for(let i=0;i<12;i++){let tooth=mesh(new THREE.BoxGeometry(.12,.13,.2),gold,x+Math.cos(i*Math.PI/6)*.47,Math.sin(i*Math.PI/6)*.47,0);root.add(tooth);}}root.add(mesh(new THREE.CylinderGeometry(.3,.3,1.8,32),orange,0,0,.7));}
@@ -3513,3 +3533,4 @@ const engIO=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isInterse
 
 <style id='atlas-v37-diagnostic-fixes'>.atlas-3d-stage{position:relative;min-height:340px;height:340px}.atlas-3d-stage canvas{display:block;width:100%;height:340px}.atlas-3d-view{position:relative;height:300px;min-height:300px;overflow:hidden}.atlas-3d-view canvas{display:block;width:100%;height:100%}</style>
 \n<style id="atlas-v38-webgl-context-recovery">.atlas-3d-view,.atlas-3d-stage{contain:content;min-height:300px}.atlas-3d-view canvas,.atlas-3d-stage canvas{display:block;width:100%;height:100%}</style>\n
+<style id="atlas-v40-engine-pilot">.eng-real3d{background:linear-gradient(135deg,#111923,#202e39)}.eng-model-hint{color:#c5d3de}</style>
