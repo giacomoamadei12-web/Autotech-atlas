@@ -350,6 +350,16 @@ body{background:#050505;color:#f1eee9}
 .m-photo-results a{display:block;width:100%}
 @media(max-width:900px){.m-photo-results img.m-photo-thumb{height:460px}}
 @media(max-width:550px){.m-photo-results img.m-photo-thumb{height:360px}}
+
+/* v23.2 - force enlargement across both legacy and dynamic gallery renderers */
+.m-photo-grid img.m-photo-thumb,
+.m-photo-grid .m-photo-thumb,
+.live-photo-results img,
+.m-photo-results img,
+img.m-photo-thumb{height:620px!important;min-height:620px!important;width:100%!important;max-width:100%!important;object-fit:contain!important}
+.m-photo-grid{grid-template-columns:1fr!important}
+@media(max-width:900px){.m-photo-grid img.m-photo-thumb,.live-photo-results img,.m-photo-results img,img.m-photo-thumb{height:500px!important;min-height:500px!important}}
+@media(max-width:550px){.m-photo-grid img.m-photo-thumb,.live-photo-results img,.m-photo-results img,img.m-photo-thumb{height:380px!important;min-height:380px!important}}
 </style>
 </head>
 <body>
