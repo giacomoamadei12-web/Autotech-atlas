@@ -344,6 +344,12 @@ body{background:#050505;color:#f1eee9}
 @media(max-width:900px){.m-photo-expanded-grid{grid-template-columns:1fr}.m-photo-results{grid-template-columns:1fr 1fr}}
 @media(max-width:550px){.m-photo-results{grid-template-columns:1fr}.m-photo-result-card img{height:300px}}
 
+
+/* v23.1 - enlarge actual dynamically inserted gallery images */
+.m-photo-results img.m-photo-thumb{display:block;width:100%;height:560px;max-height:none;object-fit:contain;background:#080b10;cursor:zoom-in}
+.m-photo-results a{display:block;width:100%}
+@media(max-width:900px){.m-photo-results img.m-photo-thumb{height:460px}}
+@media(max-width:550px){.m-photo-results img.m-photo-thumb{height:360px}}
 </style>
 </head>
 <body>
